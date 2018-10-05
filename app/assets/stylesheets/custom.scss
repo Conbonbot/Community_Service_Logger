@@ -1,10 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+<<<<<<< HEAD
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
 
+=======
+>>>>>>> static_pages
 /* universal */
 
 body {
@@ -21,9 +24,16 @@ textarea {
 
 .center {
   text-align: center;
+<<<<<<< HEAD
   h1 {
     margin-bottom: 10px;
   }
+=======
+}
+
+.center h1 {
+  margin-bottom: 10px;
+>>>>>>> static_pages
 }
 
 /* typography */
@@ -45,6 +55,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
+<<<<<<< HEAD
   color: $gray-light;
 }
 h3 {
@@ -54,11 +65,15 @@ h3 {
   text-align: center;
   font-weight: normal;
   color: $gray-light;
+=======
+  color: #777;
+>>>>>>> static_pages
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+<<<<<<< HEAD
 }
 
 
@@ -103,4 +118,6 @@ footer {
       margin-left: 15px;
     }
   }
+=======
+>>>>>>> static_pages
 }
