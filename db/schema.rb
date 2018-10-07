@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181006054341) do
+ActiveRecord::Schema.define(version: 20181007014825) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "last_name"
-    t.integer "ident"
+    t.string "indent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -3,9 +3,9 @@
 one:
   name: MyString
   last_name: MyString
-  id: 1
+  indent: MyString
 
 two:
   name: MyString
   last_name: MyString
-  id: 1
+  indent: MyString
