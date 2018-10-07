@@ -1,0 +1,28 @@
+<% provide(:title, 'Form A') %>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@user, url: formA_path) do |f| %>
+          <%= render 'shared/error_messages' %>
+          
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class: 'form-control'  %>
+          
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class: 'form-control'  %>
+          
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'form-control'  %>
+          
+          <%= f.label :student_id %> <b>ID</b>
+          <%= f.text_field :student_id, class: 'form-control'  %>
+          
+          <%= f.label :grade %>
+          <%= f.text_field :grade, class: 'form-control'  %>
+          
+          <%= f.submit "Create my Account", class: "btn btn-primary" %>
+         <% end %>
+    </div>
+</div>
+        
+        

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-#get 'user/new'
-   root 'user#new'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+   root 'users#new'
+   get  '/formA', to: 'users#new'
+   post '/formA', to: 'users#create'
+   get  '/formB', to: 'users#volunteer'
+   get  '/formC', to: 'users#hours'
+   resources :users
+   
+  
 end
