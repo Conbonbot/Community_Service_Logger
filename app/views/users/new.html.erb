@@ -1,5 +1,20 @@
 <% provide(:title, 'Form A') %>
 <h1>Create Account</h1>
+
+<h2>ALL STUDENTS MUST COMPLETE AND SUBMIT THIS FORM BEFORE BEGINNING SERVICE.</h2>
+
+<h2>The CVHS Community Service Learning Project encourages students to volunteer their time to help
+others by performing community service. We believe this program enhances skills, builds character and
+fosters personal growth. Participation is strongly encouraged but is not required. 
+</h2>
+
+          <h2> As a participant in the CVHS Community Service Learning Project, I realize that my behavior in the
+community is a reflection of my school. I promise to observe CVHS rules of conduct and to behave in a
+manner that will make my school proud to send me into the community as a representative of CVHS. 
+</h>
+
+
+
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <%= form_for(@user, url: formA_path) do |f| %>
@@ -25,6 +40,7 @@
           
           <%= f.label :password_confirmation, "Password Confirmation" %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
+          
           
           <%= f.submit "Create my Account", class: "btn btn-primary" %>
          <% end %>
