@@ -1,5 +1,5 @@
 <% provide(:title, 'Form A') %>
-
+<h1>Create Account</h1>
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <%= form_for(@user, url: formA_path) do |f| %>
@@ -12,16 +12,24 @@
           <%= f.text_field :last_name, class: 'form-control'  %>
           
           <%= f.label :email %>
-          <%= f.text_field :email, class: 'form-control'  %>
+          <%= f.email_field :email, class: 'form-control'  %>
           
-          <%= f.label :student_id %> <b>ID</b>
+          <%= f.label :student_id, "Student ID" %> 
           <%= f.text_field :student_id, class: 'form-control'  %>
           
           <%= f.label :grade %>
           <%= f.text_field :grade, class: 'form-control'  %>
           
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+          
+          <%= f.label :password_confirmation, "Password Confirmation" %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+          
           <%= f.submit "Create my Account", class: "btn btn-primary" %>
          <% end %>
+         
+         <p>Already have an account? <%= link_to "Log in!", login_path %></p>
     </div>
 </div>
         

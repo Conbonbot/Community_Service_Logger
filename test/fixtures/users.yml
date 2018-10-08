@@ -1,0 +1,8 @@
+connor:
+    id: 1
+    first_name: Connor
+    last_name: Harvey
+    email: example@railstutorial.org
+    student_id: 123456
+    grade: 9
+    password_digest: <%= User.digest('password') %>
