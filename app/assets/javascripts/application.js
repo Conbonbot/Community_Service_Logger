@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require bootstrap
+ // =require signature_pad
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .

@@ -14,39 +14,66 @@ manner that will make my school proud to send me into the community as a represe
 </h2>
 
 
+   
 
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <%= form_for(@user, url: formA_path) do |f| %>
-          <%= render 'shared/error_messages' %>
-          
-          <%= f.label :first_name %>
+        <div class="col-md-6 col-md-offset-3">
+               
+               
+        <%#= form_for(@user, url: formA_path) do |f| %>
+          <%#= render 'shared/error_messages' %>
+
+<%= simple_form_for @user do |f| %>
+ <%= render 'shared/error_messages' %>
+ <%= f.label :first_name, "First Name" %>
           <%= f.text_field :first_name, class: 'form-control'  %>
           
-          <%= f.label :last_name %>
+          <%= f.label :last_name, "Last Name" %>
           <%= f.text_field :last_name, class: 'form-control'  %>
           
-          <%= f.label :email %>
+          <%= f.label :email, "Parent's Email" %>
           <%= f.email_field :email, class: 'form-control'  %>
           
           <%= f.label :student_id, "Student ID" %> 
           <%= f.text_field :student_id, class: 'form-control'  %>
           
-          <%= f.label :grade %>
+          <%= f.label :grade, "Grade" %>
           <%= f.text_field :grade, class: 'form-control'  %>
           
-          <%= f.label :password %>
+          <%= f.label :password, "Password (At least 6 characters)"%>
           <%= f.password_field :password, class: 'form-control' %>
           
           <%= f.label :password_confirmation, "Password Confirmation" %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
-          
-          
-          <%= f.submit "Create my Account", class: "btn btn-primary" %>
-         <% end %>
-         
-         <p>Already have an account? <%= link_to "Log in!", login_path %></p>
-    </div>
+          <%#= f.submit "Create my Account", class: "btn btn-primary" %>
+                           </div>
 </div>
-        
-        
+          
+<br>
+  <%= f.input_field :signature, as: :hidden, class: 'signature_pad_input' %>
+  <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+  <%= f.label :signature, "Parent Signature"%>
+  </div>
+  </div>
+  <div class="signature_pad text-center">
+    <div class="signature_pad_body">
+      <canvas></canvas>
+    </div>
+    <div class="signature_pad_footer">
+      <div class="text-muted">Sign above</div>
+      <button type="button" class="btn btn-default signature_pad_clear">Clear</button>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+      <%= f.button :submit, 'Create Account', class: 'btn btn-success signature_pad_save'  %>
+<%# end %>
+<% end %>
+<br>
+<p>Already have an account? <%= link_to "Log in!", login_path %></p>
+  </div>
+  </div>
+                    </div>
+</div>

@@ -9,7 +9,7 @@ class User < ApplicationRecord
     validates :grade, presence: true, :inclusion => 9..12
     has_secure_password
     validates :password, presence: true, length: { minimum: 6}
-    
+       validates :signature, presence: true
     # Returns the hash of a given string.
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
