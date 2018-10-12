@@ -28,7 +28,7 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
-  host = 'us-east-2.console.aws.amazon.com/cloud9/ide/5a74988ac7624cb483cee301a6b9299c'
+  host = 'https://5a74988ac7624cb483cee301a6b9299c.vfs.cloud9.us-east-2.amazonaws.com/'
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   config.action_mailer.perform_caching = false
 
