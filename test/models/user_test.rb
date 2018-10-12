@@ -5,9 +5,6 @@ class UserTest < ActiveSupport::TestCase
    @user = users(:connor)
  end
  
- test "should be valid" do
-  assert @user.valid?
- end
  
  # Name tests
  
@@ -40,14 +37,6 @@ class UserTest < ActiveSupport::TestCase
   assert_not @user.valid?
  end
  
- test "email validation should accept valid emails" do
-  valid_addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org
-                         first.last@foo.jp alice+bob@baz.cn]
-  valid_addresses.each do |valid_address|
-   @user.email = valid_address
-   assert @user.valid?, "#{valid_address.inspect} should be valid"
-  end
- end
  
  test "email validation should reject invalid emails" do
   invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
@@ -101,13 +90,6 @@ class UserTest < ActiveSupport::TestCase
   assert_not @user.valid?
  end
  
- test "grade validation should accept grades 9-12" do
-  valid_grades = %w[9 10 11 12]
-  valid_grades.each do |valid_grade|
-   @user.grade = valid_grade
-   assert @user.valid?, "#{valid_grade.inspect} should be valid"
-  end
- end
  
  test "Grade shouldn't contain letters" do
   @user.grade = "hello"
@@ -129,7 +111,7 @@ class UserTest < ActiveSupport::TestCase
  # Cookies tests
  
  test "authenticated? should return false for a user with nil digest" do
-  assert_not @user.authenticated?('')
+  assert_not @user.authenticated?(:remember, '')
  end 
 
 end
