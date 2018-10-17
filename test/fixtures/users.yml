@@ -6,3 +6,6 @@ connor:
     student_id: 123456
     grade: 9
     password_digest: <%= User.digest('password') %>
+    admin: true
+    activated: true
+    activated_at: <%= Time.zone.now %>
