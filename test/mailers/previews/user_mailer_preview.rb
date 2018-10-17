@@ -1,4 +1,4 @@
-# Preview all emails at https://b77dbb0330b24dff92cc590200696e73.vfs.cloud9.us-east-2.amazonaws.com/rails/mailers/user_mailer
+#https://b77dbb0330b24dff92cc590200696e73.vfs.cloud9.us-east-2.amazonaws.com/rails/mailers/user_mailer
 class UserMailerPreview < ActionMailer::Preview
 
   def account_activation

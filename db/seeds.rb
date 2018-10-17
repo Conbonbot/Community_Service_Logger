@@ -1,4 +1,6 @@
-User.create!(first_name:  "Connor",
+User.create!(
+             id: "1",
+             first_name:  "Connor",
              last_name: "Harvey",
              email: "example@railstutorial.org",
              student_id: "123456",

@@ -5,16 +5,6 @@ class UserTest < ActiveSupport::TestCase
    @user = users(:connor)
  end
  
- test "user should be valid" do
-  @user.first_name = "Connor"
-  @user.last_name = "Harvey"
-  @user.email = "user@valid.com"
-  @user.student_id = "103472"
-  @user.grade = "10"
-  @user.password =  "foobar"
-  assert @user.valid?
- end
- 
  
  # Name tests
  

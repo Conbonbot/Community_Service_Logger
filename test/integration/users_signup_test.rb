@@ -21,17 +21,16 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     #assert_select 'div.field_with_errors'
   end
   
-  test "valid signup information" do
+  test "valid signup information with account activation" do
     get formA_path
     assert_difference ('User.count') do
-      post users_path, params: { user: { first_name: @user.first_name,
-                                         last_name: @user.last_name,
-                                         email: @user.email,
-                                         student_id: @user.student_id,
-                                         grade: @user.grade,
-                                         signature: @user.signature,
-                                         password: @user.password,
-                                         password_confirmation: @user.password_confirmation } }
+      post users_path, params: { user: { first_name: "Connor",
+                                         last_name: "Harvey",
+                                         email: "hello@real.com",
+                                         student_id: "123456",
+                                         grade: "10",
+                                         password: "foobar",
+                                         password_confirmation: "foobar" } }
     end
     assert_equal 1, ActionMailer::Base.deliveries.size
     user = assigns(:user)
