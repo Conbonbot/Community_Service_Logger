@@ -10,7 +10,7 @@ class User < ApplicationRecord
     validates :student_id, presence: true, length: { minimum: 6, maximum: 6}, format: { with: VALID_STUDENT_ID_REGEX }, uniqueness: true
     validates :grade, presence: true, :inclusion => 9..12
     has_secure_password
-    validates :password, presence: true, length: { minimum: 6}
+    validates :password, presence: true, length: { minimum: 6}, allow_nil: true
     validates :signature, presence: true
     # Returns the hash of a given string.
     def User.digest(string)

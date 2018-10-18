@@ -5,7 +5,7 @@ User.create!(
              email: "example@railstutorial.org",
              student_id: "123456",
              grade: "10",
-             password:              "foobar",
+             password:              "foobr",
              password_confirmation: "foobar",
              admin:     true,
              activated: true,
