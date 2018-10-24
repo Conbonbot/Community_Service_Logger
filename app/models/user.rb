@@ -11,7 +11,7 @@ class User < ApplicationRecord
     validates :grade, presence: true, :inclusion => 9..12
     has_secure_password
     validates :password, presence: true, length: { minimum: 6}, allow_nil: true
-    validates :signature, presence: true
+   
     # Returns the hash of a given string.
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -35,11 +35,11 @@ class User < ApplicationRecord
         update_attribute(:remember_token, nil)
     end
     
-    # Returns true if the given token matches the digest
-    def authenticated?(attribute, token)
-        digest = send("#{attribute}_digest")
-        return false if digest.nil?
-        BCrypt::Password.new(digest).is_password?(token)
+    # Returns true if the given token matches the digest.
+    def authenticated?(attribute, token) 
+       digest = send("#{attribute}_digest")
+       return false if digest.nil?
+       BCrypt::Password.new(digest).is_password?(token)
     end
     
     # Activates an account
