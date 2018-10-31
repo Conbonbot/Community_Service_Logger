@@ -83,10 +83,23 @@ class UserTest < ActiveSupport::TestCase
  
  # Grade tests
  
- test "Grade should be between 9-12" do
-  @user.grade = 8
+ test "Grade should be between this year to 4 years" do
+  @user.grade = Time.zone.now.year
+  assert @user.valid?
+  @user.grade = Time.zone.now.year + 1
+  assert @user.valid?
+  @user.grade = Time.zone.now.year + 2
+  assert @user.valid?
+  @user.grade = Time.zone.now.year + 3
+  assert @user.valid?
+  @user.grade = Time.zone.now.year + 4
+  assert @user.valid?
+ end
+ 
+ test "Grade should reject invalid years" do
+  @user.grade = Time.zone.now.year - 1
   assert_not @user.valid?
-  @user.grade = 13
+  @user.grade = Time.zone.now.year + 5
   assert_not @user.valid?
  end
  
