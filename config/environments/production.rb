@@ -48,7 +48,7 @@ Rails.application.configure do
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
-  ActionMailer::Base.default_options = { host: 'https://b77dbb0330b24dff92cc590200696e73.vfs.cloud9.us-east-2.amazonaws.com/' }
+  ActionMailer::Base.default_url_options = { host: 'https://b77dbb0330b24dff92cc590200696e73.vfs.cloud9.us-east-2.amazonaws.com/' }
    
 
   # Specifies the header that your server uses for sending files.

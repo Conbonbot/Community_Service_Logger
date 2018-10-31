@@ -1,79 +1,131 @@
 <% provide(:title, 'Form A') %>
-<h1>Create Account</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Form A</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="assets/startbootstrap-freelancer/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<h2>ALL STUDENTS MUST COMPLETE AND SUBMIT THIS FORM BEFORE BEGINNING SERVICE.</h2>
+    <!-- Custom fonts for this template -->
+    <link href="assets/startbootstrap-freelancer/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-<h2>The CVHS Community Service Learning Project encourages students to volunteer their time to help
-others by performing community service. We believe this program enhances skills, builds character and
-fosters personal growth. Participation is strongly encouraged but is not required. 
-</h2>
+    <!-- Plugin CSS -->
+    <link href="assets/startbootstrap-freelancer/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
-          <h2> As a participant in the CVHS Community Service Learning Project, I realize that my behavior in the
-community is a reflection of my school. I promise to observe CVHS rules of conduct and to behave in a
-manner that will make my school proud to send me into the community as a representative of CVHS. 
-</h2>
-
-
-   
-
-<div class="row">
-        <div class="col-md-6 col-md-offset-3">
-               
-               
-        <%#= form_for(@user, url: formA_path) do |f| %>
-          <%#= render 'shared/error_messages' %>
-
-<%= simple_form_for @user do |f| %>
- <%= render 'shared/error_messages' %>
-          <%= f.label :first_name, "First Name" %>
-          <%= f.text_field :first_name, class: 'form-control'  %>
+    <!-- Custom styles for this template -->
+    <link href="assets/startbootstrap-freelancer/css/freelancer.min.css" rel="stylesheet">
+  </head>
+  
+  <body id="page-top">
+    <!-- Information-->
+    <section class="bg-primary text-white mb-0" id="Community Service">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Community Service</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-4 ml-auto">
+            <p class="lead">
+              The CVHS Community Service Learning Project encourages students to volunteer their time to help
+              others by performing community service. We believe this program enhances skills, builds character and
+              fosters personal growth. Participation is strongly encouraged but is not required. 
+            </p>
+          </div>
+          <div class="col-lg-4 ml-auto">
+            <p class="lead">
+              As a participant in the CVHS Community Service Learning Project, I realize that my behavior in the
+              community is a reflection of my school. I promise to observe CVHS rules of conduct and to behave in a
+              manner that will make my school proud to send me into the community as a representative of CVHS. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section id="Signup">
+      <div class="Container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Sign up</h2>
+        <hr class="star-dark mb-5">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <%= simple_form_for @user do |f| %>
+             <%= render 'shared/error_messages' %>
+              <%= f.label :first_name, "First Name" %>
+              <%= f.text_field :first_name, class: 'form-control'  %>
           
-          <%= f.label :last_name, "Last Name" %>
-          <%= f.text_field :last_name, class: 'form-control'  %>
+              <%= f.label :last_name, "Last Name" %>
+              <%= f.text_field :last_name, class: 'form-control'  %>
           
-          <%= f.label :email, "Parent's Email" %>
-          <%= f.email_field :email, class: 'form-control'  %>
+              <%= f.label :email, "Parent's Email" %>
+              <%= f.email_field :email, class: 'form-control'  %>
+            
+              <%= f.label :student_id, "Student ID" %> 
+              <%= f.text_field :student_id, class: 'form-control'  %>
           
-          <%= f.label :student_id, "Student ID" %> 
-          <%= f.text_field :student_id, class: 'form-control'  %>
+              <%= f.label :grade, "Grade" %>
+              <%= f.text_field :grade, class: 'form-control'  %>
           
-          <%= f.label :grade, "Grade" %>
-          <%= f.text_field :grade, class: 'form-control'  %>
+              <%= f.label :password, "Password (At least 6 characters)"%>
+              <%= f.password_field :password, class: 'form-control' %>
           
-          <%= f.label :password, "Password (At least 6 characters)"%>
-          <%= f.password_field :password, class: 'form-control' %>
-          
-          <%= f.label :password_confirmation, "Password Confirmation" %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
-          <%#= f.submit "Create my Account", class: "btn btn-primary" %>
-                           </div>
-</div>
-          
-<br>
-  <%= f.input_field :signature, as: :hidden, class: 'signature_pad_input' %>
-  <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-  <%= f.label :signature, "Parent Signature"%>
-  </div>
-  </div>
-  <div class="signature_pad text-center">
-    <div class="signature_pad_body">
-      <canvas></canvas>
-    </div>
-    <div class="signature_pad_footer">
-      <div class="text-muted">Sign above</div>
-      <button type="button" class="btn btn-default signature_pad_clear">Clear</button>
-      <br>
-      <br>
-      <br>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-      <%= f.button :submit, 'Create Account', class: 'btn btn-success signature_pad_save'  %>
-<%# end %>
-<% end %>
-<br>
-<p>Already have an account? <%= link_to "Log in!", login_path %></p>
-  </div>
-  </div>
+              <%= f.label :password_confirmation, "Password Confirmation" %>
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </div>
+        </div>
+        <br>
+          <%= f.input_field :signature, as: :hidden, class: 'signature_pad_input' %>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <%= f.label :signature, "Parent Signature"%>
+            </div>
+          </div>
+          <div class="signature_pad text-center">
+            <div class="signature_pad_body">
+              <canvas></canvas>
+            </div>
+          <div class="signature_pad_footer">
+            <div class="text-muted">Sign above</div>
+              <button type="button" class="btn btn-default signature_pad_clear">Clear</button>
+                <br>
+                  <br>
+                    <br>
+                      <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                          <%= f.button :submit, 'Create Account', class: 'btn btn-success signature_pad_save'  %>
+                        <% end %>
+                          <br>
+                            <p>Already have an account? <%= link_to "Log in!", login_path %></p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-</div>
+                  </div>
+              </div>
+            </div>
+          </section>
+          
+    <!-- Bootstrap core JavaScript -->
+    <script src="assets/startbootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/startbootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="assets/startbootstrap/jquery-easing/jquery.easing.min.js"></script>
+    <script src="assets/startbootstrap/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="assets/startbootstrap/js/freelancer.min.js"></script>  
+  
+          
+  </body>
+
+
+  
+</html>
