@@ -29,3 +29,69 @@
     </nav>
   </div>
 </header>
+
+
+
+    
+    <section id="Signup">
+      <div class="Container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Sign up</h2>
+        <hr class="star-dark mb-5">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <%= simple_form_for @user do |f| %>
+             <%= render 'shared/error_messages' %>
+              <%= f.label :first_name, "First Name" %>
+              <%= f.text_field :first_name, class: 'form-control'  %>
+          
+              <%= f.label :last_name, "Last Name" %>
+              <%= f.text_field :last_name, class: 'form-control'  %>
+          
+              <%= f.label :email, "Student Email" %>
+              <%= f.email_field :email, class: 'form-control'  %>
+            
+              <%= f.label :student_id, "Student ID (6-digit)" %> 
+              <%= f.text_field :student_id, class: 'form-control'  %>
+          
+              <%= f.label :grade, "Class of: " %>
+              <%= f.text_field :grade, class: 'form-control'  %>
+          
+              <%= f.label :password, "Password (At least 6 characters)"%>
+              <%= f.password_field :password, class: 'form-control' %>
+          
+              <%= f.label :password_confirmation, "Password Confirmation" %>
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </div>
+        </div>
+        <br>
+          <%= f.input_field :signature, as: :hidden, class: 'signature_pad_input' %>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <%= f.label :signature, "Parent Signature"%>
+            </div>
+          </div>
+          <div class="signature_pad text-center">
+            <div class="signature_pad_body">
+              <canvas></canvas>
+            </div>
+          <div class="signature_pad_footer">
+            <div class="text-muted">Sign above</div>
+              <button type="button" class="btn btn-default signature_pad_clear">Clear</button>
+                <br>
+                  <br>
+                    <br>
+                      <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                          <%= f.button :submit, 'Create Account', class: 'btn btn-success signature_pad_save'  %>
+                        <% end %>
+                          <br>
+                            <p>Already have an account? <%= link_to "Log in!", login_path %></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </section>
+          

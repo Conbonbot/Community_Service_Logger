@@ -26,7 +26,7 @@
   
   <body id="page-top">
     <!-- Information-->
-    <section class="bg-primary text-white mb-0" id="Community Service">
+    <header class="masthead bg-primary text-white text-center">
       <div class="container">
         <h2 class="text-center text-uppercase text-white">Community Service</h2>
         <hr class="star-light mb-5">
@@ -47,10 +47,8 @@
           </div>
         </div>
       </div>
-    </section>
+    </header>
     
-    
-    <section id="Signup">
       <div class="Container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Sign up</h2>
         <hr class="star-dark mb-5">
@@ -58,25 +56,25 @@
           <div class="col-md-6 col-md-offset-3">
             <%= simple_form_for @user do |f| %>
              <%= render 'shared/error_messages' %>
-              <%= f.label :first_name, "First Name" %>
+              <label><h3>First Name</h3></label>
               <%= f.text_field :first_name, class: 'form-control'  %>
           
-              <%= f.label :last_name, "Last Name" %>
+              <label><h3>Last Name</h3></label>
               <%= f.text_field :last_name, class: 'form-control'  %>
           
-              <%= f.label :email, "Student Email" %>
+              <label><h3>Student email</h3></label>
               <%= f.email_field :email, class: 'form-control'  %>
             
-              <%= f.label :student_id, "Student ID (6-digit)" %> 
+              <label><h3>Student ID (6-digit)</h3></label>
               <%= f.text_field :student_id, class: 'form-control'  %>
           
-              <%= f.label :grade, "Class of: " %>
+              <label><h3>Class of:</h3></label>
               <%= f.text_field :grade, class: 'form-control'  %>
           
-              <%= f.label :password, "Password (At least 6 characters)"%>
+              <label><h3>Password</h3></label>
               <%= f.password_field :password, class: 'form-control' %>
           
-              <%= f.label :password_confirmation, "Password Confirmation" %>
+              <label><h3>Password Confirmation</h3></label>
               <%= f.password_field :password_confirmation, class: 'form-control' %>
             </div>
         </div>
@@ -84,7 +82,7 @@
           <%= f.input_field :signature, as: :hidden, class: 'signature_pad_input' %>
           <div class="row">
             <div class="col-md-6 col-md-offset-3">
-              <%= f.label :signature, "Parent Signature"%>
+              <label><h3>Parent Signature</h3></label>
             </div>
           </div>
           <div class="signature_pad text-center">
@@ -92,8 +90,8 @@
               <canvas></canvas>
             </div>
           <div class="signature_pad_footer">
-            <div class="text-muted">Sign above</div>
-              <button type="button" class="btn btn-default signature_pad_clear">Clear</button>
+            <div class="text-muted"><h2>Sign above</h2></div>
+              <button type="button" class="btn btn-default signature_pad_clear"><h2>Clear</h2></button>
                 <br>
                   <br>
                     <br>
@@ -102,7 +100,7 @@
                           <%= f.button :submit, 'Create Account', class: 'btn btn-success signature_pad_save'  %>
                         <% end %>
                           <br>
-                            <p>Already have an account? <%= link_to "Log in!", login_path %></p>
+                            <h2>Already have an account? <%= link_to "Log in!", login_path %></h2>
                           </div>
                         </div>
                       </div>
@@ -110,7 +108,6 @@
                   </div>
               </div>
             </div>
-          </section>
           
     <!-- Bootstrap core JavaScript -->
     <script src="assets/startbootstrap-freelancer/vendor/jquery/jquery.min.js"></script>
