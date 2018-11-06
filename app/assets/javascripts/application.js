@@ -10,9 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//
 //= require jquery
 //= require bootstrap
- // =require signature_pad
+//= require signature_pad
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+//= require_tree 
+//= require startbootstrap-creative/js/creative
+//= require startbootstrap-creative/vendor/jquery/jquery
+//= require startbootstrap-creative/vendor/bootstrap/js/bootstrap
+//= require startbootstrap-creative/vendor/jquery-easing/jquery.easing
+//= require startbootstrap-creative/vendor/scrollreveal/scrollreveal
+//= require startbootstrap-creative/vendor/magnific-popup/jquery.magnific-popup
