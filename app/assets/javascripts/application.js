@@ -23,3 +23,10 @@
 //= require startbootstrap-creative/vendor/jquery-easing/jquery.easing
 //= require startbootstrap-creative/vendor/scrollreveal/scrollreveal
 //= require startbootstrap-creative/vendor/magnific-popup/jquery.magnific-popup
+//= require startbootstrap-creative/vendor/bootstrap/js/bootstrap.bundle
+//= require startbootstrap-creative/vendor/fontawesome-free/js/all
+//= require startbootstrap-creative/vendor/fontawesome-free/js/brands
+//= require startbootstrap-creative/vendor/fontawesome-free/js/fontawesome
+//= require startbootstrap-creative/vendor/fontawesome-free/js/regular
+//= require startbootstrap-creative/vendor/fontawesome-free/js/solid
+//= require startbootstrap-creative/vendor/fontawesome-free/js/v4-shims
