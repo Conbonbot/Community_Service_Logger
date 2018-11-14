@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin/home'
+
   get 'sessions/new'
 
    root 'users#new'
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
    post   '/formA',  to: 'users#create'
    get    '/formB',  to: 'users#volunteer'
    get    '/formC',  to: 'users#hours'
+   get    '/admin',  to: 'admin#home'
    get    '/login',  to: 'sessions#new'
    post   '/login',  to: 'sessions#create'
    delete '/logout', to: 'sessions#destroy'

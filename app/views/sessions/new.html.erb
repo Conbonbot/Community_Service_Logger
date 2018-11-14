@@ -1,24 +1,73 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
+  <head>
 
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <%= form_for(:session, url: login_path) do |f| %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/startbootstrap-creative/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="/assets/startbootstrap-creative/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="/assets/startbootstrap-creative/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/startbootstrap-creative/css/creative.min.css" rel="stylesheet">
+
+  </head>
+  
+  <body id="page-top">
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <h1 class="text-uppercase">
+            <strong>Log in</strong>
+          </h1>
+          <hr>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="container text-left">
+              <%= form_for(:session, url: login_path) do |f| %>
           
-          <%= f.label :student_id, "Student ID" %>
-          <%= f.text_field :student_id, class: 'form-control' %>
+                <%= f.label :student_id, "Student ID" %>
+                <%= f.text_field :student_id, class: 'form-control' %>
           
-          <%= f.label :password %>
-          <%= f.password_field :password, class: 'form-control' %>
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'form-control' %>
           
-          <%= f.label :remember_me, class: "checkbox inline" do %>
-            <%= f.check_box :remember_me %>
-            <span>Remember me on this computer</span>
-          <% end %>
+                <%= f.label :remember_me, class: "checkbox inline" do %>
+                <%= f.check_box :remember_me %>
+                <span>Remember me on this computer</span>
+                <% end %>
           
-          <%= f.submit "Log in", class: 'btn btn-primary' %>
-         <% end %>
+                <%= f.submit "Log in", class: 'btn btn-primary' %>
+               <% end %>
          
-         <p>New user? <%= link_to "Sign up now!", formA_path %></p>
-    </div>
-</div>
+             <p>New user? <%= link_to "Sign up now!", formA_path %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="/assets/startbootstrap-creative/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/startbootstrap-creative/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/assets/startbootstrap-creative/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/assets/startbootstrap-creative/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="/assets/startbootstrap-creative/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/assets/startbootstrap-creative/js/creative.min.js"></script>
+  </body>
+  
