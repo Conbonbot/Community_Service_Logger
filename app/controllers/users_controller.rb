@@ -2,8 +2,10 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
   def show
+    @user = User.find(params[:id])
     if logged_in_user
       @user = User.find(params[:id])
+      @hours = @user.hours.paginate(page: params[:page])
     end
   end
   

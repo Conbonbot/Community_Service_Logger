@@ -3,6 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
  def setup
    @user = users(:connor)
+   @prash = users(:prash)
  end
  
  
@@ -126,6 +127,16 @@ class UserTest < ActiveSupport::TestCase
  test "authenticated? should return false for a user with nil digest" do
   assert_not @user.authenticated?(:remember, '')
  end 
+ 
+ # Hour tests
+ 
+ test "associated hours should be destroyed" do
+  @prash.save
+  @prash.hours.create!(content: 2)
+  assert_difference 'Hour.count', -1 do
+   @prash.destroy
+  end
+ end
  
 
 end
