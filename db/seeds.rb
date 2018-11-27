@@ -15,7 +15,7 @@ User.create!(
              
              
 users = User.order(:created_at).take(6)
-50.times do
+100.times do
     content = SecureRandom.random_number(100)
     users.each { |user| user.hours.create!(content: content) }
 end

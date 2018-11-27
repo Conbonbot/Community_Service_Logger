@@ -1,6 +1,5 @@
-<li id="hour-<%= hour.id %>">
-    <span class="content"><%= hour.content %> Hours</span>
-    <span class="timestamp">
-        Uploaded <%= time_ago_in_words(hour.created_at) %> ago.
-    </span>
-</li>
+<tr role="row">
+    <th><%= hour.id %></th>
+    <th><%= hour.content %> Hours</th>
+    <th><%= time_ago_in_words(hour.created_at) %> ago</th>
+</tr>

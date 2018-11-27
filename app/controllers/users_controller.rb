@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user.hours.any?
-      @hours = @user.hours.paginate(page: params[:page])
+      @hours = @user.hours.all
     end
   end
   
