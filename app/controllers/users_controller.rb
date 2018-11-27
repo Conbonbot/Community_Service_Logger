@@ -3,8 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   def show
     @user = User.find(params[:id])
-    if logged_in_user
-      @user = User.find(params[:id])
+    if @user.hours.any?
       @hours = @user.hours.paginate(page: params[:page])
     end
   end
@@ -42,8 +41,8 @@ class UsersController < ApplicationController
   def logged_in_user
     unless logged_in?
       flash[:danger] = "Please log in"
-      redirect_to 'https://www.youtube.com/watch?v=8ZcmTl_1ER8', :overwrite_params => { :parm => 'foo' }
-      #redirect_to root_url
+      #redirect_to 'https://www.youtube.com/watch?v=8ZcmTl_1ER8', :overwrite_params => { :parm => 'foo' }
+      redirect_to root_url
     end
   end
   

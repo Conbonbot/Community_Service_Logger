@@ -1,6 +1,5 @@
 <li id="hour-<%= hour.id %>">
-    <span class="user"><%= link_to hour.user.first_name, hour.user %><%= link_to hour.user.last_name, hour.user %></span>
-    <span class="content"><%= hour.content %></span>
+    <span class="content"><%= hour.content %> Hours</span>
     <span class="timestamp">
         Uploaded <%= time_ago_in_words(hour.created_at) %> ago.
     </span>

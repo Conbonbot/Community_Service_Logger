@@ -36,11 +36,9 @@
           </div>
           <div class="col-md-8">
            <% if @user.hours.any? %>
-            <h3>Hours (<%= @user.hours.count %>)</h3>
              <ol class="hours">
               <%= render @hours %>
              </ol>
-             <%= will_paginate @hours %>
             <% end %>
           </div>
          </div>
