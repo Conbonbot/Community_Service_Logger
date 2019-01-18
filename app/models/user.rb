@@ -54,6 +54,17 @@ class User < ApplicationRecord
         UserMailer.account_activation(self).deliver_now
     end
     
+    # finds the total hours of a user
+    def total_hours
+        tot_hours = 0
+        @count = User.find 1
+        count = @count.hours.count
+        for i in 1..count
+            tot_hours += @count.hours.find_by(id: i).content
+        end
+        update_attribute(:total_hours, tot_hours)
+    end
+    
     private
     
     # Converts an email to all lower-case
