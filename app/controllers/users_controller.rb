@@ -23,12 +23,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def hours
-  end
-
-  def volunteer
-  end
-  
   private
   
   def user_params
@@ -51,5 +45,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to(root_url) unless @user == current_user?(@user)
   end
+  
+
   
 end
