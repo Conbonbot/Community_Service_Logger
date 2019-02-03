@@ -1,4 +1,49 @@
 <% provide(:title, "Log in") %>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/formA">Community Service</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/formA">Form A</a>
+            </li>
+            <% if current_user.try(:admin?) %>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="/admin">Admin</a>
+              </li>
+            <% end %>
+            <% if !logged_in? %>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="/login">Log in</a>
+                </li>
+            <% end %>
+            <% if logged_in? %>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                         Account <b class="caret"></b>
+                    </a>
+                <ul class="dropdown-menu">
+                  <% if !current_user.try(:admin?) %>
+                    <li><%= link_to "Total Hours", current_user %></li>
+                  <% end %>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Log out", logout_path, method: :delete %>
+                  </li>
+               </ul>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
   <head>
 
     <meta charset="utf-8">
