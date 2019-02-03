@@ -14,6 +14,7 @@
 //= require jquery
 //= require bootstrap
 //= require signature_pad
+//= require total_hours_chart
 //= require rails-ujs
 //= require turbolinks
 //= require_tree 

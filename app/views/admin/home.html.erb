@@ -21,6 +21,8 @@
 
     <!-- Custom styles for this template-->
     <link href="/assets/startbootstrap-sb-admin/css/sb-admin.css" rel="stylesheet">
+    
+     
 
   </head>
 
@@ -108,9 +110,19 @@
                 </a>
               </div>
             </div>
-            
-            
           </div>
+            
+            <!-- Area Charts -->
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fas fa-chart-area"></i>
+                Total Hours</div>
+              <div class="card-body">
+                <canvas id="TotalHoursChart" width="100%" height="30"></canvas>
+              </div>
+              <div class="card-footer small text-muted">Updated <%= Time.zone.now %></div>
+            </div>
+            
         </div>
       </div>
     </div>
@@ -129,10 +141,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="/assets/startbootstrap-sb-admin/js/sb-admin.min.js"></script>
-
-    <!-- Demo scripts for this page-->
-    <script src="/assets/startbootstrap-sb-admin/js/demo/datatables-demo.js"></script>
-    <script src="/assets/startbootstrap-sb-admin/js/demo/chart-area-demo.js"></script>
+    <script src="/assets/total_hours_chart.js"></script>
     
   </body>
   
