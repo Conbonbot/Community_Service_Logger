@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190117233814) do
+ActiveRecord::Schema.define(version: 20190204171320) do
 
   create_table "hours", force: :cascade do |t|
     t.integer "content"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20190117233814) do
     t.datetime "activated_at"
     t.boolean "admin", default: false
     t.integer "total_hours"
+    t.string "level"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["student_id"], name: "index_users_on_student_id", unique: true
   end
