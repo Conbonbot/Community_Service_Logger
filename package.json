@@ -3,5 +3,8 @@
   "private": true,
   "dependencies": {
     "popper.js": "^1.14.7"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0"
   }
 }

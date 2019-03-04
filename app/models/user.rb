@@ -12,8 +12,8 @@ class User < ApplicationRecord
     validates :grade, presence: true, :inclusion => Time.zone.now.year..Time.zone.now.year + 4
     has_secure_password
     validates :password, presence: true, length: { minimum: 6}, allow_nil: true
-    VALID_LEVEL_REGEX = /\A[Fr,So,Ju,Se]+/
-    validates :level, presence: true, format: {with: VALID_LEVEL_REGEX} 
+    #VALID_LEVEL_REGEX = /\A[Fr,So,Ju,Se]+/
+    #validates :level, presence: true, format: {with: VALID_LEVEL_REGEX} 
    
     # Returns the hash of a given string.
     def User.digest(string)
@@ -70,5 +70,18 @@ class User < ApplicationRecord
     end
     
     # returns the grade of a User (f,s,j,s)
-    
+    def level
+        if grade = Time.zone.now.year
+            update_attribute(:level, "Se")
+        end
+        if grade = Time.zone.now.year + 1
+            update_attribute(:level, "Ju")
+        end
+        if grade = Time.zone.now.year + 2
+            update_attribute(:level, "So")
+        end
+        if grade = Time.zone.now.year + 3
+            update_attribute(:level, "Fr")
+        end
+    end
 end

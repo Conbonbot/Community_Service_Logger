@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20190204171320) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "total_hours"
     t.index ["user_id", "created_at"], name: "index_hours_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_hours_on_user_id"
   end
@@ -37,7 +36,6 @@ ActiveRecord::Schema.define(version: 20190204171320) do
     t.boolean "activated", default: false
     t.datetime "activated_at"
     t.boolean "admin", default: false
-    t.integer "total_hours"
     t.string "level"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["student_id"], name: "index_users_on_student_id", unique: true
