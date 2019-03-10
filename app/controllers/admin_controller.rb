@@ -1,21 +1,13 @@
 class AdminController < ApplicationController
   def home
+    @users = User.all
   end
   
   def freshmen
   end
   
   def sophomores
+    @users = User.grade = Time.zone.now.year + 1
   end
-  
-  def juniors
-  end
-  
-  def seniors
-  end
-  
-  def charts
-  end
-  
     
 end

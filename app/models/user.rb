@@ -69,19 +69,4 @@ class User < ApplicationRecord
         self.activation_digest = User.digest(activation_token)
     end
     
-    # returns the grade of a User (f,s,j,s)
-    def level
-        if grade = Time.zone.now.year
-            update_attribute(:level, "Se")
-        end
-        if grade = Time.zone.now.year + 1
-            update_attribute(:level, "Ju")
-        end
-        if grade = Time.zone.now.year + 2
-            update_attribute(:level, "So")
-        end
-        if grade = Time.zone.now.year + 3
-            update_attribute(:level, "Fr")
-        end
-    end
 end

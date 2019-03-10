@@ -17,6 +17,11 @@
                 <a class="nav-link js-scroll-trigger" href="/admin">Admin</a>
               </li>
             <% end %>
+            <% if # add case %>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="/formB">Supervisor</a>
+              </li>
+            <% end %>
             <% if !logged_in? %>
                 <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="/login">Log in</a>
