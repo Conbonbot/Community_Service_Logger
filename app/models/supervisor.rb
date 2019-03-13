@@ -3,7 +3,6 @@ class Supervisor < ApplicationRecord
     validates :last_name,  presence: true
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, format: {with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-    validates :adress, presence: false # I messed up
     validates :address, presence: true
     validates :telephone, presence: true
     validates :role, presence: true

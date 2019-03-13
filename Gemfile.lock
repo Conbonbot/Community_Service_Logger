@@ -40,7 +40,7 @@ GEM
       tzinfo (~> 1.1)
     ansi (1.5.0)
     arel (8.0.0)
-    autoprefixer-rails (9.4.8)
+    autoprefixer-rails (9.4.10.2)
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
@@ -63,7 +63,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.4)
+    concurrent-ruby (1.1.5)
     crass (1.0.4)
     erubi (1.8.0)
     execjs (2.7.0)
@@ -250,4 +250,4 @@ DEPENDENCIES
   will_paginate (= 3.1.6)
 
 BUNDLED WITH
-   1.16.5
+   1.17.2
