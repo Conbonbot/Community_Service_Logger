@@ -35,12 +35,12 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
+                <strong>Supervisor Sign up</strong>
             </h1>
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5"> Please provide your information below to create your supervisor account. Students who list your email when inputting their hours will be seen in your homepage to be confirmed. </p>
-     
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
         <div class="row">
           <div class="container text-left">
             <%= simple_form_for @supervisor do |f| %>
-              <%= render 'shared/error_messages', object: f.object %>
+              <%= render 'shared/error_sup_messages', object: f.object %>
                 <%= f.label :first_name, "First Name" %>
                 <%= f.text_field :first_name, class: 'form-control'  %>
           
@@ -63,7 +63,7 @@
                 <%= f.email_field :email, class: 'form-control'  %>
                 
                 <%= f.label :organization, "Organization" %>
-                <%= f.text_field :grade, class: 'form-control'  %>
+                <%= f.text_field :organization, class: 'form-control'  %>
             
                 <%= f.label :address, "Location/Address of Organization" %> 
                 <%= f.text_field :address, class: 'form-control'  %>
@@ -83,7 +83,7 @@
         </div>
         <br>
         <% end %>
-        </html>
+
       
       
       
@@ -100,3 +100,5 @@
 
   <!-- Custom scripts for this template -->
   <script src="/assets/startbootstrap-creative/js/creative.min.js"></script>
+  
+</html>

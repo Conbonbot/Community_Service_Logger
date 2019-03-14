@@ -1,0 +1,12 @@
+<% if @supervisor.errors.any? %>
+  <div class="error_explanation">
+      <div class="alert alert-danger">
+          The form contains <%= pluralize(@supervisor.errors.count, "error") %>.
+      </div>
+      <ul>
+          <% @supervisor.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+    </ul>
+ </div>
+<% end %>
