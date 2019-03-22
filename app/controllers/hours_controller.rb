@@ -10,6 +10,7 @@ class HoursController < ApplicationController
        @supervisor = Supervisor.new
        if @hour.save
           flash[:success] = "Hour Inputed"
+          redirect_to current_user
        end
    end
    

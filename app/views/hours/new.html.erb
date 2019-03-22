@@ -32,7 +32,7 @@
               <hr>
               <div class="row">
                   <div class="container text-left">
-                      <%= simple_form_for @hour, url: hours_path do |hour_builder| %>
+                      <%= form_for @hour, url: hours_path do |hour_builder| %>
                          <%= render 'shared/error_messages', object: hour_builder.object %>
                          
                          <%= hour_builder.label :content, "Hours to input" %>
@@ -68,7 +68,7 @@
                            
                            <% end %>
 
-                         <%= hour_builder.button :submit, 'Log Hours', class: 'btn btn-success' %>
+                         <%= hour_builder.submit 'Log Hours', class: 'btn btn-success' %>
                          <% end %>
                   </div>
               </div>
