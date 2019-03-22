@@ -10,6 +10,8 @@ Rails.application.routes.draw do
    get    '/formA',      to: 'users#new'
    post   '/formA',      to: 'users#create'
    get    '/formB',      to: 'supervisors#new'
+   get    '/new_hour',   to: 'hours#new'
+   post   '/new_hour',   to: 'hours#create'
    get    '/formC',      to: 'users#hours'
    get    '/admin',      to: 'admin#home'
    get    '/freshmen',   to: 'admin#freshmen'
@@ -24,5 +26,6 @@ Rails.application.routes.draw do
    resources :admin
    resources :supervisors, only: [:new, :create]
    resources :account_activation, only: [:edit]
+   resources :hours, only: [:create]
    
 end

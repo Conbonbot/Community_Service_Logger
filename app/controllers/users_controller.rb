@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     end
   end
   
+  
   def new
     @user = User.new
   end

@@ -82,7 +82,24 @@
           </div>
         </div>
         <br>
-        <% end %>
+        <%= f.input_field :signature, as: :hidden, class: 'signature_pad_input' %>
+          <div class="row">
+            <div class="container text-center">
+              <%= f.label :signature, "Parent Signature"%>
+            </div>
+          </div>
+          <div class="signature_pad text-center">
+            <div class="signature_pad_body">
+              <canvas></canvas>
+            </div>
+          <div class="signature_pad_footer">
+            <div class="text-muted">Sign above</div>
+              <button type="button" class="btn btn-default signature_pad_clear">Clear</button>
+                <br>
+                  <div class="row">
+                    <div class="container text-center">
+                      <%= f.button :submit, 'Create Account', class: 'btn btn-success signature_pad_save'  %>
+                      <% end %>
 
       
       

@@ -6,6 +6,11 @@ class SupervisorsController < ApplicationController
   
   def create
     @supervisor = Supervior.new(supervisor_params)
+    if @supervisor.save
+      flash[:success] = "Welcome"
+    else
+      render 'new'
+    end
   end
   
   def home
@@ -17,7 +22,7 @@ class SupervisorsController < ApplicationController
   private
   
   def supervisor_params
-    params.require(:supervisor).permit(:id, :first_name, :last_name, :email, :address, :telephone, :role, :organization, :password, :password_confirmation)
+    params.require(:supervisor).permit(:id, :first_name, :last_name, :email, :address, :telephone, :role, :organization, :password, :password_confirmation, :signature)
   end
   
 end

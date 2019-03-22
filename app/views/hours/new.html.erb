@@ -1,0 +1,89 @@
+<% provide(:title, "New Hour") %>
+
+<html lang="en">
+    
+  <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Font Awesome Icons -->
+  <link href="/assets/startbootstrap-creative/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="/assets/startbootstrap-creative/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="/assets/startbootstrap-creative/css/creative.min.css" rel="stylesheet">
+
+  </head>  
+  
+  <body id="page-top">
+      
+      <section id="new_hour">
+          <div class="container text-center">
+              <h2 class="mb-4">New Community Service</h2>
+              <hr>
+              <div class="row">
+                  <div class="container text-left">
+                      <%= simple_form_for @hour, url: hours_path do |hour_builder| %>
+                         <%= render 'shared/error_messages', object: hour_builder.object %>
+                         
+                         <%= hour_builder.label :content, "Hours to input" %>
+                         <%= hour_builder.text_field :content, class: 'form-control' %>
+                         
+                         <%= hour_builder.simple_fields_for @supervisor do |supervisor_builder| %>
+                           
+                           <%= render 'shared/error_messages', object: supervisor_builder.object %>
+                           
+                           <%= supervisor_builder.label :organization, "Name of Organization" %>
+                           <%= supervisor_builder.text_field :organization, class: 'form-control' %>
+                         
+                           <%= supervisor_builder.label :first_name, "First name of supervisor" %>
+                           <%= supervisor_builder.text_field :first_name, class: 'form-control' %>
+                         
+                           <%= supervisor_builder.label :last_name, "Last name of supervisor" %>
+                           <%= supervisor_builder.text_field :last_name, class: 'form-control' %>
+                         
+                           <%= supervisor_builder.label :email, "Email of supervisor" %>
+                           <%= supervisor_builder.text_field :email, class: 'form-control' %>
+                         
+                           <%= supervisor_builder.label :address, "Address of supervisor" %>
+                           <%= supervisor_builder.text_field :address, class: 'form-control' %>
+                         
+                           <%= supervisor_builder.label :organization, "Name of Organization" %>
+                           <%= supervisor_builder.text_field :organization, class: 'form-control' %>
+                         
+                           <%= supervisor_builder.label :telephone, "Telephone number of Supervisor" %>
+                           <%= supervisor_builder.text_field :telephone, class: 'form-control' %>
+                         
+                           <%= supervisor_builder.label :role, "Role of Supervisor" %>
+                           <%= supervisor_builder.text_field :role, class: 'form-control' %>
+                           
+                           <% end %>
+
+                         <%= hour_builder.button :submit, 'Log Hours', class: 'btn btn-success' %>
+                         <% end %>
+                  </div>
+              </div>
+          </div>
+      </section>
+     <!-- Bootstrap core JavaScript -->
+     <script src="/assets/startbootstrap-creative/vendor/jquery/jquery.min.js"></script>
+     <script src="/assets/startbootstrap-creative/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+     <!-- Plugin JavaScript -->
+     <script src="/assets/startbootstrap-creative/vendor/jquery-easing/jquery.easing.min.js"></script>
+     <script src="/assets/startbootstrap-creative/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+     <script src="/assets/startbootstrap-creative/js/creative.min.js"></script>
+     
+  </body>
+    
+</html>
