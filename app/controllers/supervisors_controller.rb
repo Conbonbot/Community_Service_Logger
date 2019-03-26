@@ -5,7 +5,14 @@ class SupervisorsController < ApplicationController
   end
   
   def create
-    @supervisor = Supervior.new(supervisor_params)
+   @supervisor = Supervior.create(supervisor_params)
+    if @supervisor.save
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account"
+      redirect_to root_url
+    else
+      render 'new'
+    end
   end
   
   def home
