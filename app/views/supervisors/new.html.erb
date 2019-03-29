@@ -52,7 +52,7 @@
         <div class="row">
           <div class="container text-left">
             <%= simple_form_for @supervisor do |f| %>
-              <%= render 'shared/error_sup_messages', object: f.object %>
+                   <%= render 'shared/error_messages', object: f.object %>
                 <%= f.label :first_name, "First Name" %>
                 <%= f.text_field :first_name, class: 'form-control'  %>
           
@@ -80,10 +80,11 @@
                 <%= f.label :password_confirmation, "Password Confirmation" %>
                 <%= f.password_field :password_confirmation, class: 'form-control' %>
                  <%= f.submit "Create account", class: "btn btn-success" %>
+                 <% end %>
           </div>
         </div>
         <br>
-        <% end %>
+       
 
       
       
