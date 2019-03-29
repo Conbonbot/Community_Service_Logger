@@ -6,6 +6,7 @@ class SupervisorsController < ApplicationController
   
   def create
 <<<<<<< HEAD
+<<<<<<< HEAD
     @supervisor = Supervior.new(supervisor_params)
     if @supervisor.save
       flash[:success] = "Welcome"
@@ -16,6 +17,12 @@ class SupervisorsController < ApplicationController
       flash[:info] = "Please check your email to activate your account"
       redirect_to root_url
 >>>>>>> 3c81167c150e32626fcf7cdb07d175b3064e3ee5
+=======
+   Supervisor.new = Supervior.create(supervisor_params)
+    if @supervisor.save
+      flash[:info] = "Please check your email to activate your account"
+      redirect_to root_url
+>>>>>>> e040f7c57505da0371eb9640498f0c6ff54f8418
     else
       render 'new'
     end
