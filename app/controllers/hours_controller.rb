@@ -18,6 +18,6 @@ class HoursController < ApplicationController
    private
    
    def hour_params
-      params.require(:hour).permit(:content)
+      params.require(:hour).permit(:content, :approved)
    end
 end

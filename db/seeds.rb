@@ -17,5 +17,19 @@ User.create!(
 users = User.order(:created_at).take(1)
 40.times do
     hour = SecureRandom.random_number(100)
-    users.each { |user| user.hours.create!(content: hour) }
+    users.each { |user| user.hours.create!(content: hour, approved: true) }
 end
+
+Supervisor.create!(
+    id: "1",
+    first_name: "Prash",
+    last_name: "Bhask",
+    email: "example@prash.com",
+    address: "1337 Example Ave.",
+    telephone: "818-555-5555",
+    organization: "example",
+    role: "Head",
+    created_at: Time.zone.now,
+    password: "foobar",
+    password_confirmation: "foobar"
+    )
