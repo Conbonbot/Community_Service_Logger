@@ -23,11 +23,8 @@ class SupervisorsController < ApplicationController
   private
   
   def supervisor_params
-    params.require(:supervisor).permit(:id, :first_name, :last_name, :email, :address, :telephone, :role, :organization, :password, :password_confirmation, :signature)
+    params.require(:supervisor).permit(:id, :first_name, :last_name, :email, :address, :telephone, :role, :organization, :password, :password_confirmation, :signature, { hour: [:content, :approved]})
   end
   
-  def exists(string)
-    return @supervisor.email = Supervisor.find(params[:email])
-  end
   
 end

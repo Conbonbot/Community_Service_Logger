@@ -7,9 +7,9 @@ class HoursController < ApplicationController
    
    def create
        @hour = current_user.hours.build(hour_params)
-       @supervisor = Supervisor.new
+       @supervisor = @hour.supervisor
        if @hour.save
-          flash[:success] = "Hour Inputed"
+          flash[:info] = "Waiting for approve"
           redirect_to current_user
        end
    end
@@ -18,6 +18,6 @@ class HoursController < ApplicationController
    private
    
    def hour_params
-      params.require(:hour).permit(:content, :approved)
+      params.require(:hour).permit(:content, :approved, supervisor_attributes: [:id, :first_name, :last_name, :email, :telephone])
    end
 end
