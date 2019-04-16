@@ -53,5 +53,16 @@ module SessionsHelper
         redirect_to(session[:return_to] || default)
         session.delete(:return_to)
     end
+    
+    # Returns the total hours of a user
+    def total
+      tot = 0
+      for x in 1..current_user.hours.count(:content)
+         if current_user.hours.find_by(id:x).approved == true
+            tot += current_user.hours.find_by(id: x).content
+         end
+      end
+      return tot
+    end
 
 end

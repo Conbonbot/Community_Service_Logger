@@ -41,9 +41,8 @@
                          
                          <%= hour_builder.simple_fields_for @supervisor do |supervisor_builder| %>
                            
-                           <%= render 'shared/error_messages', object: supervisor_builder.object %>
-                           
-                          
+                          <%= render 'shared/error_messages', object: supervisor_builder.object %>
+                
                            <%= supervisor_builder.label :first_name, "First name of supervisor" %>
                            <%= supervisor_builder.text_field :first_name, class: 'form-control' %>
                          

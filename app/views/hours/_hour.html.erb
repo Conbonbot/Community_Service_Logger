@@ -2,4 +2,9 @@
     <th><%= hour.id %></th>
     <th><%= hour.content %> Hours</th>
     <th><%= time_ago_in_words(hour.created_at) %> ago</th>
+    <% if hour.approved? %>
+       <th><%= hour.approved %></th>
+    <% else %>
+       <th>false</th>
+    <% end %>
 </tr>

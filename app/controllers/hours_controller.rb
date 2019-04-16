@@ -7,10 +7,18 @@ class HoursController < ApplicationController
    
    def create
        @hour = current_user.hours.build(hour_params)
-       @supervisor = @hour.supervisor
+       #@hour.update_attribute(:approved, false)
+       @supervisor = Supervisor.find_by(params[@hour.email])
        if @hour.save
-          flash[:info] = "Waiting for approve"
-          redirect_to current_user
+          if @supervisor.nil?
+             flash[:danger] = "Supervisor not found"
+             render 'new'
+          else
+             flash[:info] = "Waiting for approve"
+             redirect_to current_user
+          end
+       else
+          render 'new'
        end
    end
    
@@ -18,6 +26,9 @@ class HoursController < ApplicationController
    private
    
    def hour_params
-      params.require(:hour).permit(:content, :approved, supervisor_attributes: [:id, :first_name, :last_name, :email, :telephone])
+      params.require(:hour).permit(:content, :email, 
+      supervisor: [:id,:first_name, :email, :telephone])
    end
+   
+   
 end

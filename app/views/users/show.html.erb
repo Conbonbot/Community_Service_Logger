@@ -31,7 +31,7 @@
  <div class="card mb-3">
    <div class="card-header">
     <i class="fas fa-table"></i>
-    Total hours for <%= @user.first_name %> <%= @user.last_name %>, with <%= @user.hours.count(:content) %> entries and a total of <%= Hour.sum(:content) %> hours
+    Total hours for <%= @user.first_name %> <%= @user.last_name %>, with <%= @user.hours.count(:content) %> entries (including unapproved hours) and a total of <%= total %> approved hours
    </div>
    <div class="card-body">
      <div class="table-responsive">
@@ -50,6 +50,9 @@
                   <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 55px;" aria-sort="descending">
                     Date
                   </th>
+                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Approved: activate to sort column ascending" style="width: 55px;" aria-sort="descending">
+                    Approved
+                  </th>
                 </tr>
               </thread>
               <tfoot>
@@ -57,6 +60,7 @@
                   <th rowspan="1" colspan="1">Hour ID</th>
                   <th rowspan="1" colspan="1">Hours</th>
                   <th rowspan="1" colspan="1">Date</th>
+                  <th rowspan="1" colspan="1">Approved</th>
                 </tr>
               </tfoot>
               <tbody>

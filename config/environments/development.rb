@@ -10,6 +10,8 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+
+  Rails.application.config.active_record.belongs_to_required_by_default = false
   # Do not eager load code on boot.
   config.eager_load = false
 
