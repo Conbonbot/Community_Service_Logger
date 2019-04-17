@@ -12,6 +12,7 @@ Rails.application.routes.draw do
    get    '/formB',      to: 'supervisors#new'
    get    '/new_hour',   to: 'hours#new'
    post   '/new_hour',   to: 'hours#create'
+   get    '/hours',      to: 'users#hours'
    get    '/formC',      to: 'users#hours'
    get    '/admin',      to: 'admin#home'
    get    '/freshmen',   to: 'admin#freshmen'

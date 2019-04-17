@@ -20,7 +20,7 @@ users = User.order(:created_at).take(1)
     users.each { |user| user.hours.create!(content: hour, approved: true) }
 end
 
-Supervisor.create!(
+Supervisor.create!(  
     id: "1",
     first_name: "Prash",
     last_name: "Bhask",

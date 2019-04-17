@@ -10,19 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190416034433) do
+ActiveRecord::Schema.define(version: 20190417161437) do
 
   create_table "hours", force: :cascade do |t|
     t.integer "content"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "approved"
+    t.boolean "approved", default: false
     t.integer "supervisor_id"
     t.string "email"
-    t.integer "supervisors_id"
     t.index ["supervisor_id"], name: "index_hours_on_supervisor_id"
-    t.index ["supervisors_id"], name: "index_hours_on_supervisors_id"
     t.index ["user_id", "created_at"], name: "index_hours_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_hours_on_user_id"
   end
@@ -39,7 +37,6 @@ ActiveRecord::Schema.define(version: 20190416034433) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "address"
-    t.string "signature"
   end
 
   create_table "users", force: :cascade do |t|
