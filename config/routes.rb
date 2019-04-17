@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'supervisors/new'
   get 'supervisors/home'
   get 'supervisors/hours'
@@ -28,5 +32,6 @@ Rails.application.routes.draw do
    resources :supervisors, only: [:new, :create]
    resources :account_activation, only: [:edit]
    resources :hours, only: [:create]
+   resources :password_resets, only: [:new, :create, :edit, :update]
    
 end
