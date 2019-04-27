@@ -10,7 +10,7 @@
         "spec": "latest",
         "type": "tag"
       },
-      "/home/ec2-user/environment/Community_Service_Logger"
+      "/home/ec2-user/environment/Community_service_logger"
     ]
   ],
   "_from": "startbootstrap-grayscale@latest",
@@ -45,7 +45,7 @@
   "_shasum": "bad8d0ec7a6b25e3203c7ebe398c8ed7ec001644",
   "_shrinkwrap": null,
   "_spec": "startbootstrap-grayscale",
-  "_where": "/home/ec2-user/environment/Community_Service_Logger",
+  "_where": "/home/ec2-user/environment/Community_service_logger",
   "author": {
     "name": "Start Bootstrap"
   },
