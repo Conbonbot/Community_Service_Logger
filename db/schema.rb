@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190417211041) do
+ActiveRecord::Schema.define(version: 20190402171249) do
 
   create_table "hours", force: :cascade do |t|
     t.integer "content"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20190417211041) do
     t.integer "supervisor_id"
     t.string "email"
     t.index ["supervisor_id"], name: "index_hours_on_supervisor_id"
+
     t.index ["user_id", "created_at"], name: "index_hours_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_hours_on_user_id"
   end
