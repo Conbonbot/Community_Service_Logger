@@ -1,4 +1,4 @@
-<% provide(:title, "User Log in") %>
+<% provide(:title, "Log in") %>
   <head>
   
   <meta charset="utf-8">
@@ -23,44 +23,17 @@
 
   </head>
   <body id="page-top">
-
-  
-  <section id="user" class="signup-section">
-    <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <h1 class="text-uppercase">
-            <strong>User Log in</strong>
-          </h1>
-          <hr>
-        </div>
-        <div class="container text-center">
-          <div class="row">
-            <div class="container text-left">
-              <%= form_for(:session, url: user_login_path) do |f| %>
-          
-                <%= f.label :student_id, "Student ID" %>
-                <%= f.text_field :student_id, class: 'form-control' %>
-          
-                <%= f.label :password %>
-                <%= link_to "(forgot password)", new_password_reset_path %>
-                <%= f.password_field :password, class: 'form-control' %>
-          
-                <%= f.label :remember_me, class: "checkbox inline" do %>
-                <%= f.check_box :remember_me %>
-                <span>Remember me on this computer</span>
-                <% end %>
-          
-                <%= f.submit "Log in", class: 'btn btn-primary' %>
-               <% end %>
-         
-             <p>New user? <%= link_to "Sign up now!", formA_path %></p>
-            </div>
-          </div>
-        </div>
+    
+  <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+      <div class="mx-auto text-center">
+        <h1 class="mx-auto my-0 text-uppercase">Log in</h1>
+        <a href="/user_login" class="btn btn-primary js-scroll-trigger">User</a>
+        <a href="/supervisor_login" class="btn btn-primary js-scroll-trigger">Supervisor</a>
       </div>
-    </header>
-  </section>
+    </div>
+  </header>
+
   
     
   <!-- Bootstrap core JavaScript -->

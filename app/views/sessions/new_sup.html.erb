@@ -1,0 +1,72 @@
+<% provide(:title, "Supervisor Log in") %>
+
+ <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/startbootstrap-grayscale/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="/assets/startbootstrap-grayscale/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/assets/startbootstrap-grayscale/css/grayscale.min.css" rel="stylesheet">
+
+ </head>
+
+  <body id="page-top">
+    
+  <section id="supervisor" class="signup-section">
+     <header class="masthead text-center text-white d-flex">
+       <div class="container my-auto">
+         <div class="row">
+           <h1 class="text-uppercase">
+             <strong>Supervisor Log in</strong>
+           </h1>
+           <hr>
+         </div>
+         <div class="container text-center">
+           <div class="row">
+             <div class="container text-left">
+               <%= form_for(:session, url: supervisor_login_path) do |f| %>
+           
+                 <%= f.label :email, "Email" %>
+                 <%= f.text_field :email, class: 'form-control' %>
+           
+                 <%= f.label :password %>
+                 <%= link_to "(forgot password)(WIP)", new_password_reset_path %>
+                 <%= f.password_field :password, class: 'form-control' %>
+                 
+                 <%= f.label :remember_me, class: "checkbox inline" do %>
+                 <%= f.check_box :remember_me %>
+                 <span>Remember me on this computer</span>
+                 <% end %>
+           
+                 <%= f.submit "Log in", class: 'btn btn-primary' %>
+                <% end %>
+         
+              <p>New supervisor? <%= link_to "Sign up now!", formB_path %></p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </header>
+   </section>
+
+   <!-- Bootstrap core JavaScript -->
+   <script src="/assets/startbootstrap-grayscale/vendor/jquery/jquery.min.js"></script>
+   <script src="/assets/startbootstrap-grayscale/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Plugin JavaScript -->
+   <script src="/assets/startbootstrap-grayscale/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+   <!-- Custom scripts for this template -->
+   <script src="/assets/startbootstrap-grayscale/js/grayscale.min.js"></script>
+
+  </body>

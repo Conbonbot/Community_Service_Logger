@@ -2,19 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
  
-  def freshmen_index
-    @users = User.grade = Time.zone.now.year + 3
-  end
-  def sophomores_index
-    @users = User.grade = Time.zone.now.year + 2
-  end
-  def juniors_index
-    @users = User.grade = Time.zone.now.year + 1
-  end
-  def seniors_index
-    @users = User.grade = Time.zone.now.year 
-  end
- 
+
   def show
     @user = User.find(params[:id])
     if @user.hours.any?
