@@ -1,0 +1,10 @@
+<h1>CVHS Community Service</h1>
+
+<p>Hi <%= @user.first_name %>,</p>
+
+<p>
+Welcome to CVHS Community Service! Click on the link below to activate your account:
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@supervisor.activation_token,
+                                                    email: @supervisor.email) %>

@@ -12,4 +12,17 @@ class AccountActivationController < ApplicationController
             redirect_to root_url
         end
     end
+    
+    def sup_edit
+        supervisor = Supervisor.find_by(email: params[:email])
+        if supervisor && !supervisor.activated? && supervisor.authenticated?(:activation, params[:id])
+            supervisor.activate
+            supervisor_log_in(supervisor)
+            flash[:success] = "Account activated!"
+            redirect_to supervisor
+        else
+            flash[:danger] = "Invalid activation link"
+            redirect_to root_url
+        end
+    end
 end

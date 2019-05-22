@@ -29,6 +29,8 @@ Supervisor.create!(
     telephone: "818-555-5555",
     organization: "example",
     role: "Head",
+    activated: true,
+    activated_at: Time.zone.now,
     created_at: Time.zone.now,
     password: "foobar",
     password_confirmation: "foobar"

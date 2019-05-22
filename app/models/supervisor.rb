@@ -1,6 +1,9 @@
 class Supervisor < ApplicationRecord
-    has_many :hours, dependent: :destroy
-    attr_accessor :remember_token
+    attr_accessor :remember_token, :activation_token
+    before_save :downcase_email
+    before_create :create_activation_digest
+    has_many :hours, dependent: :destroy    
+    attr_accessor :remember_token, :activation_token
     validates :first_name, presence: true
     validates :last_name,  presence: true
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -11,6 +14,7 @@ class Supervisor < ApplicationRecord
     validates :organization, presence: true
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }
+    
     
     # Returns the hash of a given string.
     def Supervisor.digest(string)
@@ -35,6 +39,10 @@ class Supervisor < ApplicationRecord
     def activate
         update_attribute(:activated, true)
         update_attribute(:activated_at, Time.zone.now)
+    end
+    
+    def send_activation_email
+        SupervisorMailer.account_activation(self).deliver_now
     end
 
     def remember
