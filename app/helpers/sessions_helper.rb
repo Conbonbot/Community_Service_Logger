@@ -30,7 +30,7 @@ module SessionsHelper
     end
     
     def current_supervisor?(supervisor)
-      supervisor = current_supervisor
+      supervisor == current_supervisor
     end
     
     # Returns the user corresponding to the remember token cookie

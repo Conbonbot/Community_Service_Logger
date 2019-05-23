@@ -36,9 +36,10 @@ class SessionsController < ApplicationController
     supervisor = Supervisor.find_by(email: params[:session][:email].downcase)
     if supervisor && supervisor.authenticate(params[:session][:password])
       if supervisor.activated
-        log_in supervisor
+        supervisor_log_in supervisor
         params[:session][:remember_me] == '1' ? remember(supervisor) : forget(supervisor)
         redirect_back_or supervisor
+        #redirect_to supervisors_url(supervisor)
       else
         message = "Account not activated. "
         message += "Check your email for the activation link"

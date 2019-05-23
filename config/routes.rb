@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions2/new'
 
   get 'password_resets/new'
 
@@ -35,7 +34,7 @@ Rails.application.routes.draw do
    delete '/supervisor_logout',  to: 'sessions#destroy_sup'
    resources :users
    resources :admin
-   resources :supervisors, only: [:new, :create]
+   resources :supervisors
    resources :account_activation, only: [:edit]
    resources :hours, only: [:create]
    resources :password_resets, only: [:new, :create, :edit, :update]
