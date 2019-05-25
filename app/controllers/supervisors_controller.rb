@@ -2,6 +2,7 @@ class SupervisorsController < ApplicationController
   before_action :logged_in_supervisor, only: [:edit, :update]
   before_action :correct_supervisor,   only: [:edit, :update]
   
+  
   def new
     @supervisor = Supervisor.new
   end
@@ -17,14 +18,29 @@ class SupervisorsController < ApplicationController
     end
   end
   
+  
   def show
     @supervisor = Supervisor.find(params[:id])
+    @approves = Hour.where(email: @supervisor.email, approved: nil)
   end
   
-  def home
+  def approve
   end
-
-  def hours
+  
+  def yes
+    @supervisor = current_supervisor
+    @approves = Hour.where(email: @supervisor.email, approved: nil)
+    @hour = Hour.find(params[:id])
+    @hour.approve_hour
+    redirect_to current_supervisor
+  end
+  
+  def no
+    @supervisor = current_supervisor
+    @approves = Hour.where(email: @supervisor.email, approved: nil)
+    @hour = Hour.find(params[:id])
+    @hour.deny_hour
+    redirect_to current_supervisor
   end
   
   private
@@ -44,6 +60,7 @@ class SupervisorsController < ApplicationController
      @supervisor = Supervisor.find(params[:id])
      redirect_to(root_url) unless @supervisor == current_supervisor?(@supervisor)
    end
+   
   
   
 end

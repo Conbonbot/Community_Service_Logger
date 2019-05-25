@@ -32,6 +32,8 @@ Rails.application.routes.draw do
    get    '/supervisor_login',   to: 'sessions#new_sup'
    post   '/supervisor_login',   to: 'sessions#create_sup'
    delete '/supervisor_logout',  to: 'sessions#destroy_sup'
+   get    '/yes/:id',            to: 'supervisors#yes', :as => :new_yes_with_parameter
+   get    '/no/:id',             to: 'supervisors#no', :as => :new_no_with_parameter
    resources :users
    resources :admin
    resources :supervisors

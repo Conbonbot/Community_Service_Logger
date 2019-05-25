@@ -19,6 +19,7 @@
 
    <!-- Custom styles for this template -->
    <link href="/assets/startbootstrap-grayscale/css/grayscale.min.css" rel="stylesheet">
+
    
    </head>
    
@@ -31,7 +32,7 @@
        <div class="card mb-3">
            <div class="card-header">
                <i class="fas fa-table">
-                   Pending Hours
+                   Pending Hours from <%= Hour.where(email: @supervisor.email, approved: nil).count %> claims
                </i>
            </div>
            <div class="card-body">
@@ -66,8 +67,8 @@
                                    </tfoot>
                                    <tbody>
                                        <tr class="row">
-                                           <% if @supervisor.hours.any? %> 
-                                               <%= render @approve %>
+                                           <% if Hour.where(email: @supervisor.email, approved: nil).count > 0 %> 
+                                               <%= render partial: 'approve', collection: @approves %>
                                            <% end %>
                                        </tr>
                                    </tbody>
@@ -81,7 +82,6 @@
        </section>
        
        
-       
       <!-- Bootstrap core JavaScript -->
       <script src="/assets/startbootstrap-grayscale/vendor/jquery/jquery.min.js"></script>
       <script src="/assets/startbootstrap-grayscale/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -91,6 +91,8 @@
 
       <!-- Custom scripts for this template -->
       <script src="/assets/startbootstrap-grayscale/js/grayscale.min.js"></script>
+      
+
    </body>
 
     

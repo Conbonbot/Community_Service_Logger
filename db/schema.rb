@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20190522165656) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "approved", default: false
+    t.boolean "approved"
     t.integer "supervisor_id"
     t.string "email"
     t.index ["supervisor_id"], name: "index_hours_on_supervisor_id"
