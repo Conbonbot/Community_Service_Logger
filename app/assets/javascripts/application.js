@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //
+//= require jquery-ui
 //= require jquery
 //= require bootstrap
 //= require signature_pad
