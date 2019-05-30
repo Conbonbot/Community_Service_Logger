@@ -1,12 +1,11 @@
-const cool = require('cool-ascii-faces')
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+var path = require('path'),
+    dir = require('fs').readdirSync(__dirname + path.sep);
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .get('/cool', (req, res) => res.send(cool()))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+dir.forEach(function(filename){
+
+    if(path.extname(filename) === '.js' && filename !== 'index.js'){
+        var exportAsName = path.basename(filename);
+        module.exports[exportAsName] = require( path.join( __dirname, filename) );
+    }
+
+});
