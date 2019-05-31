@@ -23,4 +23,7 @@
 .byebug_history
 
 # Ignore Spring files.
-/spring/*.pid
+/spring/*.pidsendgrid.env
+sendgrid.env
+sendgrid.env
+sendgrid.env
