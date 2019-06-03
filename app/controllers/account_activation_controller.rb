@@ -13,7 +13,7 @@ class AccountActivationController < ApplicationController
         end
     end
     
-    def sup_edit
+    def edit
         supervisor = Supervisor.find_by(email: params[:email])
         if supervisor && !supervisor.activated? && supervisor.authenticated?(:activation, params[:id])
             supervisor.activate
