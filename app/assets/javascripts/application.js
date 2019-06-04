@@ -12,6 +12,7 @@
 //
 //
 //= require jquery-ui
+//= require jquery-ujs
 //= require jquery
 //= require bootstrap
 //= require signature_pad

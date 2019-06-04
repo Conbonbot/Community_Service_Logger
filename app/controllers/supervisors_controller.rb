@@ -1,4 +1,5 @@
 class SupervisorsController < ApplicationController
+  before_action :validate_url_hack, only: [:edit, :update]
   before_action :logged_in_supervisor, only: [:edit, :update]
   before_action :correct_supervisor,   only: [:edit, :update]
   
@@ -60,6 +61,13 @@ class SupervisorsController < ApplicationController
      @supervisor = Supervisor.find(params[:id])
      redirect_to(root_url) unless @supervisor == current_supervisor?(@supervisor)
    end
+   
+  def validate_url_hack
+    unless params[:id].to_i == current_supervisor.id
+      flash[:danger] = "Please log in"
+      redirect_to root_url
+    end
+  end
    
   
   
