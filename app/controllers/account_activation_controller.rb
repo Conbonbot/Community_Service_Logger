@@ -2,7 +2,6 @@ class AccountActivationController < ApplicationController
     
     def edit
         user = User.find_by(email: params[:email])
-        debugger
         if user && !user.activated? && user.authenticated?(:activation, params[:id])
             user.activate
             log_in user
@@ -16,7 +15,6 @@ class AccountActivationController < ApplicationController
     
     def sup_edit
         supervisor = Supervisor.find_by(email: params[:email])
-        debugger
         if supervisor && !supervisor.activated? && supervisor.authenticated?(:activation, params[:id])
             supervisor.activate
             supervisor_log_in(supervisor)
