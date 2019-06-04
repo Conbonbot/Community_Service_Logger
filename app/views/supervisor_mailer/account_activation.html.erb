@@ -6,5 +6,5 @@
 Welcome to CVHS Community Service! Click on the link below to activate your account:
 </p>
 
-<%= link_to "Activate", edit_account_activation_url(@supervisor.activation_token,
+<%= link_to "Activate", sup_edit_account_activation_url(@supervisor.activation_token,
                                                     email: @supervisor.email) %>
