@@ -27,3 +27,6 @@
 sendgrid.env
 sendgrid.env
 sendgrid.env
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key
