@@ -20,6 +20,7 @@ gem 'simple_form',             '4.0.1'
 gem 'jquery-ui-rails'
 gem 'sendgrid-ruby'
 gem 'rails_12factor'
+gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

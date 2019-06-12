@@ -19,8 +19,4 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree
-//= require /assets/startbootstrap-creative/js/creative.min.js
-//= require /assets/startbootstrap-creative/vendor/magnific-popup/jquery.magnific-popup.min.js
-//= require /assets/startbootstrap-creative/vendor/jquery-easing/jquery.easing.min.js
-//= require /assets/startbootstrap-creative/vendor/bootstrap/js/bootstrap.bundle.min.js
-//= require /assets/startbootstrap-creative/vendor/jquery/jquery.min.js
+//= require twitter/bootstrap
