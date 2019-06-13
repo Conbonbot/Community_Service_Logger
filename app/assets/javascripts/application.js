@@ -19,4 +19,3 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree
-//= require twitter/bootstrap
