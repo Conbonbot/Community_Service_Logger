@@ -1,0 +1,10 @@
+{
+    "name": "Community Service Logger",
+    "description": "Community Service Logger for CVHS",
+    "dependencies": {
+        "bower": "0.6.x"
+    },
+    "scripts": {
+        "postinstall": "./node_modules/bower/bin/bower install"
+    }
+}
