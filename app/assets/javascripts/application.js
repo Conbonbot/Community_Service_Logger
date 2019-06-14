@@ -14,6 +14,7 @@
 //= require jquery-ui
 //= require jquery
 //= require bootstrap
+//= require bootstrap-sprockets
 //= require signature_pad
 //= require total_hours_chart
 //= require rails-ujs
