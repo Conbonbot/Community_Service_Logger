@@ -38,7 +38,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   config.action_mailer.perform_caching = false
   ActionMailer::Base.delivery_method= :letter_opener
-
+  
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
