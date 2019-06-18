@@ -34,6 +34,6 @@ Supervisor.create!(
 users = User.order(:created_at).take(1)
 40.times do
     hour = SecureRandom.random_number(100)
-    users.each { |user| user.hours.create!(content: hour, approved: true, supervisor: Supervisor.find_by(id: 1), supervisor_id: 1, email: "example@.com", created_at: Time.zone.now, updated_at: Time.zone.now) }
+    users.each { |user| user.hours.create!(content: hour, approved: true, supervisor: Supervisor.find_by(id: 1), supervisor_id: 1, email: "example@joey.com", created_at: Time.zone.now, updated_at: Time.zone.now) }
 end
 
