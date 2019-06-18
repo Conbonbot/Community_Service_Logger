@@ -1,0 +1,91 @@
+<% provide(:title, @user.email) %>
+
+<html lang="en">
+
+
+  <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Font Awesome Icons -->
+  <link href="/assets/startbootstrap-creative/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="/assets/startbootstrap-creative/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="/assets/startbootstrap-creative/css/creative.min.css" rel="stylesheet">
+
+  </head>  
+  
+  
+  <br>
+  <br>
+ <div class="card mb-3">
+   <div class="card-header">
+    <i class="fas fa-table"></i>
+    Total hours for <%= @user.first_name %> <%= @user.last_name %>, with <%= @user.hours.count(:content) %> entries and a total of <%= total %> approved hours
+   </div>
+   <div class="card-body">
+     <div class="table-responsive">
+       <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+        <div clas="row">
+          <div class="col-sm-12">
+            <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+              <thread>
+                <tr role="row">
+                  <th class="sorting_desc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Hour ID: activate to sort column ascending" style="width: 55px;" aria-sort="descending">
+                    Hour ID
+                  </th>
+                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Hours: activate to sort column ascending" style="width: 55px;" aria-sort="descending">
+                    Hours
+                  </th>
+                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 55px;" aria-sort="descending">
+                    Date
+                  </th>
+                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Approved: activate to sort column ascending" style="width: 55px;" aria-sort="descending">
+                    Approved
+                  </th>
+                </tr>
+              </thread>
+              <tfoot>
+                <tr>
+                  <th rowspan="1" colspan="1">Hour ID</th>
+                  <th rowspan="1" colspan="1">Hours</th>
+                  <th rowspan="1" colspan="1">Date</th>
+                  <th rowspan="1" colspan="1">Approved</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr class="row">
+                  <% if @user.hours.any? %>
+                    <%= render @hours %>
+                  <% end %>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+   <!-- Bootstrap core JavaScript -->
+  <script src="/assets/startbootstrap-creative/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/startbootstrap-creative/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/assets/startbootstrap-creative/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/assets/startbootstrap-creative/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/assets/startbootstrap-creative/js/creative.min.js"></script>
+</html>

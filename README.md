@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # node-js-getting-started
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
@@ -37,3 +38,11 @@ For more information about using Node.js on Heroku, see these Dev Center article
 - [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
 - [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
 - [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+=======
+# README
+
+This is a project for Mrs. Gay. We are going to computerize Crescenta Valley High School's community service system.
+
+if server is locked, use lsof -wni tcp:8080 and then kill -9 PIDs
+if running tests fail for unable to detect monitor changes, use echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+>>>>>>> 078c9a644f245f18c6cf2d4e034242a34d77a762

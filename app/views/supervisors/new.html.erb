@@ -1,0 +1,107 @@
+<% provide(:title, 'Supervisor') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <style>
+    .control-label{
+       color: white important;
+    }
+  </style>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/startbootstrap-grayscale/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="/assets/startbootstrap-grayscale/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/assets/startbootstrap-grayscale/css/grayscale.min.css" rel="stylesheet">
+
+
+<body id="page-top">
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+      <div class="mx-auto text-center">
+        <h1 class="mx-auto my-0 text-uppercase">Supervisor</h1>
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">In order for a project to be considered as community service, it must be... </h2> 
+        <a href="#signup" class="btn btn-primary js-scroll-trigger">Signup</a>
+      </div>
+    </div>
+  </header>
+  
+
+  <!-- Signup Section -->
+  <section id="signup" class="signup-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto text-center">
+
+          <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+          <h2 class="text-white mb-5">Signup</h2>
+          
+            <%= simple_form_for @supervisor do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
+                <%= f.label :first_name, "First Name" %>
+                <%= f.text_field :first_name, class: 'form-control'  %>
+                
+                <%= f.label :last_name, "Last Name" %>
+                <%= f.text_field :last_name, class: 'form-control'  %>
+          
+                <%= f.label :email, "Email" %>
+                <%= f.email_field :email, class: 'form-control'  %>
+                
+                <%= f.label :organization, "Organization" %>
+                <%= f.email_field :organization, class: 'form-control'  %>
+                
+                <%= f.label :role, "Role at Organization" %>
+                <%= f.email_field :role,  class: 'form-control'  %>
+                
+                <%= f.label :address, "Address" %>
+                <%= f.email_field :address,  class: 'form-control'  %>
+                
+                <%= f.label :telephone, "Phone Number" %>
+                <%= f.email_field :telephone, class: 'form-control'  %>
+                
+                <%= f.label :password, "Password (At least 6 characters)"%>
+                <%= f.password_field :password, class: 'form-control' %>
+          
+                <%= f.label :password_confirmation, "Password Confirmation" %>
+                <%= f.password_field :password_confirmation, class: 'form-control' %>
+                
+                
+                 <%= f.button :submit, 'Create Account', class: 'btn btn-success'  %>
+                 
+             <% end %>
+                
+            <p>Already have an account? <%= link_to "Log in now!", supervisor_login_path %> </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Bootstrap core JavaScript -->
+  <script src="/assets/startbootstrap-grayscale/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/startbootstrap-grayscale/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/assets/startbootstrap-grayscale/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/assets/startbootstrap-grayscale/js/grayscale.min.js"></script>
+
+</body>
+
+</html>

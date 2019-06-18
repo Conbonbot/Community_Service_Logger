@@ -1,0 +1,23 @@
+connor:
+    id: 1
+    first_name: Connor
+    last_name: Harvey
+    email: example@railstutorial.org
+    student_id: 123456
+    grade: 2021
+    password_digest: <%= User.digest('password') %>
+    admin: true
+    activated: true
+    activated_at: <%= Time.zone.now %>
+
+prash:
+    id: 2
+    first_name: Prash
+    last_name: meh
+    email: example2@railstutorial.org
+    student_id: 654321
+    grade: 2021
+    password_digest: <%= User.digest('password1') %>
+    admin: true
+    activated: true
+    activated_at: <%= 5.minutes.ago %>

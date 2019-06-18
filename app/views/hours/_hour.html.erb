@@ -1,0 +1,12 @@
+<tr role="row">
+    <th><%= hour.id %></th>
+    <th><%= pluralize(hour.content, 'Hour') %></th>
+    <th><%= time_ago_in_words(hour.created_at) %> ago</th>
+    <% if hour.approved? == true%>
+       <th>Approved</th>
+    <% elsif hour.approved.nil? == true %>
+       <th>Pending</th>
+    <% elsif hour.approved? == false %>
+       <th>Denied</th>
+    <% end %>
+</tr>

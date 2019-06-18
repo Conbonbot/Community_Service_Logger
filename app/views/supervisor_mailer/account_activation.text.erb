@@ -1,0 +1,5 @@
+Hi <%= @supervisor.first_name %>,
+
+Welcome to CVHS Community Service! Click on the link below to activate your account:
+
+<%= sup_edit_account_activation_url(@supervisor.activation_token, email: @supervisor.email) %>

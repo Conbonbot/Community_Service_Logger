@@ -1,0 +1,132 @@
+<% provide(:title, 'Form A') %>
+
+    
+<html lang="en">
+
+  <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Font Awesome Icons -->
+  <link href="/assets/startbootstrap-creative/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="/assets/startbootstrap-creative/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="/assets/startbootstrap-creative/css/creative.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>CVHS Community Service Project</strong>
+            </h1>
+            <hr>
+            <h2 class="text-uppercase">
+              <strong>ALL STUDENTS MUST COMPLETE AND SUBMIT THIS FORM BEFORE BEGINNING SERVICE.</strong>
+            </h2>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">The CVHS Community Service Learning Project encourages students to volunteer their time to help others by performing community service. We believe this program enhances skills, builds character and fosters personal growth. Participation is strongly encouraged but is not required. </p>
+            <p class="text-faded mb-5">As a participant in the CVHS Community Service Learning Project, I realize that my behavior in the community is a reflection of my school. I promise to observe CVHS rules of conduct and to behave in a manner that will make my school proud to send me into the community as a representative of CVHS. </p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#signup">Sign up now</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <section id="signup">
+      <div class="container text-center">
+        <h2 class="mb-4">Sign up</h2>
+        <hr>
+        <div class="row">
+          <div class="container text-left">
+            <%= simple_form_for @user do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
+                <%= f.label :first_name, "First Name" %>
+                <%= f.text_field :first_name, class: 'form-control'  %>
+          
+                <%= f.label :last_name, "Last Name" %>
+                <%= f.text_field :last_name, class: 'form-control'  %>
+          
+                <%= f.label :email, "Student Email" %>
+                <%= f.email_field :email, class: 'form-control'  %>
+            
+                <%= f.label :student_id, "Student ID (6-digit)" %> 
+                <%= f.text_field :student_id, class: 'form-control'  %>
+          
+                <%= f.label :grade, "Class of: (Graduating Year)" %>
+                <%= f.text_field :grade, class: 'form-control'  %>
+          
+                <%= f.label :password, "Password (At least 6 characters)"%>
+                <%= f.password_field :password, class: 'form-control' %>
+          
+                <%= f.label :password_confirmation, "Password Confirmation" %>
+                <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+        </div>
+        <br>
+          <%= f.input_field :signature, as: :hidden, class: 'signature_pad_input' %>
+          <div class="row">
+            <div class="container text-center">
+              <%= f.label :signature, "Parent Signature"%>
+            </div>
+          </div>
+          <div class="signature_pad text-center">
+            <div class="signature_pad_body">
+              <canvas></canvas>
+            </div>
+          <div class="signature_pad_footer">
+            <div class="text-muted">Sign above</div>
+              <button type="button" class="btn btn-default signature_pad_clear">Clear</button>
+                <br>
+                  <br>
+                    <br>
+                      <div class="row">
+                        <div class="container text-center">
+                          <%= f.button :submit, 'Create Account', class: 'btn btn-success signature_pad_save'  %>
+                        <% end %>
+                          <br>
+                            <p>Already have an account? <%= link_to "Log in!", user_login_path %></p>
+                            <br>
+                            <p>Supervisor? click <%= link_to "here", formB_path %> to create an account</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+      </div>
+    </section>
+    
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/assets/startbootstrap-creative/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/startbootstrap-creative/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/assets/startbootstrap-creative/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/assets/startbootstrap-creative/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/assets/startbootstrap-creative/js/creative.min.js"></script>
+  
+  </body>
+
+</html>
