@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "node-js-getting-started",
   "version": "0.3.0",
   "description": "A sample Node.js app using Express 4",
@@ -30,14 +29,3 @@
   ],
   "license": "MIT"
 }
-=======
-    "name": "Community Service Logger",
-    "description": "Community Service Logger for CVHS",
-    "dependencies": {
-        "bower": "0.6.x"
-    },
-    "scripts": {
-        "postinstall": "./node_modules/bower/bin/bower install"
-    }
-}
->>>>>>> 078c9a644f245f18c6cf2d4e034242a34d77a762
