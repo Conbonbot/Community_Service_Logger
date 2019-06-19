@@ -52,6 +52,7 @@ Rails.application.configure do
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
+  Rails.application.routes.default_url_options[:host] = 'https://cv-community-service.herokuapp.com/'
   ActionMailer::Base.default_options = { :host => "https://cv-community-service.herokuapp.com/" }
    
 
