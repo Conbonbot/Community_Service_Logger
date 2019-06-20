@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :validate_url_hack, only: [:edit, :update]
-  before_action :logged_in_user, only: [:edit, :update]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :validate_url_hack, only: []
+  before_action :logged_in_user, only: []
+  before_action :correct_user,   only: []
  
 
   def show
