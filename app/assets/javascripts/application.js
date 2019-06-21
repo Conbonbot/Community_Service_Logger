@@ -20,3 +20,5 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree
+//= require signature
+//= require signature_pad
