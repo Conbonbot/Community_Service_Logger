@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'supervisor_password_resets/new'
+
+  get 'supervisor_password_resets/edit'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -47,5 +51,6 @@ Rails.application.routes.draw do
    resources :account_activation, only: [:edit, :sup_edit]
    resources :hours, only: [:create]
    resources :password_resets, only: [:new, :create, :edit, :update]
+   resources :supervisor_password_resets, only: [:new, :create, :edit, :update]
    
 end

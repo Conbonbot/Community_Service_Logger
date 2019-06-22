@@ -1,8 +1,8 @@
-<% provide(:title, "Supervisor Log in") %>
+<% provide(:title, "Supervisor Forgot Password") %>
 
  <head>
 
-  <meta charset="utf-8">
+  <meta charset="utf-8">    
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -27,31 +27,20 @@
        <div class="container my-auto">
          <div class="row">
            <h1 class="text-uppercase">
-             <strong>Supervisor Log in</strong>
+             <strong>Forgot Password</strong>
            </h1>
            <hr>
          </div>
          <div class="container text-center">
            <div class="row">
              <div class="container text-left">
-               <%= form_for(:session, url: supervisor_login_path) do |f| %>
+               <%= form_for(:supervisor_password_reset, url: supervisor_password_resets_path) do |f| %>
            
                  <%= f.label :email, "Email" %>
-                 <%= f.text_field :email, class: 'form-control' %>
-           
-                 <%= f.label :password %>
-                 <%= link_to "(forgot password)", new_supervisor_password_reset_path %>
-                 <%= f.password_field :password, class: 'form-control' %>
+                 <%= f.email_field :email, class: 'form-control' %>
                  
-                 <%= f.label :remember_me, class: "checkbox inline" do %>
-                 <%= f.check_box :remember_me %>
-                 <span>Remember me on this device</span>
-                 <% end %>
-           
-                 <%= f.submit "Log in", class: 'btn btn-primary' %>
-                <% end %>
-         
-              <p>New supervisor? <%= link_to "Sign up now!", formB_path %></p>
+                 <%= f.submit "Submit", class: "btn btn-primary" %>
+               <% end %>
              </div>
            </div>
          </div>

@@ -1,5 +1,5 @@
 class Supervisor < ApplicationRecord
-    attr_accessor :remember_token, :activation_token
+    attr_accessor :remember_token, :activation_token, :reset_token
     before_save :downcase_email
     before_create :create_activation_digest
     has_many :hours, dependent: :destroy    
@@ -9,7 +9,8 @@ class Supervisor < ApplicationRecord
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, format: {with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
     validates :address, presence: true
-    validates :telephone, presence: true
+    VALID_PHONE_REGEX = /d/
+    validates :telephone, presence: true, format: {with: VALID_PHONE_REGEX}
     validates :role, presence: true
     validates :organization, presence: true
     has_secure_password
@@ -44,6 +45,16 @@ class Supervisor < ApplicationRecord
     def send_activation_email
         SupervisorMailer.account_activation(self).deliver_now
     end
+    
+    def create_reset_digest
+        self.reset_token = Supervisor.new_token
+        update_attribute(:reset_digest, Supervisor.digest(reset_token))
+        update_attribute(:reset_sent_at, Time.zone.now)
+    end
+    
+    def send_password_reset_email
+        SupervisorMailer.password_reset(self).deliver_now
+    end
 
     def remember
      self.remember_token = User.new_token
@@ -54,6 +65,9 @@ class Supervisor < ApplicationRecord
         update_attribute(:remember_token, nil)
     end
     
+    def password_reset_expired?
+        reset_sent_at < 2.hours.ago
+    end
     
     private
     
