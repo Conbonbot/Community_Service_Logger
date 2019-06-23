@@ -26,6 +26,10 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
+  def all_supervisors
+    @supervisors = Supervisor.where(activated: true)
+  end
 
   private
   

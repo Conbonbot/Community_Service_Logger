@@ -72,3 +72,5 @@ class SupervisorsController < ApplicationController
   
   
 end
+
+<%= render partial: 'supervisor', collection: @supervisors %>

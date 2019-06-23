@@ -34,6 +34,7 @@ Rails.application.routes.draw do
    post   '/user_login',         to: 'sessions#create'
    get    '/user_logout',        to: 'sessions#destroy'
    delete '/user_logout',        to: 'sessions#destroy'
+   get    '/supervisors',        to: 'users#all_supervisors'
    get    '/supervisor_login',   to: 'sessions#new_sup'
    post   '/supervisor_login',   to: 'sessions#create_sup'
    get    '/supervisor_logout',  to: 'sessions#destroy_sup'
