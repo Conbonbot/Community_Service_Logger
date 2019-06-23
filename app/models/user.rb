@@ -12,6 +12,7 @@ class User < ApplicationRecord
     validates :grade, presence: true, :inclusion => Time.zone.now.year..Time.zone.now.year + 4
     has_secure_password
     validates :password, presence: true, length: { minimum: 6}, allow_nil: true
+    validates :signature, presence: false, allow_nil: true
     #VALID_LEVEL_REGEX = /\A[Fr,So,Ju,Se]+/
     #validates :level, presence: true, format: {with: VALID_LEVEL_REGEX} 
    
