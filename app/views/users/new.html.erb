@@ -22,6 +22,7 @@
 
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="/assets/startbootstrap-creative/css/creative.min.css" rel="stylesheet">
+  
 
   </head>
 
@@ -81,39 +82,20 @@
                 <%= f.password_field :password_confirmation, class: 'form-control' %>
           </div>
         </div>
+        <%= f.button :submit, 'Create Account', class: 'btn btn-success'  %>
+                
+        <% end %>
         <br>
-          <%= f.input_field :signature, as: :hidden, class: 'signature_pad_input' %>
-          <div class="row">
-            <div class="container text-center">
-              <%= f.label :signature, "Parent Signature"%>
-            </div>
-          </div>
-          <div class="signature_pad text-center">
-            <div class="signature_pad_body">
-              <canvas></canvas>
-            </div>
-          <div class="signature_pad_footer">
-            <div class="text-muted">Sign above</div>
-              <button type="button" class="btn btn-default signature_pad_clear">Clear</button>
-                <br>
-                  <br>
-                    <br>
-                      <div class="row">
-                        <div class="container text-center">
-                          <%= f.button :submit, 'Create Account', class: 'btn btn-success signature_pad_save'  %>
-                        <% end %>
-                          <br>
-                            <p>Already have an account? <%= link_to "Log in!", user_login_path %></p>
-                            <br>
-                            <p>Supervisor? click <%= link_to "here", formB_path %> to create an account</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-      </div>
+                            
+          <p>Already have an account? <%= link_to "Log in!", user_login_path %></p>
+          <br>
+          <p>Supervisor? click <%= link_to "here", formB_path %> to create an account</p>
+        </div>
+        </div>
+        </div>
+        </div>
     </section>
+    
     
 
   <!-- Bootstrap core JavaScript -->
@@ -126,9 +108,6 @@
 
   <!-- Custom scripts for this template -->
   <script src="/assets/startbootstrap-creative/js/creative.min.js"></script>
-  
-  <!-- Signature for heroku-->
-  <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
   
   </body>
 
