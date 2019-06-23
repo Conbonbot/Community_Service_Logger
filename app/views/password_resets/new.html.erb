@@ -36,6 +36,7 @@
           <div class="row">
             <div class="container text-left">
               <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+                <%= render 'shared/error_messages', object: f.object %>
           
                 <%= f.label :email %>
                 <%= f.email_field :email, class: 'form-control' %>
