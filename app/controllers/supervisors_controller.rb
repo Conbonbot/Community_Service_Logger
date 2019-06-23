@@ -68,9 +68,6 @@ class SupervisorsController < ApplicationController
       redirect_to root_url
     end
   end
-   
-  
   
 end
 
-<%= render partial: 'supervisor', collection: @supervisors %>
