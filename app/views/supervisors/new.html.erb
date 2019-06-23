@@ -70,7 +70,7 @@
                 <%= f.label :address, "Address" %>
                 <%= f.email_field :address,  class: 'form-control'  %>
                 
-                <%= f.label :telephone, "Phone Number (Ex: 81855551234)" %>
+                <%= f.label :telephone, "Phone Number (Ex: 818-555-5555)" %>
                 <%= f.email_field :telephone, class: 'form-control'  %>
                 
                 <%= f.label :password, "Password (At least 6 characters)"%>
@@ -78,6 +78,9 @@
           
                 <%= f.label :password_confirmation, "Password Confirmation" %>
                 <%= f.password_field :password_confirmation, class: 'form-control' %>
+                
+                <%= f.label :access_code, "Access Code" %>
+                <%= f.text_field :access_code, class: 'form-control' %>
                 
                 
                  <%= f.button :submit, 'Create Account', class: 'btn btn-success'  %>

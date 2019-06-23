@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190622044030) do
+ActiveRecord::Schema.define(version: 20190623030842) do
 
   create_table "hours", force: :cascade do |t|
     t.integer "content"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20190622044030) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.bigint "access_code"
   end
 
   create_table "users", force: :cascade do |t|
