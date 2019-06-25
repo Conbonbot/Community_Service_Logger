@@ -1,4 +1,7 @@
 {
+    "build": {
+        "@saveall": true
+    },
     "instance": {
         "@automaticShutdown": "30"
     },

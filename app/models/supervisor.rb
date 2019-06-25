@@ -48,6 +48,11 @@ class Supervisor < ApplicationRecord
         SupervisorMailer.account_activation(self).deliver_now
     end
     
+    # Sends an email to the supervisor
+    def send_supervisor_email(user)
+        SupervisorMailer.supervisor_hour(self, user).deliver_now
+    end
+    
     def create_reset_digest
         self.reset_token = Supervisor.new_token
         update_attribute(:reset_digest, Supervisor.digest(reset_token))

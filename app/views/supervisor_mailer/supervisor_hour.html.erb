@@ -1,0 +1,8 @@
+<h1>CVHS Community Service</h1>
+
+<p>Hello <%= @supervisor.first_name %></p>
+
+<p>
+<%= @user.first_name %> <%= @user.last_name %> has requested hours for you to approve,
+<%= link_to "Approve now", supervisor_login_url %>
+</p>
