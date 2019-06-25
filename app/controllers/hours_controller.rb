@@ -10,16 +10,10 @@ class HoursController < ApplicationController
        @hour.approved = nil
        @supervisor = Supervisor.new
        if @hour.save
-          if Supervisor.exists?(email: @hour.email)
-             @supervisor = Supervisor.find_by(email: @hour.email)
+             @supervisor = Supervisor.new(email: @hour.email)
              @supervisor.send_supervisor_email(current_user)
              flash[:info] = "Wating for approve"
-             
              redirect_to current_user
-          else
-             flash[:danger] = "Supervisor not found"
-             render 'new'
-          end
        else
           render 'new'
        end
