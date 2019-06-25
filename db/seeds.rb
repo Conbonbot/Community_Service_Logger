@@ -16,7 +16,7 @@ Supervisor.create!(
     id: "1",
     first_name: "Prash",
     last_name: "Bhask",
-    email: "example@prash.com",
+    email: "prashanthbhaskara123@gmail.com",
     address: "1337 Example Ave.",
     telephone: "818-555-5555",
     organization: "example",
