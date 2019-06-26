@@ -29,12 +29,15 @@
 
 <body id="page-top">
 
-  <!-- Header -->
   <header class="masthead">
     <div class="container d-flex h-100 align-items-center">
       <div class="mx-auto text-center">
         <h1 class="mx-auto my-0 text-uppercase">Supervisor</h1>
-        <h2 class="text-white-50 mx-auto mt-2 mb-5">In order for a project to be considered as community service, it must be... </h2> 
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">In order for a project to be considered as community service, it must be nonpaid and a non-profit organization. </h2> 
+          <br>
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">Up to 5 hours may be logged in per day, and 8 hours per day on weekends, summer, and holidays. </h2>
+        <br>
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">Community Service does NOT count at any profit business, such as doctors, dentists, etc. </h2>
         <a href="#signup" class="btn btn-primary js-scroll-trigger">Signup</a>
       </div>
     </div>
@@ -49,8 +52,9 @@
 
           <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
           <h2 class="text-white mb-5">Signup</h2>
-          
+    
             <%= simple_form_for @supervisor do |f| %>
+        
               <%= render 'shared/error_messages', object: f.object %>
                 <%= f.label :first_name, "First Name" %>
                 <%= f.text_field :first_name, class: 'form-control'  %>
@@ -81,13 +85,14 @@
                 
                 <%= f.label :access_code, "Access Code" %>
                 <%= f.text_field :access_code, class: 'form-control' %>
-                
+                <br>
                 
                  <%= f.button :submit, 'Create Account', class: 'btn btn-success'  %>
                  
              <% end %>
-                
-            <p>Already have an account? <%= link_to "Log in now!", supervisor_login_path %> </p>
+             <p class="text-white mb-5">Don't have an access code? Contact rgay@gusd.net to recieve your access code. </p>  
+             <br>
+            <p class="text-white mb-5">Already have an account? <%= link_to "Log in now!", supervisor_login_path %> </p>
 
         </div>
       </div>

@@ -1,5 +1,14 @@
 Hello <%= @supervisor.first_name %>,
 
-<%= @user.first_name %> <%= @user.last_name %> has requested hours for you to approve,
-
+<%= @user.first_name %> <%= @user.last_name %> has requested hours for you to approve.
+<br>
+<br>
+Please log into your supervisor account in order to approve/deny pending hours.
+<br>
 <%= supervisor_login_url %>
+<br>
+<br>
+Haven't created a supervisor account yet? Click here to sign up as a supervisor.
+<%= formb_url %>
+<br>
+After signing up, come back to this email and click the login link to login as a supervisor.
