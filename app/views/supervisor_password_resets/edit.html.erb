@@ -34,9 +34,9 @@
          <div class="container text-center">
            <div class="row">
              <div class="container text-left">
-               <%= simple_form_for(@supervisor, url: supervisor_password_reset_path(params[:id])) do |f| %>
+               <%= form_for(@supervisor, url: supervisor_password_reset_path(params[:id])) do |f| %>
                
-                 <%= render 'shared/error_messages', locals: {object: @supervisor } %>
+                 <%= render 'shared/error_messages', object: @supervisor %>
                  
                  <%= f.label :password, "Password" %>
                  <%= f.password_field :password, class: 'form-control' %>
