@@ -3,6 +3,15 @@
 <p>Hello <%= @supervisor.first_name %></p>
 
 <p>
-<%= @user.first_name %> <%= @user.last_name %> has requested hours for you to approve,
+<%= @user.first_name %> <%= @user.last_name %> has requested hours for you to approve.
+<br>
+<p>Please log into your supervisor account in order to approve/deny pending hours.</p>
+<br>
 <%= link_to "Approve now", supervisor_login_url %>
 </p>
+<br>
+<p>Haven't created a supervisor account yet? Click here to sign up as a supervisor.
+<br>
+<%= link_to "Sign Up", formB_url %></p>
+
+
