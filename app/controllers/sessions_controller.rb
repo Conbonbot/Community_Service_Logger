@@ -48,7 +48,7 @@ class SessionsController < ApplicationController
       end
     else
       flash.now[:danger] = "Invalid ID or password"
-      render 'new'
+      render 'new_sup'
     end
   end
   

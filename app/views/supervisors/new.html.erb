@@ -56,41 +56,62 @@
             <%= simple_form_for @supervisor do |f| %>
         
               <%= render 'shared/error_messages', object: f.object %>
-                <%= f.label :first_name, "First Name" %>
-                <%= f.text_field :first_name, class: 'form-control'  %>
+                <p class="text-white mb-5">First Name
+                <br>
+                <br>
+                <%= f.text_field :first_name, class: 'form-control' %> </p>
                 
-                <%= f.label :last_name, "Last Name" %>
-                <%= f.text_field :last_name, class: 'form-control'  %>
-          
-                <%= f.label :email, "Email" %>
-                <%= f.email_field :email, class: 'form-control'  %>
+                 <p class="text-white mb-5">Last Name
+                                 <br>
+                <br>
+                <%= f.text_field :last_name, class: 'form-control'  %></p>
                 
-                <%= f.label :organization, "Organization" %>
-                <%= f.email_field :organization, class: 'form-control'  %>
+           <p class="text-white mb-5">Email
+                           <br>
+                <br>
+                <%= f.email_field :email, class: 'form-control'  %></p>
                 
-                <%= f.label :role, "Role at Organization" %>
-                <%= f.email_field :role,  class: 'form-control'  %>
+                 <p class="text-white mb-5">Organization
+                                 <br>
+                <br>
+                <%= f.email_field :organization, class: 'form-control'  %></p>
                 
-                <%= f.label :address, "Address" %>
-                <%= f.email_field :address,  class: 'form-control'  %>
+                 <p class="text-white mb-5">Role at Organization
+                                 <br>
+                <br>
+                <%= f.email_field :role,  class: 'form-control'  %></p>
                 
-                <%= f.label :telephone, "Phone Number (Ex: 818-555-5555)" %>
-                <%= f.email_field :telephone, class: 'form-control'  %>
+                 <p class="text-white mb-5"> Address
+                                 <br>
+                <br>
+                <%= f.email_field :address,  class: 'form-control'  %></p>
                 
-                <%= f.label :password, "Password (At least 6 characters)"%>
-                <%= f.password_field :password, class: 'form-control' %>
-          
-                <%= f.label :password_confirmation, "Password Confirmation" %>
-                <%= f.password_field :password_confirmation, class: 'form-control' %>
+                 <p class="text-white mb-5">Phone Number (Ex: 818-555-5555)
+                                 <br>
+                <br>
+                <%= f.email_field :telephone, class: 'form-control'  %></p>
                 
-                <%= f.label :access_code, "Access Code" %>
-                <%= f.text_field :access_code, class: 'form-control' %>
+                 <p class="text-white mb-5">Password (At least 6 characters)
+                                 <br>
+                <br>
+                <%= f.password_field :password, class: 'form-control' %></p>
+                
+           <p class="text-white mb-5">Password Confirmation
+                           <br>
+                <br>
+                <%= f.password_field :password_confirmation, class: 'form-control' %></p>
+                
+                 <p class="text-white mb-5">Access Code
+                                 <br>
+                <br>
+                <%= f.text_field :access_code, class: 'form-control' %></p>
                 <br>
                 
                  <%= f.button :submit, 'Create Account', class: 'btn btn-success'  %>
-                 
+               
              <% end %>
-             <p class="text-white mb-5">Don't have an access code? Contact rgay@gusd.net to recieve your access code. </p>  
+             <p class="text-white mb-5">Don't have an access code? Contact cvcommunityservice@gmail.com to recieve your access code. </p>  
+             <p class="text-white mb-5">After signing up, you will recieve a confirmation email. Once confirming, look back to the original hour request email to login as a supervisor</p>
              <p class="text-white mb-5">Have any questions? Contact cvcommunityservice@gmail.com</p>
              <br>
             <p class="text-white mb-5">Already have an account? <%= link_to "Log in now!", supervisor_login_path %> </p>
