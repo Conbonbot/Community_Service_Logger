@@ -1,13 +1,9 @@
 class AdminController < ApplicationController
+  
+  layout 'application', :except => [:home]
+  
   def home
     @users = User.all
+    @supervisors = Supervisor.all
   end
-  
-  def freshmen
-  end
-  
-  def sophomores
-    @users = User.grade = Time.zone.now.year + 1
-  end
-    
 end
