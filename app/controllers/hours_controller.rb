@@ -1,7 +1,7 @@
 class HoursController < ApplicationController
    
    def new
-      @hour = current_user.hours.build
+      @hour = Hour.new
       @supervisor = Supervisor.new
    end
    
