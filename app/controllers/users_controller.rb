@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.cutoff = "Jul 22 2019"
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account"
       redirect_to root_url
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:id, :first_name, :last_name, :email, :student_id, :grade, :password, :password_confirmation)
+    params.require(:user).permit(:id, :first_name, :last_name, :email, :student_id, :grade, :password, :password_confirmation, :cutoff)
   end
   
   # Before filters

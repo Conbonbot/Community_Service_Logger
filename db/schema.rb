@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190623030842) do
+ActiveRecord::Schema.define(version: 20190722230940) do
 
   create_table "hours", force: :cascade do |t|
     t.integer "content"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20190623030842) do
     t.string "level"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.datetime "cutoff"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["student_id"], name: "index_users_on_student_id", unique: true
   end
