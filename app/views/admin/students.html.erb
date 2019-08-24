@@ -225,17 +225,15 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    <% @students.each do |student| %>
+                    <% @stu_hours.each do |student| %>
                     <tr>
-                      <th><%= student.first_name %></th>
-                      <th><%= student.last_name %></th>
-                      <th><%= student.student_id %></th>
-                      <th><%= student.grade %></th>
-                      <% end %>
-                      <% @totals.each do |total| %>
-                      <th><%= total %></th>
-                      <% end %>
+                      <th><%= student[0].first_name %></th>
+                      <th><%= student[0].last_name %></th>
+                      <th><%= student[0].student_id %></th>
+                      <th><%= student[0].grade %></th>
+                      <th><%= student[1] %></th>
                     </tr>
+                    <% end %>
                   </tbody>
                 </table>
               </div>
