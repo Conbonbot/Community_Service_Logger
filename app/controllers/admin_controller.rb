@@ -40,7 +40,6 @@ class AdminController < ApplicationController
     for i in 0..@students.size()-1
       @totals[i] = total(@students[i])
     end
-    debugger
   end
   
   private
