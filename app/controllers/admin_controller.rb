@@ -36,16 +36,6 @@ class AdminController < ApplicationController
   
   def students
     @students = User.all
-    #Useless, but cool and could be used for later
-    @stu_hours = Array.new(1) {Array.new(1,0)}
-    for i in 0..@students.size-1
-      for j in 0..@students[i].hours.count-1
-        if @students[i].hours[j].approved?
-          @stu_hours[i][j] = @students[i].hours[j]
-        end
-      end
-    end
-    
     @totals = Array.new(1)
     for i in 0..@students.size()-1
       @totals[i] = total(@students[i])
