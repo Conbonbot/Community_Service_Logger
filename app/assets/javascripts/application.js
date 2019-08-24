@@ -19,6 +19,7 @@
 //= require total_hours_chart
 //= require rails-ujs
 //= require turbolinks
-//= require_tree
 //= require signature
-//= require signature_pad
+//= require signature_pad  
+//= require_tree
+

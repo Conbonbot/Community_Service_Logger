@@ -20,6 +20,10 @@
 
   <!-- Custom styles for this template-->
   <link href="/assets/startbootstrap-sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
+  
+  <!-- DataTables css/js -->
+  <link href="/assets/startbootstrap-sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  
 
 </head>
 
@@ -193,20 +197,48 @@
           </div>
 
           <!-- All Students Data Table -->
+                 <!-- DataTales Example -->
+                         <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weigh-bold text-primary">All Students</h6>
+              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table bordered" id="StudentsTable" width="100%" cellspacing="0">
-                  <%= render @students %>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Student ID</th>
+                      <th>Class Of</th>
+                      <th>Approved Hours</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Student ID</th>
+                      <th>Class Of</th>
+                      <th>Approved Hours</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <% @students.each do |student| %>
+                    <tr>
+                      <th><%= student.first_name %></th>
+                      <th><%= student.last_name %></th>
+                      <th><%= student.student_id %></th>
+                      <th><%= student.grade %></th>
+                      <th><%= @tot %></th>
+                    </tr>
+                    <% end %>
+                  </tbody>
                 </table>
               </div>
             </div>
           </div>
-
-
 
 
            
@@ -251,10 +283,13 @@
 
   <!-- Page level plugins -->
   <script src="/assets/startbootstrap-sb-admin-2/vendor/chart.js/Chart.min.js"></script>
+  <script src="/assets/startbootstrap-sb-admin-2/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="/assets/startbootstrap-sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <!-- Page level custom scripts -->
   <script src="/assets/startbootstrap-sb-admin-2/js/demo/chart-area-demo.js"></script>
-  <script src="/assets/startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js"></script>
+  <script src="/assets/startbootstrap-sb-admin-2/js/demo/datatables-demo.js"></script>
+  
 
 </body>
 

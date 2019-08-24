@@ -36,6 +36,14 @@ class AdminController < ApplicationController
   
   def students
     @students = User.all
+    @students.each do |student|
+      @hours = Hour.where(user_id: student.id, approved: true)
+    end
+    temp = 0
+    @hours.each do |hour|
+      temp += hour.content
+    end
+    @tot = temp
   end
   
 
