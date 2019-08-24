@@ -41,10 +41,10 @@ class AdminController < ApplicationController
       @totals[i] = total(@students[i])
     end
     @stu_hours = Array.new(1) {Array.new(2, 0)}
-    #for i in 0..User.all.size-1
-    #  @stu_hours[i][0] = @students[i]
-    #  @stu_hours[i][1] = @totals[i]
-    #end
+    for i in 0..User.all.size-1
+      @stu_hours[i][0] = @students[i]
+      @stu_hours[i][1] = @totals[i]
+    end
   end
   
   private
