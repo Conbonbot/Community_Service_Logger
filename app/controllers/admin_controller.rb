@@ -16,9 +16,6 @@ class AdminController < ApplicationController
     end
   end
   
-  def show
-  end
-  
   def freshmen
   end
   
@@ -37,8 +34,8 @@ class AdminController < ApplicationController
   def tables
   end
   
-  def all_stu
-    @users = User.all
+  def students
+    @students = User.all
   end
   
 

@@ -29,7 +29,7 @@ Rails.application.routes.draw do
    get    '/admin/juniors',      to: 'admin#juniors'
    get    '/admin/seniors',      to: 'admin#seniors'
    get    '/admin/charts',       to: 'admin#charts'
-   get    '/admin/students',     to: 'admin#all_stu'
+   get    '/admin/students',     to: 'admin#students'
    get    '/tables',             to: 'admin#tables'
    get    '/login',              to: 'sessions#pre'
    get    '/user_login',         to: 'sessions#new'
