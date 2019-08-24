@@ -21,9 +21,10 @@ level(Time.parse("Dec 25 2019 00:00"))
 level(Time.parse("Jan 20 2020 00:00"))
 level(Time.parse("Sep 20 2020 00:00"))
 level(Time.parse("Jan 05 2019 00:00"))
-print("\n")
-bruh = Time.new(2019, 7, 22, 9, 28, 0)
-print(bruh)
-print("\n")
-bruh += 31622400 * 1 # increases by 1 year
-print(bruh)
+def grade(datetime, endyear) # datetime represents the date when a student is evalutated, endyear is when they graduate
+    # check if they are still in school
+    if endyear.year > Time.now.year and endyear.year < Time.now.year+4
+        print("here")
+    end
+end
+grade(Time.now, Time.parse("Jul 20 2021 00:00"))

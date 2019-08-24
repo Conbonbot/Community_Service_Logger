@@ -16,5 +16,30 @@ class AdminController < ApplicationController
     end
   end
   
+  def show
+  end
+  
+  def freshmen
+  end
+  
+  def sophomores
+  end
+  
+  def juniors
+  end
+  
+  def seniors
+  end
+  
+  def charts
+  end
+  
+  def tables
+  end
+  
+  def all_stu
+    @users = User.all
+  end
+  
 
 end
