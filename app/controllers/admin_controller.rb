@@ -36,15 +36,32 @@ class AdminController < ApplicationController
   
   def students
     @students = User.all
-    @students.each do |student|
-      @hours = Hour.where(user_id: student.id, approved: true)
+    #Useless, but cool and could be used for later
+    @stu_hours = Array.new(1) {Array.new(1,0)}
+    for i in 0..@students.size-1
+      for j in 0..@students[i].hours.count-1
+        if @students[i].hours[j].approved?
+          @stu_hours[i][j] = @students[i].hours[j]
+        end
+      end
     end
-    temp = 0
-    @hours.each do |hour|
-      temp += hour.content
+    
+    @totals = Array.new(1)
+    for i in 0..@students.size()-1
+      @totals[i] = total(@students[i])
     end
-    @tot = temp
+    debugger
   end
   
-
+  private
+  
+  # Return the total approved hours of a User
+  def total(user)
+    tot = 0
+    hours = Hour.where(user_id: user.id, approved: true)
+    for x in 0..hours.count-1
+      tot += hours[x].content
+    end
+    return tot
+  end
 end

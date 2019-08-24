@@ -231,9 +231,11 @@
                       <th><%= student.last_name %></th>
                       <th><%= student.student_id %></th>
                       <th><%= student.grade %></th>
-                      <th><%= @tot %></th>
+                      <% end %>
+                      <% @totals.each do |total| %>
+                      <th><%= total %></th>
+                      <% end %>
                     </tr>
-                    <% end %>
                   </tbody>
                 </table>
               </div>
