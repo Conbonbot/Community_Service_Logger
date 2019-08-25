@@ -40,16 +40,17 @@ class AdminController < ApplicationController
     for i in 0..@students.size()-1
       @totals[i] = total(@students[i])
     end
-    @stu_hours = Array.new(1) {Array.new(2, 0)}
-    for i in 0..User.all.size-1
+    @stu_hours = Array.new(@students.size()) {Array.new(2, 0)}
+    for i in 0..@students.size()-1
       @stu_hours[i][0] = @students[i]
       @stu_hours[i][1] = @totals[i]
     end
+    debugger
   end
   
   private
   
-  # Return the total approved hours of a User
+  # Return the total approved hours of a User 
   def total(user)
     tot = 0
     hours = Hour.where(user_id: user.id, approved: true)
