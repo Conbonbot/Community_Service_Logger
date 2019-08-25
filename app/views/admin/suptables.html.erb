@@ -1,4 +1,4 @@
-<% provide(:title, 'All Students') %>
+<% provide(:title, 'Supervisor Tables') %>
 <!DOCTYPE html>
 <html lang="en">
   <br>
@@ -12,7 +12,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Community Service Admin - All Students</title>
+  <title>Community Service Admin - Supervisors</title>
 
   <!-- Custom fonts for this template-->
   <link href="/assets/startbootstrap-sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,7 +59,7 @@
       
       <!-- Heading -->
       <div class="sidebar-heading">
-        Students
+        Supervisors
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
@@ -192,7 +192,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">All Students</h1>
+            <h1 class="h3 mb-0 text-gray-800">Supervisors</h1>
             <!-- MAYBE?<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
           </div>
 
@@ -210,28 +210,34 @@
                     <tr>
                       <th>First Name</th>
                       <th>Last Name</th>
-                      <th>Student ID</th>
-                      <th>Class Of</th>
-                      <th>Approved Hours</th>
+                      <th>Telephone</th>
+                      <th>Address</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                      <th>Organization</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>First Name</th>
                       <th>Last Name</th>
-                      <th>Student ID</th>
-                      <th>Class Of</th>
-                      <th>Approved Hours</th>
+                      <th>Telephone</th>
+                      <th>Address</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                      <th>Organization</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                    <% @stu_hours.each do |student| %>
+                    <% @supervisors.each do |supervisor| %>
                     <tr>
-                      <th><%= student[0].first_name %></th>
-                      <th><%= student[0].last_name %></th>
-                      <th><%= student[0].student_id %></th>
-                      <th><%= student[0].grade %></th>
-                      <th><%= student[1] %></th>
+                      <th><%= supervisor.first_name %></th>
+                      <th><%= supervisor.last_name %></th>
+                      <th><%= supervisor.telephone %></th>
+                      <th><%= supervisor.address %></th>
+                      <th><%= supervisor.email %></th>
+                      <th><%= supervisor.role %></th>
+                      <th><%= supervisor.organization %></th>
                     </tr>
                     <% end %>
                   </tbody>

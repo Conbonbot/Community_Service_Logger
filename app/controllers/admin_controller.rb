@@ -47,6 +47,13 @@ class AdminController < ApplicationController
     end
   end
   
+  def supcharts
+  end
+  
+  def suptables
+    @supervisors = Supervisor.all
+  end
+  
   private
   
   # Return the total approved hours of a User 

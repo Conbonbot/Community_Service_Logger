@@ -30,6 +30,8 @@ Rails.application.routes.draw do
    get    '/admin/seniors',      to: 'admin#seniors'
    get    '/admin/charts',       to: 'admin#charts'
    get    '/admin/students',     to: 'admin#students'
+   get    '/admin/sup_tables',   to: 'admin#suptables'
+   get    '/admin/sup_charts',   to: 'admin#supcharts'
    get    '/tables',             to: 'admin#tables'
    get    '/login',              to: 'sessions#pre'
    get    '/user_login',         to: 'sessions#new'
