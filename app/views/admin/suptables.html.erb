@@ -229,6 +229,7 @@
                     </tr>
                   </tfoot>
                   <tbody>
+                    <!-- This doesn't work locally via AWS -->
                     <% @supervisors.each do |supervisor| %>
                     <tr>
                       <th><%= supervisor.first_name %></th>

@@ -29,6 +29,7 @@ class AdminController < ApplicationController
   end
   
   def charts
+    @s = Array.new(4,3)
   end
   
   def tables

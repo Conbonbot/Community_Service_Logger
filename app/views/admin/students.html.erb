@@ -229,7 +229,7 @@
                     <tr>
                       <th><%= student[0].first_name %></th>
                       <th><%= student[0].last_name %></th>
-                      <th><%= student[0].student_id %></th>
+                      <th><%= link_to student[0].student_id, user_path(student) %></th>
                       <th><%= student[0].grade %></th>
                       <th><%= student[1] %></th>
                     </tr>
