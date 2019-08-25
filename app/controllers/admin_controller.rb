@@ -45,7 +45,6 @@ class AdminController < ApplicationController
       @stu_hours[i][0] = @students[i]
       @stu_hours[i][1] = @totals[i]
     end
-    debugger
   end
   
   private
