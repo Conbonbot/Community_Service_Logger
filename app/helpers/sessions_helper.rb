@@ -102,10 +102,9 @@ module SessionsHelper
     def total
         if logged_in?
           tot = 0
-          for x in 1..current_user.hours.count(:content)
-             if current_user.hours.find_by(id: x).approved == true
-                tot += current_user.hours.find_by(id: x).content
-             end
+          hours = Hour.where(user_id: current_user.id, approved: true)
+          for x in 0..hours.count-1
+            tot += hours[x].content
           end
           return tot
         end
