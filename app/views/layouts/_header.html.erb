@@ -61,12 +61,12 @@
               <% end %>
               <% if !supervisor_logged_in? %>
                   <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/login">Log in</a>
+                    <a class="nav-link js-scroll-trigger" href="/supervisor_login">Log in</a>
                   </li>
               <% end %>
              <% elsif current_supervisor.nil? && current_user.nil? %>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/login">Log in</a>
+                    <a class="nav-link js-scroll-trigger" href="/user_login">Log in</a>
                   </li>
              <% end %>
           </ul>
