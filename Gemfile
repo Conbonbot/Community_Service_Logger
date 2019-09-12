@@ -22,6 +22,7 @@ gem 'sendgrid-ruby'
 gem 'rails_12factor'
 gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
 gem 'jquery-datatables-rails', '~> 3.4'
+gem "roo", "~> 2.8.0"
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
