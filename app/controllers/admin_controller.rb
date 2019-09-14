@@ -75,7 +75,7 @@ class AdminController < ApplicationController
         flash[:warning] = "Must be admin"
       end
     else
-      redirect_to(login_path)
+      redirect_to(user_login_path)
       flash[:warning] = "Please Log in"
     end
   end
