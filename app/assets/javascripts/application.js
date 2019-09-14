@@ -14,7 +14,6 @@
 //= require jquery-ui
 //= require jquery
 //= require bootstrap
-//= require bootstrap-sprockets
 //= require total_hours_chart
 //= require WeeklyHourChart
 //= require rails-ujs

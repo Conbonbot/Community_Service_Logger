@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+  before_action :admin_user
   
   def home
     @users = User.all
@@ -65,5 +66,17 @@ class AdminController < ApplicationController
       tot += hours[x].content
     end
     return tot
+  end
+  
+  def admin_user
+    if logged_in?
+      redirect_to(root_url) unless current_user.admin?
+      if !current_user.admin?
+        flash[:warning] = "Must be admin"
+      end
+    else
+      redirect_to(login_path)
+      flash[:warning] = "Please Log in"
+    end
   end
 end
