@@ -100,7 +100,7 @@ module SessionsHelper
     
     # Returns the total hours of a logged in user
     def total
-        if logged_in?
+        if logged_in? or current_user.admin?
           tot = 0
           hours = Hour.where(user_id: current_user.id, approved: true)
           for x in 0..hours.count-1

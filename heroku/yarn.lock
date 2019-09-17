@@ -78,7 +78,7 @@
     netrc-parser "^3.1.6"
     opn "^5.4.0"
 
-"@heroku-cli/command@^8.2.10", "@heroku-cli/command@^8.2.11", "@heroku-cli/command@^8.2.12":
+"@heroku-cli/command@^8.2.10", "@heroku-cli/command@^8.2.11", "@heroku-cli/command@^8.2.12", "@heroku-cli/command@^8.2.13":
   version "8.2.13"
   resolved "https://registry.yarnpkg.com/@heroku-cli/command/-/command-8.2.13.tgz#8d6ac394b0c39be253692df82e4896678165cc37"
   integrity sha512-2L/0LFsF9jknRhnkz4Xjd/gAmcf3f2TB8Yke7kdOUj5O2s8YUCz7dwmrgu8CYbrhfrrHiBpLskdrOlKP3BXcUg==
@@ -250,10 +250,10 @@
     validator "^10.11.0"
     ws "^6.2.1"
 
-"@heroku-cli/plugin-config@^7.24.0":
-  version "7.24.0"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-config/-/plugin-config-7.24.0.tgz#0d876108b121c6aedab6275c98b15ae26edcb833"
-  integrity sha512-Cibta/5zLIlr0IYsQdRRjDw6U5QibCREMj26A2o/SZdFhGC/vxPhMxXiiR44t8T0MCBCBSWMTmPT6qssS+2riA==
+"@heroku-cli/plugin-config@^7.30.0":
+  version "7.30.0"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-config/-/plugin-config-7.30.0.tgz#dd21575c603c8a639fc760ddf59db055d8021d8e"
+  integrity sha512-zdVdxeRdidTuF6oi+BMgvOxWrdtnBzczDe+jcnERE1bu56zA1I7lRattkvXh4YkDiSMon2RBj62/IrYvjwpfkg==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/command" "^8.2.10"
@@ -392,10 +392,10 @@
     heroku-exec-util "0.7.3"
     lodash "^4.17.13"
 
-"@heroku-cli/plugin-ps@^7.24.0":
-  version "7.24.0"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-ps/-/plugin-ps-7.24.0.tgz#255189ddbceff815eadd051643753a54b8498260"
-  integrity sha512-rtZE8Hh9pIgFrPWW9BfIo3z3ZjHr4YmeVvfBpWr9uzOUL/W3oWBNSD/707zj2P4Fggckbpc+MQVpc4xs06DgNA==
+"@heroku-cli/plugin-ps@^7.30.0":
+  version "7.30.0"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-ps/-/plugin-ps-7.30.0.tgz#8270d94a02b21831b6cfa60bcf90cc74eeb7c6a4"
+  integrity sha512-2UB7x7LmtLqkzA+V6rDXpKDg25j6b3CI/ahgtWaAv3j60hBL3cBMHK/uYjWNyQJrwfTJOgsbiW1atq70mSCHrA==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/command" "^8.2.10"
@@ -426,6 +426,21 @@
     fs-extra "^7.0.1"
     heroku-cli-util "^8.0.11"
     shellwords "^0.1.1"
+
+"@heroku-cli/plugin-run@^7.30.0":
+  version "7.30.0"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-run/-/plugin-run-7.30.0.tgz#e9dfa38d9b896ba09f6eaf076c83ebcaad634fe3"
+  integrity sha512-SWXVYP0ZqvoxPc2rUaQL/EK7vW+dQ69l+Bd1/P6oTTx1KBLRZMOoO4SSdhWeCs8lwdkDQqz81dPQjrx+zRBTkA==
+  dependencies:
+    "@heroku-cli/color" "^1.1.14"
+    "@heroku-cli/command" "^8.2.13"
+    "@heroku-cli/notifications" "^1.2.2"
+    "@heroku/eventsource" "^1.0.7"
+    "@oclif/command" "^1"
+    "@oclif/config" "^1"
+    cli-ux "^5.3.1"
+    debug "^4.1.1"
+    tslib "^1"
 
 "@heroku-cli/plugin-spaces@^7.27.0":
   version "7.27.0"

@@ -29,3 +29,6 @@
   border: dotted #444;
   background: #CCCCCC;
 }
+.masthead text-center text-white d-flex{
+ background-color:red !important;
+}
