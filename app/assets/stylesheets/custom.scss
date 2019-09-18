@@ -1,9 +1,19 @@
-header.masthead{
- background-color:red !important;
+div.container{    
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: none !important;
+    //width: 100vw !important;
+    
 }
-
-@media (min-width: 1920px){
-    .container{
-        width: 100%;
-    }
+div.row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+#signup{
+    padding-left: 30px;
+}
+#inputs{
+    width: 80vw;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
