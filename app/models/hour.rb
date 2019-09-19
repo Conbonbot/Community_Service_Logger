@@ -15,4 +15,10 @@ class Hour < ApplicationRecord
   def deny_hour
     update_attribute(:approved, false)
   end
+  
+  private
+  
+  def downcase_email
+      self.email = email.downcase
+  end
 end
