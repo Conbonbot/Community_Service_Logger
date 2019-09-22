@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
   def new
   end
   
@@ -56,5 +57,6 @@ class SessionsController < ApplicationController
     supervisor_log_out if supervisor_logged_in?
     redirect_to root_url
   end
+  
 end
 

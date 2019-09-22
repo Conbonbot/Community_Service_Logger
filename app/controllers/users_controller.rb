@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-  before_action :validate_url_hack, only: []
-  before_action :logged_in_user, only: []
-  before_action :correct_user,   only: []
+  before_action :logged_in_user
  
 
   def show
@@ -38,29 +36,13 @@ class UsersController < ApplicationController
   end
   
   # Before filters
+  private
   
   # Confirms a logged in user
   def logged_in_user
-    unless logged_in?
-      flash[:danger] = "Please log in"
-      #redirect_to 'https://www.youtube.com/watch?v=8ZcmTl_1ER8', :overwrite_params => { :parm => 'foo' }
-      redirect_to root_url
-    end
+    print(User.find_by(params[:id]))
+      #redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
   end
   
-  # Confirms the correct user
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_url) unless @user == current_user?
-  end
-  
-  def validate_url_hack
-    unless params[:id].to_i == current_user.id
-      flash[:danger] = "Please log in"
-      redirect_to root_url
-    end
-  end
-  
-
   
 end
