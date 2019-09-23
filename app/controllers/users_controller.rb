@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user
  
 
   def show
@@ -35,8 +34,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:id, :first_name, :last_name, :email, :student_id, :grade, :password, :password_confirmation)
   end
   
-  # Before filters
-  private
   
   
   
