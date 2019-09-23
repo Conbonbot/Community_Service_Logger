@@ -38,12 +38,17 @@ class UsersController < ApplicationController
   
   def correct_user
     @user = User.find(params[:id]) 
-    if !current_user.admin?
-      if !current_user?(@user)
-        #redirect_to(root_url)
-        redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
+    if logged_in?
+      if !current_user.admin?
+        if !current_user?(@user)
+          #redirect_to(root_url)
+          redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
+        end
       end
+    else
+      redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
     end
   end
+      
   
 end
