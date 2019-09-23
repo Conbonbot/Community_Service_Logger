@@ -38,11 +38,6 @@ class UsersController < ApplicationController
   # Before filters
   private
   
-  # Confirms a logged in user
-  def logged_in_user
-    print(User.find_by(params[:id]))
-      #redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
-  end
   
   
 end
