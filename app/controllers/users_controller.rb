@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
- 
+  before_action :correct_user, only: [:show]
 
   def show
     @user = User.find(params[:id])
@@ -34,7 +34,16 @@ class UsersController < ApplicationController
     params.require(:user).permit(:id, :first_name, :last_name, :email, :student_id, :grade, :password, :password_confirmation)
   end
   
+  private
   
-  
+  def correct_user
+    @user = User.find(params[:id]) 
+    if !current_user.admin?
+      if !current_user?(@user)
+        #redirect_to(root_url)
+        redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
+      end
+    end
+  end
   
 end

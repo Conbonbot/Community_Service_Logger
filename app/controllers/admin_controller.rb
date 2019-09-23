@@ -74,7 +74,6 @@ class AdminController < ApplicationController
       if !current_user.admin?
         flash[:warning] = "Must be admin"
         redirect_to(root_url) 
-        #redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
       end
     else
       redirect_to(user_login_path)

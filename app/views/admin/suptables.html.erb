@@ -236,7 +236,7 @@
                       <th><%= supervisor.last_name %></th>
                       <th><%= supervisor.telephone %></th>
                       <th><%= supervisor.address %></th>
-                      <th><%= supervisor.email %></th>
+                      <th><%= link_to supervisor.email, supervisor_path(supervisor) %></th>
                       <th><%= supervisor.role %></th>
                       <th><%= supervisor.organization %></th>
                     </tr>
