@@ -107,5 +107,7 @@ module SessionsHelper
          end
         return tot
     end
+    
+    
 
 end

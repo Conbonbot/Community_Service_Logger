@@ -215,6 +215,7 @@
                       <th>Email</th>
                       <th>Role</th>
                       <th>Organization</th>
+                      <th>Approved Hours</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -226,19 +227,21 @@
                       <th>Email</th>
                       <th>Role</th>
                       <th>Organization</th>
+                      <th>Approved Hours</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <!-- This doesn't work locally via AWS -->
-                    <% @supervisors.each do |supervisor| %>
+                    <% @sup_hours.each do |supervisor| %>
                     <tr>
-                      <th><%= supervisor.first_name %></th>
-                      <th><%= supervisor.last_name %></th>
-                      <th><%= supervisor.telephone %></th>
-                      <th><%= supervisor.address %></th>
-                      <th><%= link_to supervisor.email, supervisor_path(supervisor) %></th>
-                      <th><%= supervisor.role %></th>
-                      <th><%= supervisor.organization %></th>
+                      <th><%= supervisor[0].first_name %></th>
+                      <th><%= supervisor[0].last_name %></th>
+                      <th><%= supervisor[0].telephone %></th>
+                      <th><%= supervisor[0].address %></th>
+                      <th><%= link_to supervisor[0].email, supervisor_path(supervisor) %></th>
+                      <th><%= supervisor[0].role %></th>
+                      <th><%= supervisor[0].organization %></th>
+                      <th><%= supervisor[1] %></th>
                     </tr>
                     <% end %>
                   </tbody>

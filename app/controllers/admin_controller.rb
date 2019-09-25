@@ -54,6 +54,15 @@ class AdminController < ApplicationController
   
   def suptables
     @supervisors = Supervisor.all
+    @totals = Array.new(1)
+    for i in 0..@supervisors.size()-1
+      @totals[i] = sup_total(@supervisors[i])
+    end
+    @sup_hours = Array.new(@supervisors.size()) {Array.new(2, 0)}
+    for i in 0..@supervisors.size()-1
+      @sup_hours[i][0] = @supervisors[i]
+      @sup_hours[i][1] = @totals[i]
+    end 
   end
   
   private
@@ -66,6 +75,16 @@ class AdminController < ApplicationController
       tot += hours[x].content
     end
     return tot
+  end
+  
+  # Returns the total hours a supervisor has approved
+  def sup_total(supervisor)
+      tot = 0
+      hours = Hour.where(email: supervisor.email)
+      for i in 0..hours.count-1
+          tot +=hours[i].content
+      end
+      return tot
   end
   
   def admin_user
