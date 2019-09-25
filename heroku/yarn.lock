@@ -319,10 +319,10 @@
     lodash "^4.17.11"
     lodash.flatten "^4.4.0"
 
-"@heroku-cli/plugin-pg-v5@^7.28.0":
-  version "7.28.0"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-pg-v5/-/plugin-pg-v5-7.28.0.tgz#f5efdab0ba3b8ede1e3ca39243e39294827a1b2e"
-  integrity sha512-l2VdZ78NLgLHS8l5HbcL4hIb2AQ/GmK5PTcleuWMqJb6yM5KvR09Ix5KNY1nzPmlxLYwFhy080SwMs2hdYReLQ==
+"@heroku-cli/plugin-pg-v5@^7.30.1":
+  version "7.30.1"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-pg-v5/-/plugin-pg-v5-7.30.1.tgz#e5b4a7d910541ecc61efcdf2d2b79c92b196b9f2"
+  integrity sha512-W0wQrnzIgl9Otm+9Lzof+AZAg6ekr9cV0kc15eYGA0d3baxOfBX9Hoy7RTr+QJw2agzX/xmA791Lpk+ZKePZNQ==
   dependencies:
     "@heroku-cli/plugin-addons" "^1.2.29"
     bytes "^3.1.0"
@@ -338,10 +338,10 @@
     strip-eof "^1.0.0"
     tunnel-ssh "^4.1.4"
 
-"@heroku-cli/plugin-pipelines-v5@^7.28.0":
-  version "7.28.0"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-pipelines-v5/-/plugin-pipelines-v5-7.28.0.tgz#674d00edb504abf2f658146fda487910be5c56af"
-  integrity sha512-JgWVd9vyb1T+IYaCE0ocFcBisdDSRdgpUEx3MOVN0UxlZmhOdp7Wjvl+gco1IU42txD/oKTXwYVzNLLJxJT81Q==
+"@heroku-cli/plugin-pipelines-v5@^7.30.1":
+  version "7.30.1"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-pipelines-v5/-/plugin-pipelines-v5-7.30.1.tgz#3a1a5436ce086451345f5049642e7e69a3bf12c8"
+  integrity sha512-B3GPsYQZhGBlC4T9C/2bXDsohv7w4PrAvPgQrdxt+g2NKVvp/WOY5jXfaGr5WPSMdZ2ry09RPdwoyFDcl6ZSrA==
   dependencies:
     "@heroku-cli/command" "^8.2.10"
     bluebird "^3.5.3"
