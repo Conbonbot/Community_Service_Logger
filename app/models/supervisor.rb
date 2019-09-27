@@ -45,6 +45,10 @@ class Supervisor < ApplicationRecord
     end
     
     def send_activation_email
+        if self.activation_digest.nil?
+            self.activation_digest = Supervisor.new_token
+            self.activation_digest = Supervisor.digest(activation_token)
+        end
         SupervisorMailer.account_activation(self).deliver_now
     end
     
@@ -85,8 +89,8 @@ class Supervisor < ApplicationRecord
     
     # Creates and assigns the activation token and digest
     def create_activation_digest
-        self.activation_token = User.new_token
-        self.activation_digest = User.digest(activation_token)
+        self.activation_token = Supervisor.new_token
+        self.activation_digest = Supervisor.digest(activation_token)
     end
 
 end
