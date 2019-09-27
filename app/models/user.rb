@@ -42,7 +42,6 @@ class User < ApplicationRecord
     
     # Returns true if the given token matches the digest.
     def authenticated?(attribute, token) 
-       debugger
        digest = send("#{attribute}_digest")
        return false if digest.nil?
        BCrypt::Password.new(digest).is_password?(token)
@@ -93,7 +92,6 @@ class User < ApplicationRecord
     def create_activation_digest
         self.activation_token = User.new_token
         self.activation_digest = User.digest(activation_token)
-        debugger
     end
     
 end
