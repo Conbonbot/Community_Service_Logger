@@ -55,8 +55,10 @@ class User < ApplicationRecord
     
     # Sends activation email
     def send_activation_email
-        self.activation_token = User.new_token
-        self.activation_digest = User.digest(activation_token)
+        if self.activation_token.nil?
+            self.activation_token = User.new_token
+            self.activation_digest = User.digest(activation_digest)
+        end
         UserMailer.account_activation(self).deliver_now
     end
     
