@@ -11,9 +11,9 @@
    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   </head>
   <body>
-    
     <div class="container">
       <% flash.each do |message_type, message| %>
+        <br>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
     <%= yield %>
