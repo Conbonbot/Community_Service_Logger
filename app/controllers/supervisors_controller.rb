@@ -1,5 +1,6 @@
 class SupervisorsController < ApplicationController
-  
+  before_action :correct_supervisor, only: [:show]
+  before_action :not_users
   
   def new
     @supervisor = Supervisor.new
@@ -41,10 +42,36 @@ class SupervisorsController < ApplicationController
     redirect_to current_supervisor
   end
   
-  private
-  
   def supervisor_params
     params.require(:supervisor).permit(:id, :first_name, :last_name, :email, :address, :telephone, :role, :organization, :password, :password_confirmation, :access_code, { hour: [:content, :approved]})
+  end
+  
+  private
+  
+  def correct_supervisor
+    @supevisor = Supervisor.find(params[:id]) 
+    if supervisor_logged_in?
+      if !current_supervisor.admin?
+        if !current_supervisor?(@supervisor)
+          redirect_to(root_url)
+          flash[:warning] = "Must be the correct Supervisor"
+        end
+      end
+    else
+      if logged_in?
+        if !current_user.admin?
+         redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
+        end
+      end
+    end
+  end
+  
+  def not_users
+    if logged_in?
+      if !current_user.admin?
+        redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
+      end
+    end
   end
   
 
