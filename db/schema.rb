@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20190926184716) do
     t.string "address"
     t.boolean "approved"
     t.string "remember_digest"
-    t.boolean "actived"
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"

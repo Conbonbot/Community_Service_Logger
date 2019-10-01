@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.31.2](https://github.com/heroku/cli/compare/v7.31.1...v7.31.2) (2019-09-30)
+
+
+### Bug Fixes
+
+* **cli:** uninstall old autocomplete plugin ([#1345](https://github.com/heroku/cli/issues/1345)) ([8dc20e7](https://github.com/heroku/cli/commit/8dc20e7))
+
+
+
+
+
+## [7.31.1](https://github.com/heroku/cli/compare/v7.31.0...v7.31.1) (2019-09-30)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
+# [7.31.0](https://github.com/heroku/cli/compare/v7.30.1...v7.31.0) (2019-09-30)
+
+
+### Bug Fixes
+
+* **pipelines-v5:** keep pipelines:setup v5 cmd ([#1340](https://github.com/heroku/cli/issues/1340)) ([9658f6a](https://github.com/heroku/cli/commit/9658f6a))
+
+
+### Features
+
+* **pipelines:** finishing converting pipelines plugin to oclif ([#1310](https://github.com/heroku/cli/issues/1310)) ([42adcbb](https://github.com/heroku/cli/commit/42adcbb))
+
+
+
+
+
 ## [7.30.1](https://github.com/heroku/cli/compare/v7.30.0...v7.30.1) (2019-09-24)
 
 **Note:** Version bump only for package heroku
