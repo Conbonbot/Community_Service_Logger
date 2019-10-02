@@ -63,6 +63,10 @@ class SupervisorsController < ApplicationController
          redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
         end
       end
+      if !logged_in?
+        redirect_to(root_url)
+        flash[:danger] = "Must be the Correct Supervisor"
+      end
     end
   end
   

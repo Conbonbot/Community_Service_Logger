@@ -49,12 +49,13 @@ Rails.application.routes.draw do
    resources :users
    resources :admin
    resources :supervisors
+   resources :account_activation, only: [:edit, :sup_edit]
    resources :account_activation do
        member do
            get "sup_edit"
        end
    end
-   resources :account_activation, only: [:edit, :sup_edit]
+   
    resources :hours, only: [:create]
    resources :password_resets, only: [:new, :create, :edit, :update]
    resources :supervisor_password_resets, only: [:new, :create, :edit, :update]
