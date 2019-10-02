@@ -54,7 +54,7 @@ class SupervisorsController < ApplicationController
       if !current_supervisor.admin?
         if !current_supervisor?(@supervisor)
           redirect_to(root_url)
-          flash[:warning] = "Must be the correct Supervisor"
+          flash[:warning] = "Must be the Correct Supervisor"
         end
       end
     else
