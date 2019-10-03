@@ -9,9 +9,12 @@ class SupervisorsController < ApplicationController
   def create
     @supervisor = Supervisor.create(supervisor_params)
     if @supervisor.save
-      @supervisor.send_activation_email
-      flash[:info] = "Please check your email to activate your account"
-      redirect_to root_url
+      #@supervisor.send_activation_email
+      #flash[:info] = "Please check your email to activate your account"
+      @supervisor.save
+      supervisor_log_in(@supervisor)
+      redirect_to @supervisor
+      flash[:success] = "Account Created and Activated"
     else
       render 'new'
     end
@@ -49,7 +52,7 @@ class SupervisorsController < ApplicationController
   private
   
   def correct_supervisor
-    @supevisor = Supervisor.find(params[:id]) 
+    @supervisor = Supervisor.find(params[:id]) 
     if supervisor_logged_in?
       if !current_supervisor.admin?
         if !current_supervisor?(@supervisor)
