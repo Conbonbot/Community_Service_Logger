@@ -54,11 +54,9 @@ class SupervisorsController < ApplicationController
   def correct_supervisor
     @supervisor = Supervisor.find(params[:id]) 
     if supervisor_logged_in?
-      if !current_supervisor.admin?
-        if !current_supervisor?(@supervisor)
-          redirect_to(root_url)
-          flash[:warning] = "Must be the Correct Supervisor"
-        end
+      if !current_supervisor?(@supervisor)
+        redirect_to(root_url)
+        flash[:warning] = "Must be the Correct Supervisor"
       end
     else
       if logged_in?
