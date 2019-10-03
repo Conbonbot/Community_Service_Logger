@@ -11,7 +11,7 @@ class SupervisorsController < ApplicationController
     if @supervisor.save
       #@supervisor.send_activation_email
       #flash[:info] = "Please check your email to activate your account"
-      @supervisor.save
+      @supervisor.activate
       supervisor_log_in(@supervisor)
       redirect_to @supervisor
       flash[:success] = "Account Created and Activated"
