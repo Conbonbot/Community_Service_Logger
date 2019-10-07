@@ -34,7 +34,7 @@ var myLineChart = new Chart(ctx, {
   data: {
       
     // This is what matters  
-    labels: ["Jansadf", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ["Jansadf", "Fedsafda", "Maadsfasr", "Apadsfasdffr", "Mayasdfasdf", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     datasets: [{
       label: "Hours",
       lineTension: 0.3,

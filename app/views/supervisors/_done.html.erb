@@ -1,0 +1,5 @@
+<tr>
+    <th><%= User.find(approve.user_id).first_name %> <%= User.find(approve.user_id).last_name %></th>
+    <th><%= pluralize(approve.content, 'Hour') %></th>
+    <th><%= time_ago_in_words(approve.created_at) %> ago</th>
+</tr>

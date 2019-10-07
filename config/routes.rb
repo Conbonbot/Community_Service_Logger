@@ -46,6 +46,7 @@ Rails.application.routes.draw do
    get    '/yes/:id',             to: 'supervisors#yes', :as => :new_yes_with_parameter
    get    '/no/:id',              to: 'supervisors#no', :as => :new_no_with_parameter
    get    'users/:user_id/admin', to: 'admin#students',  as: :user_admin
+   get    '/approved',            to: 'supervisors#approved'
    resources :users
    resources :admin
    resources :supervisors

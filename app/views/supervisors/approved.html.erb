@@ -1,0 +1,91 @@
+<% provide(:title, 'Approved Hours') %>
+<!DOCTYPE html>
+<html lang="en">
+    
+   <head>
+
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <!-- Bootstrap core CSS -->
+   <link href="/assets/startbootstrap-grayscale/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Custom fonts for this template -->
+   <link href="/assets/startbootstrap-grayscale/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+   
+   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+   <!-- Custom styles for this template -->
+   <link href="/assets/startbootstrap-grayscale/css/grayscale.min.css" rel="stylesheet">
+   
+   <link href="/assets/startbootstrap-sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+   
+   </head>
+   
+   
+   
+   
+     <header class="masthead text-center text-black d-flex">
+       <div class="container my-auto">
+        <div class="row">
+         <div class="col-lg-10 mx-auto">
+          <h1 class="text-uppercase">
+           <strong>Approved Hours</strong>
+          </h1>
+         </div>
+        </div>
+  
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Approved Hours from <%= Hour.where(email: @supervisor.email, approved: true).count %> People</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Hours</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Name</th>
+                      <th>Hours</th>
+                      <th>Date</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <%= render partial: 'done', collection: @approved %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          
+          </div>
+      </header>
+       
+      <!-- Bootstrap core JavaScript -->
+      <script src="/assets/startbootstrap-grayscale/vendor/jquery/jquery.min.js"></script>
+      <script src="/assets/startbootstrap-grayscale/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Plugin JavaScript -->
+      <script src="/assets/startbootstrap-grayscale/vendor/jquery-easing/jquery.easing.min.js"></script>
+      
+      <script src="/assets/startbootstrap-sb-admin-2/vendor/chart.js/Chart.min.js"></script>
+      <script src="/assets/startbootstrap-sb-admin-2/vendor/datatables/jquery.dataTables.min.js"></script>
+      <script src="/assets/startbootstrap-sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+      <!-- Custom scripts for this template -->
+      <script src="/assets/startbootstrap-grayscale/js/grayscale.min.js"></script>
+      <script src="/assets/startbootstrap-sb-admin-2/js/demo/datatables-demo.js"></script>
+   
+
+    
+</html>

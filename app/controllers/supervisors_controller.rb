@@ -20,6 +20,11 @@ class SupervisorsController < ApplicationController
     end
   end
   
+  def approved
+    @supervisor = current_supervisor
+    @approved = Hour.where(email: @supervisor.email, approved: true)
+  end
+  
   
   def show
     @supervisor = Supervisor.find(params[:id])
