@@ -1,6 +1,6 @@
 en:
   user_mailer:
     account_activation:
-      subject: 'You has signed up'
+      subject: 'You have signed up'
     password_reset:
       subject: 'You have reset your password'

@@ -7,7 +7,7 @@ class SupervisorPasswordResetsController < ApplicationController
   end
   
   def create
-    @supervisor = Supervisor.find_by(email: params[:password_reset][:email].downcase)
+    @supervisor = Supervisor.find_by(email: params[:supervisor_password_reset][:email].downcase)
     if @supervisor
       @supervisor.create_reset_digest
       @supervisor.send_password_reset_email
