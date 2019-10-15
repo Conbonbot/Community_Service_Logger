@@ -37,8 +37,8 @@
             <div class="container text-left">
               <%= form_for(:password_reset, url: password_resets_path) do |f| %>
           
-                <%= f.label :email %>
-                <%= f.email_field :email, class: 'form-control' %>
+                <%= f.label :student_id, "Student ID" %>
+                <%= f.text_field :student_id, class: 'form-control' %>
 
                 <%= f.submit "Submit", class: "btn btn-primary" %>
               <% end %>

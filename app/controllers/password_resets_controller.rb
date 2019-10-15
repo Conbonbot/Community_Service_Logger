@@ -7,14 +7,17 @@ class PasswordResetsController < ApplicationController
   end
   
   def create
-    @user = User.find_by(email: params[:password_reset][:email].downcase)
+    @user = User.find_by(student_id: params[:password_reset][:student_id])
     if @user
       @user.create_reset_digest
       @user.send_password_reset_email
-      flash[:info] = "Email sent with password reset instructions"
+      msg = "Email sent to "
+      msg += @user.email
+      msg += " with password reset instructions"
+      flash[:info] = msg
       redirect_to root_url
     else
-      flash.now[:danger] = "Email address not found"
+      flash.now[:danger] = "Student ID not found"
       render 'new'
     end
   end
@@ -43,7 +46,7 @@ class PasswordResetsController < ApplicationController
   end
   
   def get_user
-    @user = User.find_by(email: params[:email])
+    @user = User.find_by(email: params[:student_id])
   end
 
   # Confirms a valid user.
