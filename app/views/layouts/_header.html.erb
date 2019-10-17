@@ -17,6 +17,11 @@
                 <a class="nav-link js-scroll-trigger" href="/admin">Admin</a>
               </li>
             <% end %>
+            <% if current_supervisor.try(:admin?) %>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="/admin">Admin</a>
+              </li>
+            <% end %>
             <% if !current_user.nil? %>
               <% if !logged_in? %>
                   <li class="nav-item">
