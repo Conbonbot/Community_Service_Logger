@@ -94,8 +94,14 @@ class AdminController < ApplicationController
         flash[:warning] = "Must be admin"
         redirect_to(root_url) 
       end
+    elsif supervisor_logged_in?
+    redirect_to(root_url) unless current_supervisor.admin?
+    if !current_supervisor.admin?
+      flash[:warning] = "Must be admin"
+      redirect_to(root_url)
+    end
     else
-      redirect_to(user_login_path)
+      redirect_to(supervisor_login_path)
       flash[:warning] = "Please Log in"
     end
   end

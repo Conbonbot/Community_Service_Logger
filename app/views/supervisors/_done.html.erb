@@ -1,7 +1,7 @@
-<% @approved.each do |approved| %>
-    <tr>    
-        <th><%= User.find(approved.user_id).first_name %> <%= User.find(approved.user_id).last_name %></th>
-        <th><%= pluralize(approved.content, 'Hour') %></th>
-        <th><%= time_ago_in_words(approved.created_at) %> ago</th>
-    </tr>
+<% @approved.each do |approve| %>
+<tr>
+    <th><%= User.find(approve.user_id).first_name %> <%= User.find(approve.user_id).last_name %></th>
+    <th><%= pluralize(approve.content, 'Hour') %></th>
+    <th><%= time_ago_in_words(approve.created_at) %> ago</th>
+</tr>
 <% end %>
