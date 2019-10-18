@@ -32,7 +32,7 @@ var ctx = document.getElementById("TotalChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Bruh", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "after", "okay"],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Fev"],
     datasets: [{
       label: "Hours",
       lineTension: 0.3,

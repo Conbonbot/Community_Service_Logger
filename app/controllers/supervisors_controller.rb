@@ -25,6 +25,9 @@ class SupervisorsController < ApplicationController
     @approved = Hour.where(email: @supervisor.email, approved: true)
   end
   
+  def done
+  end
+  
   
   def show
     @supervisor = Supervisor.find(params[:id])
