@@ -6,10 +6,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
    <%= stylesheet_link_tag "custom" %>
-    <%= render 'layouts/header' %>
+   <% if current_page?(controller: 'admin') %>
+     <%= render 'layouts/admin_header' %>
+   <% else %>
+     <%= render 'layouts/header' %>
+   <% end %>
    <%= render 'layouts/shim' %>
    
    <%= favicon_link_tag asset_path('image-name.ico') %>
+   
   </head>
   <body>
     <div class="container">

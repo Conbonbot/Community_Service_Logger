@@ -2,6 +2,7 @@ class SupervisorsController < ApplicationController
   before_action :correct_supervisor, only: [:show]
   before_action :not_users
   
+  
   def new
     @supervisor = Supervisor.new
   end
