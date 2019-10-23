@@ -6,6 +6,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
    <%= stylesheet_link_tag "custom" %>
+   <% if current_page?(controller: 'sessions', action: 'create') %>
+     <%= stylesheet_link_tag "sessions" %>
+   <% end %>
    <% if current_page?(controller: 'admin') %>
      <%= render 'layouts/admin_header' %>
    <% else %>
