@@ -15,7 +15,6 @@ class HoursController < ApplicationController
              @supervisor.send_supervisor_email(current_user)
              flash[:info] = "Wating for approve"
              redirect_to current_user
-             debugger
        else
           render 'new'
        end

@@ -33,6 +33,8 @@ Rails.application.routes.draw do
    get    '/admin/sup_tables',    to: 'admin#suptables'
    get    '/admin/sup_charts',    to: 'admin#supcharts'
    get    '/admin/tables',        to: 'admin#tables'
+   get    '/admin/approve_stu',   to: 'admin#activate_stu'
+   get    '/admin/yes/:id',       to: 'admin#yes', :as => :new_admin_yes_with_parameter
    get    '/login',               to: 'sessions#pre'
    get    '/user_login',          to: 'sessions#new'
    post   '/user_login',          to: 'sessions#create'

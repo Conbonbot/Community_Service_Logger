@@ -65,6 +65,10 @@ class AdminController < ApplicationController
     end 
   end
   
+  def activate_stu
+    @users = User.where(activated: false)
+  end
+  
   private
   
   # Return the total approved hours of a User 
