@@ -8,10 +8,13 @@ class HoursController < ApplicationController
    def create
        @hour = current_user.hours.build(hour_params)
        @hour.approved = nil
-       @hour.email = @hour.email.downcase 
+       @hour.email = @hour.email.downcase
        @supervisor = Supervisor.new
        if @hour.save
-             @supervisor = Supervisor.new(email: @hour.email)
+             @supervisor = Supervisor.find_by(email: @hour.email)
+             if @supervisor.nil?
+                @supervisor = Supervisor.new(email: @hour.email)
+             end
              @supervisor.send_supervisor_email(current_user)
              flash[:info] = "Wating for approve"
              redirect_to current_user
