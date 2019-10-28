@@ -15,6 +15,16 @@
     }
   </style>
 
+    <script language="javascript">
+        function formatPhoneNumber(obj){
+            number = obj.value.replace(/\D/g,'');
+            char = { 0: '(', 3: ')', 6: '-'};
+            obj.value = '';
+            for(var i = 0; i < number.length; i++){
+                obj.value += (char[i] || '') + number[i];
+            }
+        }
+    </script>
   <!-- Bootstrap core CSS -->
   <link href="/assets/startbootstrap-grayscale/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -86,10 +96,10 @@
                 <br>
                 <%= f.email_field :address,  class: 'form-control'  %></p>
                 
-                 <p class="text-white mb-5">Phone Number (Ex: 818-555-5555)
+                 <p class="text-white mb-5">Phone Number (EX: 8185555555)
                                  <br>
                 <br>
-                <%= f.email_field :telephone, class: 'form-control'  %></p>
+                <%= f.telephone_field :telephone, {maxlength: 10, :onblur => "formatPhoneNumber(this);", class: 'form-control'}  %></p>
                 
                  <p class="text-white mb-5">Password (At least 6 characters)
                                  <br>

@@ -9,7 +9,7 @@ class Supervisor < ApplicationRecord
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, format: {with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
     validates :address, presence: true
-    VALID_PHONE_REGEX = /\A[2-9]\d{2}-\d{3}-\d{4}\z/
+    VALID_PHONE_REGEX = /((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/
     validates :telephone, presence: true, format: {with: VALID_PHONE_REGEX}
     validates :role, presence: true
     validates :organization, presence: true
