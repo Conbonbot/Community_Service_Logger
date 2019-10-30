@@ -6,7 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
    <%= stylesheet_link_tag "custom" %>
-   <% if current_page?(controller: 'admin') %>
+   <% if controller_name == 'admin'%>
      <%= render 'layouts/admin_header' %>
    <% else %>
      <%= render 'layouts/header' %>
