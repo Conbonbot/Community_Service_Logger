@@ -27,7 +27,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 var stuff = gon.values
-var ctx = document.getElementById("WeeklyAreaChart");
+var ctx = document.getElementById("YearlyAreaChart");
 var WeeklyAreaChart = new Chart(ctx, {
   type: 'line',
   data: {
