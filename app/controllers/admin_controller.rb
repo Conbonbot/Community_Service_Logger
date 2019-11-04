@@ -31,11 +31,11 @@ class AdminController < ApplicationController
   
   def charts
     @values = Array.new(12)
-    yeah = 1
+    yeah = 12
     for i in 0..@values.count-1
       @stuff = Hour.where(approved: true, updated_at: (yeah).month.ago..(yeah-1).month.ago)
       @values[i] = mon_total(@stuff)
-      yeah += 1
+      yeah -= 1
     end
     gon.values = @values
   end
