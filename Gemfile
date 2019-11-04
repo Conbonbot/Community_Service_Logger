@@ -24,6 +24,7 @@ gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
 gem 'jquery-datatables-rails', '~> 3.4'
 gem "roo", "~> 2.8.0"
 gem 'newrelic_rpm'
+gem 'gon', '~> 6.2'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

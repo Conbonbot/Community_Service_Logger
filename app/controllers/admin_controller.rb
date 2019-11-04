@@ -30,7 +30,14 @@ class AdminController < ApplicationController
   end
   
   def charts
-    @s = Array.new(4,3)
+    @values = Array.new(12)
+    yeah = 1
+    for i in 0..@values.count-1
+      @stuff = Hour.where(approved: true, updated_at: (yeah).month.ago..(yeah-1).month.ago)
+      @values[i] = mon_total(@stuff)
+      yeah += 1
+    end
+    gon.values = @values
   end
   
   def tables
@@ -77,6 +84,15 @@ class AdminController < ApplicationController
     hours = Hour.where(user_id: user.id, approved: true)
     for x in 0..hours.count-1
       tot += hours[x].content
+    end
+    return tot
+  end
+  
+  # Returns the amount of hours from a given set
+  def mon_total(array)
+    tot = 0
+    for i in 0..array.count-1
+      tot += array[i].content
     end
     return tot
   end
