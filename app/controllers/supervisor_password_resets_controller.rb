@@ -38,7 +38,7 @@ class SupervisorPasswordResetsController < ApplicationController
   private
   
   def supervisor_params
-    params.require(:supervisor).permit(:password, :password_confirmation)
+    params.require(:supervisor).permit(:id, :first_name, :last_name, :email, :address, :telephone, :role, :organization, :password, :password_confirmation, :access_code,)
   end
   
   def get_supervisor
