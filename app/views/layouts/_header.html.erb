@@ -22,9 +22,12 @@
                 <a class="nav-link js-scroll-trigger" href="/admin">Admin</a>
               </li>
             <% end %>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="/pre_login">Log in</a>
-              </li>
+            <% if !current_user.nil? %>
+              <% if !logged_in? %>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="/pre_login">Log in</a>
+                </li>
+              <% end %>
               <% if logged_in? %>
                 <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="/new_hour">New Hour</a>
@@ -42,6 +45,7 @@
                     </li>
                  </ul>
                 </li>
+                <% end %>
                 <% end %>
             <% if !current_supervisor.nil? %>
               <% if supervisor_logged_in? %>
@@ -62,6 +66,11 @@
                  </li>
               <% end %>
               <% end %>
+              <% if current_supervisor.nil? && current_user.nil? %>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="/pre_login">Log in</a>
+                  </li>
+               <% end %>
           </ul>
         </div>
       </div>
