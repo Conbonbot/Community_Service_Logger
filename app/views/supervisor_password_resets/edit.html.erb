@@ -38,6 +38,8 @@
                
                  <%= render 'shared/error_messages', object: f.object %>
                  
+                 <%= hidden_field_tag :email, @supervisor.email %>
+                 
                  <%= f.label :password, "Password" %>
                  <%= f.password_field :password, class: 'form-control' %>
                  
