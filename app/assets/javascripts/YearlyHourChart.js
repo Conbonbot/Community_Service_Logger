@@ -27,13 +27,14 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 var stuff = gon.values
+var times = gon.times
 var ctx = document.getElementById("YearlyAreaChart");
 var WeeklyAreaChart = new Chart(ctx, {
   type: 'line',
   data: {
       
     // This is what matters  
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: times,
     datasets: [{
       label: "Hours",
       lineTension: 0.3,

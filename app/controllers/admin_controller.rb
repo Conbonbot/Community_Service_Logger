@@ -37,6 +37,13 @@ class AdminController < ApplicationController
       @values[i] = mon_total(@stuff)
       yeah -= 1
     end
+    @times = Array.new(12)
+    counter = 11
+    for i in 0..@times.count-1
+      @times[i] = counter.months.ago.strftime("%B")
+      counter -= 1
+    end
+    gon.times = @times
     gon.values = @values
   end
   
