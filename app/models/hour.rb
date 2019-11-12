@@ -2,10 +2,12 @@ class Hour < ApplicationRecord
   belongs_to :user
   belongs_to :supervisor
   attr_accessor :supervisor
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   accepts_nested_attributes_for :supervisor 
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :content, :inclusion => 1..100
+  validates :email, length: { maximum: 255}, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   validates :approved, presence: true, allow_nil: true, default: nil
   
   def approve_hour
