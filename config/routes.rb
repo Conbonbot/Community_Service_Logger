@@ -8,10 +8,6 @@ Rails.application.routes.draw do
 
   get 'password_resets/edit'
 
-  get 'supervisors/new'
-  get 'supervisors/home'
-  get 'supervisors/hours'
-
    get 'sessions/new'
    #get 'admin/home'
    
@@ -21,8 +17,6 @@ Rails.application.routes.draw do
    get    '/formB',               to: 'supervisors#new'
    get    '/new_hour',            to: 'hours#new'
    post   '/new_hour',            to: 'hours#create'
-   get    '/hours',               to: 'users#hours'
-   get    '/formC',               to: 'users#hours'
    get    '/admin',               to: 'admin#home'
    get    '/admin/freshmen',      to: 'admin#freshmen'
    get    '/admin/sophomores',    to: 'admin#sophomores'

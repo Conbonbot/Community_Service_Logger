@@ -9,15 +9,14 @@ class HoursController < ApplicationController
        @hour = current_user.hours.build(hour_params)
        @hour.approved = nil
        @hour.email = @hour.email.downcase
-       @supervisor = Supervisor.new
        if @hour.save
-             @supervisor = Supervisor.find_by(email: @hour.email)
-             if @supervisor.nil?
-                @supervisor = Supervisor.new(email: @hour.email)
-             end
-             @supervisor.send_supervisor_email(current_user)
-             flash[:info] = "Wating for approve"
-             redirect_to current_user
+          @supervisor = Supervisor.find_by(email: @hour.email)
+          if @supervisor.nil?
+            @supervisor = Supervisor.new(email: @hour.email)
+          end
+          @supervisor.send_supervisor_email(current_user)
+          flash[:info] = "Wating for approve"
+          redirect_to current_user
        else
           render 'new'
        end

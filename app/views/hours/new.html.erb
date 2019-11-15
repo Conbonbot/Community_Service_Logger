@@ -56,16 +56,11 @@
                          
                          <%= hour_builder.label :content, "Hours to input" %>
                          <%= hour_builder.text_field :content, class: 'form-control' %>
-                         
-                         <%= hour_builder.simple_fields_for @supervisor do |supervisor_builder| %>
-                           
-                          <%= render 'shared/error_messages', object: supervisor_builder.object %>
-                       
-                         
+                   
+                        
                            <%= hour_builder.label :email, "Email of supervisor" %>
                            <%= hour_builder.text_field :email, class: 'form-control' %>
-                         
-                           <% end %>
+                           
 
                          <%= hour_builder.submit 'Log Hours', class: 'btn btn-success' %>
                          <% end %>
