@@ -1,6 +1,11 @@
 en:
-  user_mailer:
-    account_activation:
-      subject: 'You have signed up'
-    password_reset:
-      subject: 'You have reset your password'
+  activerecord:
+    attributes:
+      user:
+        email: "Email address"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "is required"

@@ -16,14 +16,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      #@user.send_activation_email
-      #flash[:info] = "Please check your email to activate your account"
-      #redirect_to root_url
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account"
+      redirect_to root_url
+      debugger
       # Use lower code until Mailer is fixed
-      @user.activate
-      log_in(@user)
-      redirect_to @user
-      flash[:success] = "Account Created and Activated"
+      #@user.activate
+      #log_in(@user)
+      #redirect_to @user
+      #flash[:success] = "Account Created and Activated"
     else
       render 'new'
     end
