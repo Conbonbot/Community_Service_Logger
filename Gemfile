@@ -25,6 +25,7 @@ gem 'jquery-datatables-rails', '~> 3.4'
 gem "roo", "~> 2.8.0"
 gem 'newrelic_rpm'
 gem 'gon', '~> 6.2'
+gem 'mail', '~> 2.7'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
