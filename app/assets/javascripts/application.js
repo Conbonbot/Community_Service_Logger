@@ -15,7 +15,6 @@
 //= require jquery
 //= require bootstrap
 //= require total_hours_chart
-//= require YearlyHourChart
 //= require rails-ujs
 //= require turbolinks
 //= require_tree
