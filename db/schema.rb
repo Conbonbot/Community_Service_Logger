@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190926184716) do
+ActiveRecord::Schema.define(version: 20191203194815) do
 
   create_table "hours", force: :cascade do |t|
-    t.integer "content"
+    t.decimal "content", precision: 5, scale: 2
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20190926184716) do
     t.string "address"
     t.boolean "approved"
     t.string "remember_digest"
+    t.boolean "actived"
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"
