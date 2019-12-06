@@ -101,11 +101,13 @@ module SessionsHelper
     # Returns the total hours of a logged in user
     def total
          tot = 0
-         hours = Hour.where(user_id: current_user.id, approved: true)
-         for x in 0..hours.count-1
-           tot += hours[x].content
+         if logged_in?
+             hours = Hour.where(user_id: current_user.id, approved: true)
+             for x in 0..hours.count-1
+               tot += hours[x].content
+             end
          end
-        return tot
+            return tot
     end
     
     
