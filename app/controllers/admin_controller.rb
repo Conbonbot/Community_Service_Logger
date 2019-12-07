@@ -1,3 +1,4 @@
+require 'roo'
 class AdminController < ApplicationController
   before_action :admin_user
   
@@ -14,6 +15,53 @@ class AdminController < ApplicationController
     end
     for i in 0..@hours_month.size()-1
       @hm += @hours_month[i].content
+    end
+  end
+  
+  def transfer
+    xlsx = Roo::Spreadsheet.open('./Copy of Community Service 2015-2016.xlsx')
+    seniors= xlsx.sheet('SENIORS 2020')
+    @students = []
+    i = 0
+    seniors.each do |senior|
+      id = senior[0]
+      last_name = senior[1]
+      first_name = senior[2]
+      hours = senior[6]
+      if hours.nil?
+        hours = 0
+      end
+      student = [id,last_name,first_name,hours]
+      @students[i] = student
+      i = i + 1
+    end
+    for i in 0..@students.size()-1
+      for j in 0..@students[i].size()-1
+        if @students[i][j].nil?
+          debugger
+        end
+      end
+      email = @students[i][2].downcase.to_s[0] + @students[i][1].downcase.to_s[0..2] + @students[i][0].to_s[2..5] + "@stu.gusd.net"
+      password = "gusd" + @students[i][0].to_s
+      user = User.new(first_name: @students[i][2].to_s,
+                  last_name: @students[i][1].to_s,
+                  email: email,
+                  student_id: @students[i][0],
+                  grade: "2020",
+                  created_at: Time.zone.now,
+                  password: password,
+                  password_confirmation: password,
+                  activated: true,
+                  activated_at: Time.zone.now
+                  )
+      if user.valid?
+        user.save
+        if !(@students[i][3] == 0)
+          user.hours.create(content: @students[i][3], user_id: user.id, created_at: Time.zone.now, approved: true, email: "old_system@CVHS.com")
+        end
+      else
+        debugger
+      end
     end
   end
   
@@ -84,6 +132,10 @@ class AdminController < ApplicationController
   end
   
   private
+  
+  def user_params
+    params.require(:user).permit(:id, :first_name, :last_name, :email, :student_id, :grade, :password, :password_confirmation)
+  end
   
   # Return the total approved hours of a User 
   def total(user)

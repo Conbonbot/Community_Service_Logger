@@ -6,9 +6,10 @@ class Hour < ApplicationRecord
   accepts_nested_attributes_for :supervisor 
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
-  validates :content, :inclusion => 1..100
+  validates :content, :inclusion => 1..1000
   validates :email, length: { maximum: 255}, format: { with: VALID_EMAIL_REGEX }
   validates :approved, presence: true, allow_nil: true, default: nil
+  validates :organization, presence: true
   
   def approve_hour
     update_attribute(:approved, true)

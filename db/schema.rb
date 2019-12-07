@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191203194815) do
+ActiveRecord::Schema.define(version: 20191207021311) do
 
   create_table "hours", force: :cascade do |t|
     t.decimal "content", precision: 5, scale: 2
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20191203194815) do
     t.boolean "approved"
     t.integer "supervisor_id"
     t.string "email"
+    t.string "organization"
     t.index ["supervisor_id"], name: "index_hours_on_supervisor_id"
     t.index ["user_id", "created_at"], name: "index_hours_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_hours_on_user_id"

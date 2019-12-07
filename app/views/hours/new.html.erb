@@ -54,12 +54,15 @@
                       <%= form_for @hour, url: hours_path do |hour_builder| %>
                          <%= render 'shared/error_messages', object: hour_builder.object %>
                          
-                         <%= hour_builder.label :content, "Hours to input" %>
+                         <%= hour_builder.label :content, "Hours to input (can be a decimal)" %>
                          <%= hour_builder.text_field :content, class: 'form-control' %>
                    
                         
                            <%= hour_builder.label :email, "Email of supervisor" %>
                            <%= hour_builder.text_field :email, class: 'form-control' %>
+                           
+                           <%= hour_builder.label :organization, "Organization" %>
+                           <%= hour_builder.text_field :organization, class: 'form-control' %>
                            
 
                          <%= hour_builder.submit 'Log Hours', class: 'btn btn-success' %>
