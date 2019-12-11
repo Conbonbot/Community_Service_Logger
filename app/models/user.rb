@@ -55,7 +55,6 @@ class User < ApplicationRecord
     
     # Sends activation email
     def send_activation_email
-        debugger
         if self.activation_token.nil?
             self.update_attribute(:activation_digest, nil)
             self.activation_token = User.new_token
