@@ -26,7 +26,7 @@ class HoursController < ApplicationController
    private
    
    def hour_params
-      params.require(:hour).permit(:content, :email, # :organization,
+      params.require(:hour).permit(:content, :email, :organization,
       supervisor: [:id,:first_name, :email, :telephone])
    end
    

@@ -62,10 +62,10 @@
                            <%= hour_builder.label :email, "Email of supervisor" %>
                            <%= hour_builder.text_field :email, class: 'form-control' %>
                            
-                           <!--
-                           < %= hour_builder.label :organization, "Organization" %>
-                           < %= hour_builder.text_field :organization, class: 'form-control' %>
-                           -->
+                           
+                           <%= hour_builder.label :organization, "Organization" %>
+                           <%= hour_builder.text_field :organization, class: 'form-control' %>
+                          
 
                          <%= hour_builder.submit 'Log Hours', class: 'btn btn-success' %>
                          <% end %>
