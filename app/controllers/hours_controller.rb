@@ -11,7 +11,7 @@ class HoursController < ApplicationController
    end
    
    def full_delete
-       Hour.find_by(params[:id]).delete
+       Hour.find(params[:id]).delete
        redirect_to current_user
        flash[:success] = "Request deleted"
    end
