@@ -1,8 +1,12 @@
 <tr>
-    <th><%= hour.id %></th>
+    <% if hour.approved? %>
+        <th><%= hour.id %></th>
+    <% else %>
+        <th><%= link_to hour.id, new_hour_delete_with_parameter_path(hour) %></th>
+    <% end %>
     <th><%= pluralize(hour.content, 'Hour') %></th>
     <th><%= time_ago_in_words(hour.created_at) %> ago</th>
-    <% if hour.approved? == true%>
+    <% if hour.approved? == true %>
        <th>Approved</th>
     <% elsif hour.approved.nil? == true %>
        <th>Pending</th>

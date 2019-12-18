@@ -1,8 +1,19 @@
 class HoursController < ApplicationController
+    before_action :correct_delete, only: [:delete]
    
    def new
       @hour = Hour.new
       @supervisor = Supervisor.new
+   end
+   
+   def delete
+      @hour = Hour.find(params[:id])
+   end
+   
+   def full_delete
+       Hour.find_by(params[:id]).delete
+       redirect_to current_user
+       flash[:success] = "Request deleted"
    end
    
    def create
@@ -28,6 +39,10 @@ class HoursController < ApplicationController
    def hour_params
       params.require(:hour).permit(:content, :email, :organization,
       supervisor: [:id,:first_name, :email, :telephone])
+   end
+   
+   def correct_delete
+       redirect_to(root_url) unless Hour.find(params[:id]) == current_user.hours.find(params[:id])
    end
    
    

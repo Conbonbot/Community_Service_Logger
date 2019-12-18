@@ -17,6 +17,8 @@ Rails.application.routes.draw do
    get    '/formB',               to: 'supervisors#new'
    get    '/new_hour',            to: 'hours#new'
    post   '/new_hour',            to: 'hours#create'
+   get    '/delete/:id',          to: 'hours#delete', :as => :new_hour_delete_with_parameter
+   post   '/full_delete/:id',     to: 'hours#full_delete', :as => :new_delete_with_parameter
    get    '/transfer',            to: 'admin#transfer'
    get    '/admin',               to: 'admin#home'
    get    '/admin/freshmen',      to: 'admin#freshmen'
