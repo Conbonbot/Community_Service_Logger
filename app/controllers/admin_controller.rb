@@ -25,44 +25,84 @@ class AdminController < ApplicationController
     i = 0
     seniors.each do |senior|
       id = senior[0]
+      next if id.nil?
       last_name = senior[1]
       first_name = senior[2]
       hours = senior[6]
-      if hours.nil?
-        hours = 0
-      end
+      next if hours.nil?
       student = [id,last_name,first_name,hours]
       @students[i] = student
       i = i + 1
     end
-    for i in 0..@students.size()-1
-      for j in 0..@students[i].size()-1
-        if @students[i][j].nil?
-          debugger
+    juniors= xlsx.sheet('Juniors 2021')
+    i = @students.count
+    juniors.each do |junior|
+      id = junior[0]
+      next if id.nil?
+      last_name = junior[1]
+      first_name = junior[2]
+      hours = junior[5]
+      next if hours.nil?
+      student = [id, last_name, first_name, hours]
+      @students[i] = student
+      i = i + 1
+    end
+    xls  = Roo::Spreadsheet.open('./CS 2022 & 2023.xlsx')
+    sophomores = xls.sheet('Sophomores 2022')
+    i = @students.count
+    sophomores.each do |sophomore|
+      next if sophomore[0].index(',').nil? or sophomore[0].index('(').nil? or sophomore[0].index(')').nil?
+      last_name = sophomore[0][0..sophomore[0].index(',')-1]
+      first_name = sophomore[0][sophomore[0].index(',')+2..sophomore[0].index('(')-1]
+      id = sophomore[0][sophomore[0].index('(')+1..sophomore[0].index(")")-1]
+      hours = sophomore[5]
+      next if hours.nil?
+      student = [id, last_name, first_name, hours]
+      @students[i] = student
+      i = i + 1
+    end
+    freshmen = xls.sheet('Freshmen 2023')
+    i = @students.count
+    freshmen.each do |freshman|
+      next if freshman[5].nil?
+      student = [freshman[0], freshman[1], freshman[2], freshman[5]]
+      @students[i] = student
+      i = i + 1
+    end
+    @final_students = []
+    index = 0
+    for i in 0..@students.count()-1
+      if !(User.find_by(student_id: @students[i][0])).nil?
+        if User.find_by(student_id: @students[i][0]).hours.find_by(email: "old_system@CVHS.com").nil?
+          @final_students[index] = @students[i]
+          index = index + 1
         end
-      end
-      email = @students[i][2].downcase.to_s[0] + @students[i][1].downcase.to_s[0..2] + @students[i][0].to_s[2..5] + "@stu.gusd.net"
-      password = "gusd" + @students[i][0].to_s
-      user = User.new(first_name: @students[i][2].to_s,
-                  last_name: @students[i][1].to_s,
-                  email: email,
-                  student_id: @students[i][0],
-                  grade: "2020",
-                  created_at: Time.zone.now,
-                  password: password,
-                  password_confirmation: password,
-                  activated: true,
-                  activated_at: Time.zone.now
-                  )
-      if user.valid?
-        user.save
-        if !(@students[i][3] == 0)
-          user.hours.create(content: @students[i][3], user_id: user.id, created_at: Time.zone.now, approved: true, email: "old_system@CVHS.com")
-        end
-      else
-        debugger
       end
     end
+    @pass = []
+    for i in 0..@final_students.count()-1
+      @pass[i] = @final_students[i][0].to_s + " " + @final_students[i][3].to_s
+    end
+    params[:final] = @pass
+  end
+  
+  def full_transfer
+    @final = params[:format]
+    @split = (0..@final.length).find_all { |i| @final[i,1] == "/"}
+    @id_h = []
+    start = -1
+    for i in 0..@split.count()
+      if @split[i].nil?
+        @split[i] = @final.length
+      end
+      @id_h[i] = @final[start+1..@split[i]-1]
+      start = @split[i]
+    end
+    for i in 0..@id_h.count()-1
+      User.find_by(student_id: @id_h[i][0..@id_h[i].index(" ")-1]).hours.create(content: @id_h[i][@id_h[i].index(" ")+1..], created_at: Time.zone.now, approved: true, email: "old_system@CVHS.com", organization: "Old System")
+    end
+    redirect_to admin_home_path
+    flash[:success] = "Hours Transfered"
   end
   
   def freshmen
