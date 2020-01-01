@@ -99,7 +99,8 @@ class AdminController < ApplicationController
       start = @split[i]
     end
     for i in 0..@id_h.count()-1
-      User.find_by(student_id: @id_h[i][0..@id_h[i].index(" ")-1]).hours.create(content: @id_h[i][@id_h[i].index(" ")+1..], created_at: Time.zone.now, approved: true, email: "old_system@CVHS.com", organization: "Old System")
+      debugger
+      User.find_by(student_id: @id_h[i][0..@id_h[i].index(" ")-1]).hours.create(content: @id_h[i][@id_h[i].index(" ")+1..@id_h[i].length-1], created_at: Time.zone.now, approved: true, email: "old_system@CVHS.com", organization: "Old System")
     end
     redirect_to admin_home_path
     flash[:success] = "Hours Transfered"
