@@ -20,7 +20,7 @@ Rails.application.routes.draw do
    get    '/delete/:id',              to: 'hours#delete', :as => :new_hour_delete_with_parameter
    post   '/full_delete/:id',         to: 'hours#full_delete', :as => :new_delete_with_parameter
    get    '/admin/transfer',          to: 'admin#transfer'
-   post   '/admin/full_transfer/:id', to: 'admin#full_transfer', :as => :full_transfer
+   get    '/admin/full_transfer/:id', to: 'admin#full_transfer', :as => :full_transfer
    get    '/admin',                   to: 'admin#home', :as => :admin_home
    get    '/admin/freshmen',          to: 'admin#freshmen'
    get    '/admin/sophomores',        to: 'admin#sophomores'
