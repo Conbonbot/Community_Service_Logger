@@ -36,7 +36,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Transfer Hours?</h1>
-            <%= button_to 'Yes', full_transfer_path(@pass), :method => :post %>
+            <%= button_to 'Yes', get_full_transfer_path(@pass), :method => :post %>
             <!-- MAYBE?<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
           </div>
 
@@ -56,6 +56,7 @@
                       <th>Last Name</th>
                       <th>Student ID</th>
                       <th>Hours to tranfer</th>
+                      <th>Transfer?</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -64,6 +65,7 @@
                       <th>Last Name</th>
                       <th>Student ID</th>
                       <th>Hours to tranfer</th>
+                      <th>Transfer?</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -73,6 +75,7 @@
                       <th><%= student[1] %></th>
                       <th><%= student[0] %></th>
                       <th><%= student[3] %></th>
+                      <th><%= button_to 'Yes', post_full_transfer_path(student[4]), :method => :post %></th>
                     </tr>
                     <% end %>
                   </tbody>

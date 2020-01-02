@@ -79,6 +79,9 @@ class AdminController < ApplicationController
         end
       end
     end
+    for i in 0..@final_students.count()-1
+      @final_students[i][4] = @final_students[i][0].to_s + " " + @final_students[i][3].to_s
+    end
     @pass = []
     for i in 0..@final_students.count()-1
       @pass[i] = @final_students[i][0].to_s + " " + @final_students[i][3].to_s
@@ -101,7 +104,7 @@ class AdminController < ApplicationController
     for i in 0..@id_h.count()-1
       User.find_by(student_id: @id_h[i][0..@id_h[i].index(" ")-1]).hours.create(content: @id_h[i][@id_h[i].index(" ")+1..@id_h[i].length-1], created_at: Time.zone.now, approved: true, email: "old_system@CVHS.com", organization: "Old System")
     end
-    redirect_to admin_home_path
+    redirect_to transfer_path
     flash[:success] = "Hours Transfered"
   end
   
