@@ -1,30 +1,18 @@
-ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
-require 'rails/test_help'
-require "minitest/reporters"
+ENV["RAILS_ENV"] = "test"
+require File.expand_path("../../config/environment", __FILE__)
+require "rails/test_help"
+require "minitest/rails"
 Minitest::Reporters.use!
+
+# To add Capybara feature tests add `gem "minitest-rails-capybara"`
+# to the test group in the Gemfile and uncomment the following:
+# require "minitest/rails/capybara"
+
+# Uncomment for awesome colorful output
+# require "minitest/pride"
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
-
-  # Returns true if a test user is logged in
-  def is_logged_in?
-    !session[:user_id].nil?
-  end
-  
-  # Logs in as a particular user
-  def log_in_as(user)
-    session[:user_id] = user.id
-  end
-end
-
-class ActionDispatch::IntegrationTest
-  
-  # Logs in as a particular user
-  def log_in_as(user, student_id: '123456', remember_me: '1')
-    post login_path, params: { session: { student_id: user.student_id,
-                                          password: 'password',
-                                          remember_me: remember_me } }
-  end
+  # Add more helper methods to be used by all tests here...
 end
