@@ -1,7 +1,7 @@
 desc "This task is called by the Heroku scheduler add-on"
 task :update_feed => :environment do
     puts "Updating Feed..."
-    @users = User.all
+    @users = User.all.order(grade: :asc)
     @users.each do |user|
         puts "Class of: " + user.grade.to_s + ", Student ID: " + user.student_id.to_s
     end
