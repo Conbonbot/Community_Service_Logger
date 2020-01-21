@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.36.3](https://github.com/heroku/cli/compare/v7.36.2...v7.36.3) (2020-01-21)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
+## [7.36.2](https://github.com/heroku/cli/compare/v7.36.1...v7.36.2) (2020-01-21)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
+## [7.36.1](https://github.com/heroku/cli/compare/v7.36.0...v7.36.1) (2020-01-21)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
+# [7.36.0](https://github.com/heroku/cli/compare/v7.35.1...v7.36.0) (2020-01-20)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
 ## [7.35.1](https://github.com/heroku/cli/compare/v7.35.0...v7.35.1) (2019-12-19)
 
 **Note:** Version bump only for package heroku
