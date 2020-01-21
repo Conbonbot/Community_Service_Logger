@@ -11,8 +11,17 @@ task :change_students => :environment do
     
 end
 
-task :hehe => :environment do
-    for i in 0..1000
-        puts "hello"
+task :check_time => :environment do
+    puts Time.now
+    if Time.now.strftime("%m") == 7
+        if Time.now.strftime("%d") == 22
+            puts "Time to Change students"
+            # increase level of students and delete seniors
+        else
+            puts "July, but not the 22nd"
+        end
+        
+    else
+        puts "Not July"
     end
 end
