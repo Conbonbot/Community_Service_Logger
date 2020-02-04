@@ -200,10 +200,10 @@
     term-img "^2.1.0"
     urijs "1.19.1"
 
-"@heroku-cli/plugin-apps@^7.36.3":
-  version "7.36.3"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-apps/-/plugin-apps-7.36.3.tgz#c6001c8ac3dd0edd9ba52f0bb95b0fe8283ef2fd"
-  integrity sha512-T5ylV9ykRBz5w/Ve2X42CwXgh7p+LClnxi4o0mMDDYaox+xQ9fUuZhaDd3rBDVF6cuYT0MaTSAj/5xbamT6pvw==
+"@heroku-cli/plugin-apps@^7.37.0":
+  version "7.37.0"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-apps/-/plugin-apps-7.37.0.tgz#195beee129ff3c4f731a8097a3719857af1a959d"
+  integrity sha512-7r5rlrbJGd8SuQnzNz5aAyNADa/mfmYDDCwj0SPgHqY9n8CIHFlOs8eDd5fyNPbj5kM5TfDVVOuc7h0tisiQlg==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/command" "^8.2.14"
@@ -211,6 +211,7 @@
     "@oclif/command" "^1"
     "@oclif/config" "^1"
     cli-ux "^5.3.2"
+    inquirer "^7.0.1"
     shell-escape "^0.2.0"
     tslib "^1"
     urijs "^1.19.1"
@@ -394,10 +395,10 @@
     lodash "^4.17.11"
     lodash.flatten "^4.4.0"
 
-"@heroku-cli/plugin-pg-v5@^7.36.0":
-  version "7.36.0"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-pg-v5/-/plugin-pg-v5-7.36.0.tgz#e1373e125cd366909cffc465dfec4848efe2f800"
-  integrity sha512-S2M5D8x4Y+7kmSZMZUxvBF0QMt9IqtOvq9yYn1oWiCGXTrxMICULVKc58CyWjMWlZxmIzgFjgNawOU1yFhGl6A==
+"@heroku-cli/plugin-pg-v5@^7.37.0":
+  version "7.37.0"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-pg-v5/-/plugin-pg-v5-7.37.0.tgz#cae01975e53647c5a90821ea5908ada0fd1e1eb0"
+  integrity sha512-2/ex9SOpfWnnmkVEK5c2VI2E9Gue4erc/UHmvp53gYkRZRdSZ60uCsXtGUQixLMQb8pXwR7eeXFp7zsTrdwNXA==
   dependencies:
     "@heroku-cli/plugin-addons" "^1.2.29"
     bytes "^3.1.0"
@@ -4287,6 +4288,25 @@ inquirer@^7.0.0:
     strip-ansi "^5.1.0"
     through "^2.3.6"
 
+inquirer@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-7.0.1.tgz#13f7980eedc73c689feff3994b109c4e799c6ebb"
+  integrity sha512-V1FFQ3TIO15det8PijPLFR9M9baSlnRs9nL7zWu1MNVA2T9YVl9ZbrHJhYs7e9X8jeMZ3lr2JH/rdHFgNCBdYw==
+  dependencies:
+    ansi-escapes "^4.2.1"
+    chalk "^2.4.2"
+    cli-cursor "^3.1.0"
+    cli-width "^2.0.0"
+    external-editor "^3.0.3"
+    figures "^3.0.0"
+    lodash "^4.17.15"
+    mute-stream "0.0.8"
+    run-async "^2.2.0"
+    rxjs "^6.5.3"
+    string-width "^4.1.0"
+    strip-ansi "^5.1.0"
+    through "^2.3.6"
+
 into-stream@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/into-stream/-/into-stream-3.1.0.tgz#96fb0a936c12babd6ff1752a17d05616abd094c6"
@@ -6598,6 +6618,13 @@ rxjs@^6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.4.0.tgz#f3bb0fe7bda7fb69deac0c16f17b50b0b8790504"
   integrity sha512-Z9Yfa11F6B9Sg/BK9MnqnQ+aQYicPLtilXBp2yUtDt2JRCE0h26d33EnfO3ZxoNxG0T92OUucP3Ct7cpfkdFfw==
+  dependencies:
+    tslib "^1.9.0"
+
+rxjs@^6.5.3:
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.3.tgz#510e26317f4db91a7eb1de77d9dd9ba0a4899a3a"
+  integrity sha512-wuYsAYYFdWTAnAaPoKGNhfpWwKZbJW+HgAJ+mImp+Epl7BG8oNWBCTyRM8gba9k4lk8BgWdoYm21Mo/RYhhbgA==
   dependencies:
     tslib "^1.9.0"
 

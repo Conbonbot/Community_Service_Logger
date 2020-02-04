@@ -1,1 +1,1 @@
-require "time"
+User.all
