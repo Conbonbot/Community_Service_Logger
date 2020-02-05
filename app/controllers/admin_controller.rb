@@ -18,6 +18,8 @@ class AdminController < ApplicationController
     end
   end
   
+
+  
   def transfer
     xlsx = Roo::Spreadsheet.open('./Copy of Community Service 2015-2016.xlsx')
     seniors= xlsx.sheet('SENIORS 2020')
@@ -106,6 +108,9 @@ class AdminController < ApplicationController
     end
     redirect_to transfer_path
     flash[:success] = "Hours Transfered"
+  end
+  
+  def show
   end
   
   def freshmen

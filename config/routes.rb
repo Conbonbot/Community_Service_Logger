@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
 
    get 'sessions/new'
-   #get 'admin/home'
    
    root 'users#new'
    get    '/formA',                   to: 'users#new'
