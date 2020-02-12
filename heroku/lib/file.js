@@ -5,8 +5,6 @@ const path = tslib_1.__importStar(require("path"));
 const deps_1 = tslib_1.__importDefault(require("./deps"));
 const debug = require('debug')('heroku-cli:file');
 function exists(f) {
-    // debug('exists', f)
-    // @ts-ignore
     return deps_1.default.fs.pathExists(f);
 }
 exports.exists = exists;
@@ -28,8 +26,8 @@ async function remove(file) {
 }
 exports.remove = remove;
 async function ls(dir) {
-    let files = await deps_1.default.fs.readdir(dir);
-    let paths = files.map(f => path.join(dir, f));
+    const files = await deps_1.default.fs.readdir(dir);
+    const paths = files.map(f => path.join(dir, f));
     return Promise.all(paths.map(path => deps_1.default.fs.stat(path).then(stat => ({ path, stat }))));
 }
 exports.ls = ls;
@@ -38,16 +36,17 @@ async function removeEmptyDirs(dir) {
     try {
         files = await ls(dir);
     }
-    catch (err) {
-        if (err.code === 'ENOENT')
+    catch (error) {
+        if (error.code === 'ENOENT')
             return;
-        throw err;
+        throw error;
     }
-    let dirs = files.filter(f => f.stat.isDirectory()).map(f => f.path);
-    for (let p of dirs.map(removeEmptyDirs))
+    const dirs = files.filter(f => f.stat.isDirectory()).map(f => f.path);
+    // eslint-disable-next-line no-await-in-loop
+    for (const p of dirs.map(removeEmptyDirs))
         await p;
     files = await ls(dir);
-    if (!files.length)
+    if (files.length === 0)
         await remove(dir);
 }
 exports.removeEmptyDirs = removeEmptyDirs;

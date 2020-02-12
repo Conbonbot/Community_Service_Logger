@@ -12,11 +12,12 @@ export default class UserConfig {
     private saving?;
     private _init;
     constructor(config: Config.IConfig);
-    install: string;
-    readonly skipAnalytics: boolean;
+    get install(): string;
+    set install(install: string);
+    get skipAnalytics(): boolean;
     init(): Promise<void>;
-    private readonly debug;
-    private readonly file;
+    private get debug();
+    private get file();
     private save;
     private read;
     private migrate;

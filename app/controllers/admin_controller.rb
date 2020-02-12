@@ -18,7 +18,12 @@ class AdminController < ApplicationController
     end
   end
   
-
+  def levels
+    @users = User.all
+    for i in 0..@users.count()-1
+      @users[i].update_attribute(:level, stu_level(@users[i]))
+    end
+  end
   
   def transfer
     xlsx = Roo::Spreadsheet.open('./Copy of Community Service 2015-2016.xlsx')
@@ -183,6 +188,15 @@ class AdminController < ApplicationController
   
   def user_params
     params.require(:user).permit(:id, :first_name, :last_name, :email, :student_id, :grade, :password, :password_confirmation)
+  end
+  
+  # Returns the Level (Fr, So, Ju, Se) of a student
+  def stu_level(user)
+    @user = user
+    time = Time.zone.now
+    cutoff = DateTime.new(0, 7, 22, 0, 0, 0)
+    debugger
+    
   end
   
   # Return the total approved hours of a User 

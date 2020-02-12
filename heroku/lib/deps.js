@@ -1,5 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const cache = {};
+function fetch(s) {
+    if (!cache[s]) {
+        cache[s] = require(s);
+    }
+    return cache[s];
+}
 exports.default = {
     get fs() {
         return fetch('fs-extra');
@@ -14,10 +21,3 @@ exports.default = {
         return fetch('./user-config').default;
     },
 };
-const cache = {};
-function fetch(s) {
-    if (!cache[s]) {
-        cache[s] = require(s);
-    }
-    return cache[s];
-}

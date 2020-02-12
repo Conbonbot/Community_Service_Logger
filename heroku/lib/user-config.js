@@ -4,6 +4,7 @@ const tslib_1 = require("tslib");
 const path = tslib_1.__importStar(require("path"));
 const deps_1 = tslib_1.__importDefault(require("./deps"));
 class UserConfig {
+    // eslint-disable-next-line no-useless-constructor
     constructor(config) {
         this.config = config;
         this.needsSave = false;
@@ -28,7 +29,7 @@ class UserConfig {
         await this.saving;
         if (this._init)
             return this._init;
-        return (this._init = (async () => {
+        this._init = (async () => {
             this.debug('init');
             this.body = (await this.read()) || { schema: 1 };
             if (!this.body.schema) {
@@ -43,7 +44,8 @@ class UserConfig {
             this.skipAnalytics;
             if (this.needsSave)
                 await this.save();
-        })());
+        })();
+        return this._init;
     }
     get debug() {
         return require('debug')('heroku:user_config');
@@ -67,19 +69,19 @@ class UserConfig {
         await this.migrate();
         try {
             this.mtime = await this.getLastUpdated();
-            let body = await deps_1.default.file.readJSON(this.file);
+            const body = await deps_1.default.file.readJSON(this.file);
             return body;
         }
-        catch (err) {
-            if (err.code !== 'ENOENT')
-                throw err;
+        catch (error) {
+            if (error.code !== 'ENOENT')
+                throw error;
             this.debug('not found');
         }
     }
     async migrate() {
         if (await deps_1.default.file.exists(this.file))
             return;
-        let old = path.join(this.config.configDir, 'config.json');
+        const old = path.join(this.config.configDir, 'config.json');
         if (!await deps_1.default.file.exists(old))
             return;
         this.debug('moving config into new place');
@@ -95,9 +97,9 @@ class UserConfig {
             const stat = await deps_1.default.file.stat(this.file);
             return stat.mtime.getTime();
         }
-        catch (err) {
-            if (err.code !== 'ENOENT')
-                throw err;
+        catch (error) {
+            if (error.code !== 'ENOENT')
+                throw error;
         }
     }
     genInstall() {

@@ -27,12 +27,12 @@ export default class AnalyticsCommand {
     http: typeof deps.HTTP;
     constructor(config: Config.IConfig);
     record(opts: RecordOpts): Promise<any>;
-    readonly url: string;
-    readonly authorizationToken: string | undefined;
-    readonly netrcToken: string | undefined;
-    readonly usingHerokuAPIKey: boolean;
-    readonly netrcLogin: string | undefined;
-    readonly user: string | undefined;
+    get url(): string;
+    get authorizationToken(): string | undefined;
+    get netrcToken(): string | undefined;
+    get usingHerokuAPIKey(): boolean;
+    get netrcLogin(): string | undefined;
+    get user(): string | undefined;
     _acAnalytics(id: string): Promise<number>;
     private init;
 }

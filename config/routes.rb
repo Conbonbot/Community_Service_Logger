@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
    get 'sessions/new'
    
+   get '/admin/levels', to: 'admin#levels'
+   
    root 'users#new'
    get    '/formA',                   to: 'users#new'
    post   '/formA',                   to: 'users#create'

@@ -37,15 +37,13 @@ class AnalyticsCommand {
                 valid: true,
                 language: 'node',
                 install_id: this.userConfig.install,
-            }
+            },
         };
         const data = Buffer.from(JSON.stringify(analyticsData)).toString('base64');
         if (this.authorizationToken) {
             return this.http.get(`${this.url}?data=${data}`, { headers: { authorization: `Bearer ${this.authorizationToken}` } }).catch(error => debug(error));
         }
-        else {
-            return this.http.get(`${this.url}?data=${data}`).catch(error => debug(error));
-        }
+        return this.http.get(`${this.url}?data=${data}`).catch(error => debug(error));
     }
     get url() {
         return process.env.HEROKU_ANALYTICS_URL || 'https://backboard.heroku.com/hamurai';
@@ -58,7 +56,7 @@ class AnalyticsCommand {
     }
     get usingHerokuAPIKey() {
         const k = process.env.HEROKU_API_KEY;
-        return !!(k && k.length > 0);
+        return Boolean(k && k.length > 0);
     }
     get netrcLogin() {
         return netrc_parser_1.default.machines[command_1.vars.apiHost] && netrc_parser_1.default.machines[command_1.vars.apiHost].login;
@@ -71,8 +69,8 @@ class AnalyticsCommand {
     async _acAnalytics(id) {
         if (id === 'autocomplete:options')
             return 0;
-        let root = path.join(this.config.cacheDir, 'autocomplete', 'completion_analytics');
-        let meta = {
+        const root = path.join(this.config.cacheDir, 'autocomplete', 'completion_analytics');
+        const meta = {
             cmd: deps_1.default.file.exists(path.join(root, 'command')),
             flag: deps_1.default.file.exists(path.join(root, 'flag')),
             value: deps_1.default.file.exists(path.join(root, 'value')),
