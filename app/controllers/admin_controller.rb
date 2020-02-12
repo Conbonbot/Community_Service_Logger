@@ -18,7 +18,12 @@ class AdminController < ApplicationController
     end
   end
   
-
+  def levels
+    @users = User.all
+    for i in 0..@users.count()-1
+      @users[i].update_attribute(:level, stu_level(@users[i]))
+    end
+  end
   
   def transfer
     xlsx = Roo::Spreadsheet.open('./Copy of Community Service 2015-2016.xlsx')
@@ -183,6 +188,43 @@ class AdminController < ApplicationController
   
   def user_params
     params.require(:user).permit(:id, :first_name, :last_name, :email, :student_id, :grade, :password, :password_confirmation)
+
+  end
+  
+  # Returns the Level (Fr, So, Ju, Se) of a student
+  def stu_level(user)
+    # Use https://docs.google.com/spreadsheets/d/1VaK7odVTlnk6R28_4tIZQXeWpnGQ_6kE2jw-iWw6rcI/edit#gid=0 as a resource
+    @user = user
+    time = Time.zone.now
+    cutoff = DateTime.new(0, 7, 22, 0, 0, 0)
+    lev = ""
+    if(time.strftime("%m") < cutoff.strftime("%m")) # Before July
+      if(time.strftime("%d") < cutoff.strftime("%d")) # Before the 22nd
+        if (@user.grade.to_i - time.strftime("%Y").to_i == 0) # Senior
+          lev = "Se"
+        elsif(@user.grade.to_i - time.strftime("%Y").to_i == 1) # Junior
+         lev = "Ju"
+        elsif(@user.grade.to_i - time.strftime("%Y").to_i == 2) # Sophomore
+         lev = "So"
+        elsif(@user.grade.to_i - time.strftime("%Y").to_i == 3) # Freshman
+         lev = "Fr"
+        end
+      end
+    elsif(time.strftime("%m") >= cutoff.strftime("%m")) # During or after July
+      if(time.strftime("%d")) >= cutoff.strftime("%d") # During or after the 22nd
+        if (@user.grade.to_i - time.strftime("%Y").to_i == 1) # Senior
+          lev = "Se"
+        elsif(@user.grade.to_i - time.strftime("%Y").to_i == 2) # Junior
+          lev = "Ju"
+        elsif(@user.grade.to_i - time.strftime("%Y").to_i == 3) # Sophomore
+          lev = "So"
+        elsif(@user.grade.to_i - time.strftime("%Y").to_i == 4) # Freshman
+            lev = "Fr"
+        end
+      end
+    end
+    return lev
+
   end
   
   # Return the total approved hours of a User 
