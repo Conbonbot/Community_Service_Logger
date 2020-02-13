@@ -227,15 +227,6 @@ class AdminController < ApplicationController
 
   end
   
-  # Returns the Level (Fr, So, Ju, Se) of a student
-  def stu_level(user)
-    @user = user
-    time = Time.zone.now
-    cutoff = DateTime.new(0, 7, 22, 0, 0, 0)
-    debugger
-    
-  end
-  
   # Return the total approved hours of a User 
   def total(user)
     tot = 0
