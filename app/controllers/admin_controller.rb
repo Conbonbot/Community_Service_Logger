@@ -222,9 +222,10 @@ class AdminController < ApplicationController
             lev = "Fr"
         end
       end
+    else
+      lev = "N/A"
     end
     return lev
-
   end
   
   # Return the total approved hours of a User 
