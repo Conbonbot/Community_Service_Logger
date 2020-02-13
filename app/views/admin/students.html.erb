@@ -55,6 +55,7 @@
                       <th>Last Name</th>
                       <th>Student ID</th>
                       <th>Class Of</th>
+                      <th>Grade</th>
                       <th>Approved Hours</th>
                     </tr>
                   </thead>
@@ -64,6 +65,7 @@
                       <th>Last Name</th>
                       <th>Student ID</th>
                       <th>Class Of</th>
+                      <th>Grade</th>
                       <th>Approved Hours</th>
                     </tr>
                   </tfoot>
@@ -74,6 +76,7 @@
                       <th><%= student[0].last_name %></th>
                       <th><%= link_to student[0].student_id, user_path(student) %></th>
                       <th><%= student[0].grade %></th>
+                      <th><%= student[0].level %></th>
                       <th><%= student[1] %></th>
                     </tr>
                     <% end %>

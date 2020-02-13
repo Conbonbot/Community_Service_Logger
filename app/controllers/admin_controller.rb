@@ -119,15 +119,55 @@ class AdminController < ApplicationController
   end
   
   def freshmen
+    @students = User.where(level: "Fr")
+    @totals = Array.new(1)
+    for i in 0..@students.size()-1
+      @totals[i] = total(@students[i])
+    end
+    @stu_hours = Array.new(@students.size()) {Array.new(2, 0)}
+    for i in 0..@students.size()-1
+      @stu_hours[i][0] = @students[i]
+      @stu_hours[i][1] = @totals[i]
+    end
   end
   
   def sophomores
+    @students = User.where(level: "So")
+    @totals = Array.new(1)
+    for i in 0..@students.size()-1
+      @totals[i] = total(@students[i])
+    end
+    @stu_hours = Array.new(@students.size()) {Array.new(2, 0)}
+    for i in 0..@students.size()-1
+      @stu_hours[i][0] = @students[i]
+      @stu_hours[i][1] = @totals[i]
+    end
   end
   
   def juniors
+    @students = User.where(level: "Ju")
+    @totals = Array.new(1)
+    for i in 0..@students.size()-1
+      @totals[i] = total(@students[i])
+    end
+    @stu_hours = Array.new(@students.size()) {Array.new(2, 0)}
+    for i in 0..@students.size()-1
+      @stu_hours[i][0] = @students[i]
+      @stu_hours[i][1] = @totals[i]
+    end
   end
   
   def seniors
+    @students = User.where(level: "Se")
+    @totals = Array.new(1)
+    for i in 0..@students.size()-1
+      @totals[i] = total(@students[i])
+    end
+    @stu_hours = Array.new(@students.size()) {Array.new(2, 0)}
+    for i in 0..@students.size()-1
+      @stu_hours[i][0] = @students[i]
+      @stu_hours[i][1] = @totals[i]
+    end
   end
   
   def charts
@@ -208,6 +248,8 @@ class AdminController < ApplicationController
          lev = "So"
         elsif(@user.grade.to_i - time.strftime("%Y").to_i == 3) # Freshman
          lev = "Fr"
+        else
+          lev = "N/A"
         end
       end
     elsif(time.strftime("%m") >= cutoff.strftime("%m")) # During or after July
@@ -220,6 +262,8 @@ class AdminController < ApplicationController
           lev = "So"
         elsif(@user.grade.to_i - time.strftime("%Y").to_i == 4) # Freshman
             lev = "Fr"
+        else
+          lev = "N/A"
         end
       end
     else
