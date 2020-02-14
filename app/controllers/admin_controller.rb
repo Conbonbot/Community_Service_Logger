@@ -129,6 +129,10 @@ class AdminController < ApplicationController
       @stu_hours[i][0] = @students[i]
       @stu_hours[i][1] = @totals[i]
     end
+    @total = 0.0
+    for i in 0..@stu_hours.count()-1
+      @total += @stu_hours[i][1]
+    end
   end
   
   def sophomores
@@ -141,6 +145,10 @@ class AdminController < ApplicationController
     for i in 0..@students.size()-1
       @stu_hours[i][0] = @students[i]
       @stu_hours[i][1] = @totals[i]
+    end
+    @total = 0.0
+    for i in 0..@stu_hours.count()-1
+      @total += @stu_hours[i][1]
     end
   end
   
@@ -155,6 +163,10 @@ class AdminController < ApplicationController
       @stu_hours[i][0] = @students[i]
       @stu_hours[i][1] = @totals[i]
     end
+    @total = 0.0
+    for i in 0..@stu_hours.count()-1
+      @total += @stu_hours[i][1]
+    end
   end
   
   def seniors
@@ -167,6 +179,10 @@ class AdminController < ApplicationController
     for i in 0..@students.size()-1
       @stu_hours[i][0] = @students[i]
       @stu_hours[i][1] = @totals[i]
+    end
+    @total = 0.0
+    for i in 0..@stu_hours.count()-1
+      @total += @stu_hours[i][1]
     end
   end
   
