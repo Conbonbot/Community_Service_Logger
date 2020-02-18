@@ -11,6 +11,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( custom.scss )
 Rails.application.config.assets.precompile += %w( favicon.ico )
 Rails.application.config.assets.precompile += %w( YearlyHourChart.js )
+Rails.application.config.assets.precompile += %w( HourDistributionChart.js )
 Rails.application.config.assets.precompile += %w( sessions.css )
 Rails.root.join('app', 'assets', 'images', 'favicon.ico')
 # Precompile additional assets.

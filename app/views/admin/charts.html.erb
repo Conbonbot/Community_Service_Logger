@@ -52,7 +52,45 @@
                   Approved Hour Distribution from the year
               </div>
           </div>
-           
+          
+          
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Hour Distribution</h6>
+                  <div class="dropdown no-arrow">
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2">
+                    <canvas id="myPieChart"></canvas>
+                  </div>
+                  <div class="mt-4 text-center small">
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-primary"></i> Freshmen
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-success"></i> Sophomores
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-info"></i> Juniors
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-success"></i> Seniors
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          
+                
+               
 
         </div>
         <!-- /.container-fluid -->
@@ -99,6 +137,12 @@
   <!-- Page level custom scripts -->
   <!-- Use these for Charts -->
   <script src="<%= asset_path 'YearlyHourChart' %>"></script>
+  <div class="card-body">
+    <div class="chart-area">
+      <canvas id="HourDistributionChart"></canvas>
+    </div>
+  </div>
+  <script src="<%= asset_path 'HourDistributionChart' %>"></script>
   <div class="card-body">
     <div class="chart-area">
       <canvas id="YearlyAreaChart"></canvas>

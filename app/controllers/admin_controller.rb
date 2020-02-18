@@ -187,6 +187,7 @@ class AdminController < ApplicationController
   end
   
   def charts
+    # Hour Area Chart
     @values = Array.new(12)
     yeah = 12
     for i in 0..@values.count-1
@@ -202,6 +203,34 @@ class AdminController < ApplicationController
     end
     gon.times = @times
     gon.values = @values
+    # Hour Distribution Pie Chart
+    @distribution = Array.new(4)
+    @freshmen = User.where(level: "Fr")
+    @sophomores = User.where(level: "So")
+    @juniors = User.where(level: "Ju")
+    @seniors = User.where(level: "Se")
+    fresh = 0.0
+    sopho = 0.0
+    junio = 0.0
+    senio = 0.0
+    for i in 0..@freshmen.count()-1
+      fresh += total(@freshmen[i]).to_i
+    end
+    for i in 0..@sophomores.count()-1
+      sopho += total(@sophomores[i]).to_i
+    end
+    for i in 0..@juniors.count()-1
+      junio += total(@juniors[i]).to_i
+    end
+    for i in 0..@seniors.count()-1
+      senio += total(@seniors[i]).to_i
+    end
+    @distribution[0] = fresh
+    @distribution[1] = sopho
+    @distribution[2] = junio
+    @distribution[3] = senio
+    gon.distribution = @distribution
+    
   end
   
   def tables
