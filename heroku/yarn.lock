@@ -181,10 +181,10 @@
     term-img "^2.1.0"
     urijs "1.19.1"
 
-"@heroku-cli/plugin-apps@^7.38.1":
-  version "7.38.1"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-apps/-/plugin-apps-7.38.1.tgz#40ffac98ecb98d0c341154381893e53440c1d42c"
-  integrity sha512-4tKNo/B8D/XVAtPXfvpasOJWPkeBltZUFXWDYNoFD3RjmTRpCmuRPjaCzrZqBZCU9vE3TYgomwvCrfsAWKI5+Q==
+"@heroku-cli/plugin-apps@^7.38.2":
+  version "7.38.2"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-apps/-/plugin-apps-7.38.2.tgz#2409fd33ef84d8b68a5bc7f77aee033b2e02742b"
+  integrity sha512-JABAFamKlRjEZTfhdultAVkjJsYTec7Sb5TNVvpSl/fayaocJCSudGIsqcCRedwvRrIvkDN6gQ5XBneXPBD5+Q==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/command" "^8.3.0"
