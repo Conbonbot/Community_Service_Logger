@@ -23,7 +23,7 @@
   
   <!-- DataTables css/js -->
   <link href="/assets/startbootstrap-sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-  <%= javascript_include_tag('HourDistributionChart.js') %>
+
   
 
 </head>
@@ -137,13 +137,13 @@
 
   <!-- Page level custom scripts -->
   <!-- Use these for Charts -->
-  <script src="<%= asset_path 'YearlyHourChart.js' %>"></script>
+  <script src="<%= asset_path 'YearlyHourChart' %>"></script>
   <div class="card-body">
     <div class="chart-area">
       <canvas id="YearlyHourChart"></canvas>
     </div>
   </div>
-  <script src="<%= asset_path 'HourDistributionChart.js' %>"></script>
+  <script src="<%= asset_path 'HourDistributionChart' %>"></script>
   <div class="card-body">
     <div class="chart-area">
       <canvas id="HourDistributionChart"></canvas>
