@@ -133,10 +133,10 @@ class AdminController < ApplicationController
     for i in 0..@stu_hours.count()-1
       @total += @stu_hours[i][1]
     end
-    count = 0
+    @count = 0
     for i in 0..@stu_hours.count()-1
       if @stu_hours[i][1] >= 100
-        count += 1
+        @count += 1
       end
     end
   end
@@ -156,10 +156,10 @@ class AdminController < ApplicationController
     for i in 0..@stu_hours.count()-1
       @total += @stu_hours[i][1]
     end
-    count = 0
+    @count = 0
     for i in 0..@stu_hours.count()-1
       if @stu_hours[i][1] >= 100
-        count += 1
+        @count += 1
       end
     end
   end
@@ -179,10 +179,10 @@ class AdminController < ApplicationController
     for i in 0..@stu_hours.count()-1
       @total += @stu_hours[i][1]
     end
-    count = 0
+    @count = 0
     for i in 0..@stu_hours.count()-1
       if @stu_hours[i][1] >= 100
-        count += 1
+        @count += 1
       end
     end
   end
