@@ -363,7 +363,7 @@ class AdminController < ApplicationController
   # Returns the total hours a supervisor has approved
   def sup_total(supervisor)
       tot = 0
-      hours = Hour.where(email: supervisor.email)
+      hours = Hour.where(email: supervisor.email, approved: true)
       for i in 0..hours.count-1
           tot +=hours[i].content
       end
