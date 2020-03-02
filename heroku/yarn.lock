@@ -162,10 +162,10 @@
     lodash "^4.17.10"
     printf "0.3.0"
 
-"@heroku-cli/plugin-apps-v5@^7.38.1":
-  version "7.38.1"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-apps-v5/-/plugin-apps-v5-7.38.1.tgz#c1c0d82029d78663cae9dae240499de9de74bbf4"
-  integrity sha512-A/yuN7v/OEfhyA/o211Y+dIAgBv9Ta6l2DRa0wp7ppJ57au0zOvZT1lZSeuGBsnYF6tVyXmaVJSAmVI5mYAeVA==
+"@heroku-cli/plugin-apps-v5@^7.39.0":
+  version "7.39.0"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-apps-v5/-/plugin-apps-v5-7.39.0.tgz#3b442703a8255e9d7f40379ec4fd2f23e412a644"
+  integrity sha512-d3uAD0LLN6qLgdiYI0aICd4xiWLJQ3GRkRcIMA+YzkPrkOTV27eAGk1/Co04GkkAUL0sF7b1UEWQsyd2p0MHvg==
   dependencies:
     "@heroku-cli/command" "^8.3.0"
     co "^4.6.0"
@@ -241,10 +241,10 @@
     "true-myth" "2.2.3"
     valid-url "^1.0.9"
 
-"@heroku-cli/plugin-certs-v5@^7.38.0":
-  version "7.38.0"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-certs-v5/-/plugin-certs-v5-7.38.0.tgz#1f20eb63ff23c9a36e65a959c7e14b51098e09b2"
-  integrity sha512-nJj5HDKSvtPZLU1QAWjQ+S8Su31aRM/XIrvNq+FUUC6aba4n3w+yllKiuJ9GsmtHvixbZnUBR6p09n0uZ3Oyqg==
+"@heroku-cli/plugin-certs-v5@^7.39.0":
+  version "7.39.0"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-certs-v5/-/plugin-certs-v5-7.39.0.tgz#478495463a38f35a1371e9b633be55cbbe300a24"
+  integrity sha512-hqeQEUrN1gFvkOKyUtOkphZIB3EZ4dy/Rl8a3AQQ5NYrigEFX9qpIv6NEDCAy3MJeioAC3+nmqwSUMLh7s2GVw==
   dependencies:
     co "4.6.0"
     co-wait "0.0.0"
