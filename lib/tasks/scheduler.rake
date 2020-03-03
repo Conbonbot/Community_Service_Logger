@@ -17,6 +17,24 @@ task :check_time => :environment do
         if Time.now.strftime("%d") == 22
             puts "Time to Change students"
             # increase level of students and delete seniors
+            @users = User.all
+            for i in 0..@users.count()-1 
+                # Freshmen to Sophomore
+                if @users[i].level = "Fr"
+                
+                # Sophomore to Junior
+                elsif @users[i].level = "So"
+                
+                # Junior to Senior
+                elsif @users[i].level = "Ju"
+                
+                # Senior to DEAD
+                elsif @users[i].level = "Se"
+                
+                end
+                
+            end
+            
         else
             puts "July, but not the 22nd"
         end
