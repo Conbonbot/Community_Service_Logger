@@ -7,9 +7,6 @@ task :check_students => :environment do
     end
 end
 
-task :change_students => :environment do
-    
-end
 
 task :check_time => :environment do
     puts Time.now
