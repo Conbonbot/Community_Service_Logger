@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.39.5](https://github.com/heroku/cli/compare/v7.39.4...v7.39.5) (2020-04-22)
+
+
+### Bug Fixes
+
+* **cli:** dummy fix to trigger lerna ([40c0281](https://github.com/heroku/cli/commit/40c0281c5808e3f15bedfd0bd279ce56c0eb4a4d))
+
+
+
+
+
+## [7.39.4](https://github.com/heroku/cli/compare/v7.39.3...v7.39.4) (2020-04-22)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
+## [7.39.3](https://github.com/heroku/cli/compare/v7.39.2...v7.39.3) (2020-04-15)
+
+
+### Bug Fixes
+
+* update to a notarized version of node ([#1481](https://github.com/heroku/cli/issues/1481)) ([a01c03c](https://github.com/heroku/cli/commit/a01c03cf45b8d02477754da382112c4905d91ecc))
+
+
+
+
+
+## [7.39.2](https://github.com/heroku/cli/compare/v7.39.1...v7.39.2) (2020-03-30)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
+## [7.39.1](https://github.com/heroku/cli/compare/v7.39.0...v7.39.1) (2020-03-19)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
 # [7.39.0](https://github.com/heroku/cli/compare/v7.38.2...v7.39.0) (2020-03-02)
 
 **Note:** Version bump only for package heroku

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
    get    '/admin/full_transfer/:id', to: 'admin#full_transfer', :as => :get_full_transfer
    post   '/admin/full_transfer/:id', to: 'admin#full_transfer', :as => :post_full_transfer
    get    '/admin',                   to: 'admin#home', :as => :admin_home
+   get    '/admin/spreadsheet',       to: 'admin#spreadsheet'
    get    '/admin/freshmen',          to: 'admin#freshmen'
    get    '/admin/sophomores',        to: 'admin#sophomores'
    get    '/admin/juniors',           to: 'admin#juniors'

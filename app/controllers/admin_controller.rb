@@ -1,4 +1,5 @@
 require 'roo'
+require 'spreadsheet'
 class AdminController < ApplicationController
   before_action :admin_user
   
@@ -113,6 +114,15 @@ class AdminController < ApplicationController
     end
     redirect_to transfer_path
     flash[:success] = "Hours Transfered"
+  end
+  
+  def spreadsheet
+    primary_row = ["Last Name", "First Name", "Student ID", "Hours", "Class of"]
+    spreadsheet = Spreadsheet::Workbook.new
+    spreadsheet.create_worksheet :name => 'All Students & Supervisors'
+    spreadsheet.worksheet(0).insert_row(0, primary_row)
+    spreadsheet.write('test.xls')
+    open_book = Spreadsheet.open('test.xls')
   end
   
   def show
