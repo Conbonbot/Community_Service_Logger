@@ -98,16 +98,14 @@ module SessionsHelper
         session.delete(:return_to)
     end
     
-    # Returns the total hours of a logged in user
+    # Returns the total hours of a user
     def total
          tot = 0
-         if logged_in?
              hours = Hour.where(user_id: current_user.id, approved: true)
              for x in 0..hours.count-1
                tot += hours[x].content
              end
-         end
-            return tot
+        return tot
     end
     
     

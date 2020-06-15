@@ -18,16 +18,16 @@ task :check_time => :environment do
             for i in 0..@users.count()-1 
                 # Freshmen to Sophomore
                 if @users[i].level = "Fr"
-                
+                    @users[i].update_attribute(:level, "So")
                 # Sophomore to Junior
                 elsif @users[i].level = "So"
-                
+                    @users[i].update_attribute(:level, "Ju")
                 # Junior to Senior
                 elsif @users[i].level = "Ju"
-                
+                    @users[i].update_attribute(:level, "Se")
                 # Senior to DEAD
                 elsif @users[i].level = "Se"
-                
+                    @users[i].delete
                 end
                 
             end

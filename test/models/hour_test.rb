@@ -8,7 +8,6 @@ class HourTest < ActiveSupport::TestCase
   
   test "should be valid" do
     assert @hour.valid?
-    debugger
   end
   
   test "user id should be present" do

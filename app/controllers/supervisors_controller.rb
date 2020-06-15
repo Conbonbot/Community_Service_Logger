@@ -75,8 +75,8 @@ class SupervisorsController < ApplicationController
         end
       end
       if !logged_in?
-        redirect_to(root_url)
-        flash[:danger] = "Must be the Correct Supervisor"
+        redirect_to(supervisor_login_path)
+        flash[:danger] = "Login as a Supervisor to access your account"
       end
     end
   end
