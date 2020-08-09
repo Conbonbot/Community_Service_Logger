@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.42.6](https://github.com/heroku/cli/compare/v7.42.5...v7.42.6) (2020-07-30)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
+## [7.42.5](https://github.com/heroku/cli/compare/v7.42.4...v7.42.5) (2020-07-20)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
+## [7.42.4](https://github.com/heroku/cli/compare/v7.42.3...v7.42.4) (2020-07-13)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
+## [7.42.3](https://github.com/heroku/cli/compare/v7.42.2...v7.42.3) (2020-07-09)
+
+
+### Bug Fixes
+
+* use inclusive terms ([#1553](https://github.com/heroku/cli/issues/1553)) ([3639297](https://github.com/heroku/cli/commit/36392971cba2a4e4e9077c4575626bfb89c5005a))
+
+
+
+
+
+## [7.42.2](https://github.com/heroku/cli/compare/v7.42.1...v7.42.2) (2020-06-22)
+
+**Note:** Version bump only for package heroku
+
+
+
+
+
 ## [7.42.1](https://github.com/heroku/cli/compare/v7.42.0...v7.42.1) (2020-06-05)
 
 **Note:** Version bump only for package heroku
@@ -414,7 +457,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **cli:** whitelist version env var warnings ([#1057](https://github.com/heroku/cli/issues/1057)) ([e71214d](https://github.com/heroku/cli/commit/e71214d))
+* **cli:** allow list of version env var warnings ([#1057](https://github.com/heroku/cli/issues/1057)) ([e71214d](https://github.com/heroku/cli/commit/e71214d))
 
 
 
