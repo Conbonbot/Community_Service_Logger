@@ -57,3 +57,10 @@ task :update_me => :environment do
     puts "Finished?"
     puts @main_user
 end
+
+task force_update_students => :environment do
+    @users = User.all
+    for user in @users
+        print(user)
+    end
+end
