@@ -40,3 +40,18 @@ task :check_time => :environment do
         puts "Not July"
     end
 end
+
+task :update_me => :environment do
+    @users = User.all
+    @main_user = @users.find_by(student_id: 326740)
+    puts @main_user
+    if @main_user.level == "Fr"
+        @main_user.update_attribute(:level, "So")
+    elsif @main_user.level == "So"
+        @main_user.update_attribute(:level, "Ju")
+    elsif @main_user.level == "Ju"
+        @main_user.update_attribute(:level, "Se")
+    elsif @main_user.level == "Se"
+        @main_user.delete
+    puts "Finished?"
+    puts @main_user
