@@ -62,5 +62,6 @@ task force_update_students => :environment do
     @users = User.all
     for user in @users
         print(user)
+        print(user.level)
     end
 end
