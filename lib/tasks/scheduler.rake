@@ -53,5 +53,7 @@ task :update_me => :environment do
         @main_user.update_attribute(:level, "Se")
     elsif @main_user.level == "Se"
         @main_user.delete
+    end
     puts "Finished?"
     puts @main_user
+end
