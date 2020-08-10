@@ -69,7 +69,7 @@ task :force_update_students => :environment do
         elsif user.level == "Ju"
             user.update_attribute(:levle, "Se")
         elsif user.level == "Se"
-            user.delete
+            user.destroy
         end
     end
 end
