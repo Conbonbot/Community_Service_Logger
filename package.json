@@ -26,8 +26,7 @@
     "startbootstrap-creative": "^6.0.3",
     "startbootstrap-grayscale": "^6.0.2",
     "startbootstrap-sb-admin-2": "^4.1.1",
-    "tooltip.js": "^1.3.2",
-    "yarn": "^1.22.4"
+    "tooltip.js": "^1.3.2"
   },
   "devDependencies": {
     "request": "^2.81.0",
