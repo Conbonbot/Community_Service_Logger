@@ -61,7 +61,15 @@ end
 task :force_update_students => :environment do
     @users = User.all
     for user in @users
-        print(user)
         print(user.level)
+        if user.level == "Fr"
+            user.update_attribute(:level, "So")
+        elsif user.level == "So"
+            user.update_attribute(:level, "Ju")
+        elsif user.level == "Ju"
+            user.update_attribute(:levle, "Se")
+        elsif user.level == "Se"
+            user.delete
+        end
     end
 end
