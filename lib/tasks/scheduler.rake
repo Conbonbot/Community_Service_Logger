@@ -15,19 +15,19 @@ task :check_time => :environment do
             puts "Time to Change students"
             # increase level of students and delete seniors
             @users = User.all
-            for i in 0..@users.count()-1 
+            for user in @users
                 # Freshmen to Sophomore
-                if @users[i].level = "Fr"
-                    @users[i].update_attribute(:level, "So")
+                if user.level == "Fr"
+                    user.update_attribute(:level, "So")
                 # Sophomore to Junior
-                elsif @users[i].level = "So"
-                    @users[i].update_attribute(:level, "Ju")
+                elsif user.level == "So"
+                    user.update_attribute(:level, "Ju")
                 # Junior to Senior
-                elsif @users[i].level = "Ju"
-                    @users[i].update_attribute(:level, "Se")
+                elsif user.level == "Ju"
+                    user.update_attribute(:level, "Se")
                 # Senior to DEAD
-                elsif @users[i].level = "Se"
-                    @users[i].delete
+                elsif user.level == "Se"
+                    user.destroy
                 end
                 
             end
@@ -67,7 +67,7 @@ task :force_update_students => :environment do
         elsif user.level == "So"
             user.update_attribute(:level, "Ju")
         elsif user.level == "Ju"
-            user.update_attribute(:levle, "Se")
+            user.update_attribute(:level, "Se")
         elsif user.level == "Se"
             user.destroy
         end
