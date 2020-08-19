@@ -1,6 +1,6 @@
 class SupervisorsController < ApplicationController
-  before_action :correct_supervisor, only: [:show]
-  #before_action :not_users
+  #before_action :correct_supervisor, only: [:show]
+  before_action :not_users
   
   
   def new
@@ -61,6 +61,7 @@ class SupervisorsController < ApplicationController
   private
   
   def correct_supervisor
+    byebug
     @supervisor = Supervisor.find(params[:id]) 
     if supervisor_logged_in?
       if !current_supervisor?(@supervisor)
@@ -81,15 +82,16 @@ class SupervisorsController < ApplicationController
     end
   end
   
-  
-  #def not_users
-  #  if logged_in?
-  #    if !current_user.admin?
-  #      redirect_to(root_url)
-  #      #redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
-  #    end
-  #  end
-  #end
+  def not_users
+    #byebug
+    if logged_in?
+      if !current_user.admin?
+        redirect_to(root_url)
+        flash[:danger] = "You are a student. Don't touch that 😡"
+        #redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
+      end
+    end
+  end
   
 
   

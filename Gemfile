@@ -29,6 +29,7 @@ gem 'gon', '~> 6.2'
 gem 'mail', '~> 2.7'
 gem 'rubyXL', '~> 3.3', '>= 3.3.21'
 
+
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
