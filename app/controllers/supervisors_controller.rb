@@ -1,5 +1,5 @@
 class SupervisorsController < ApplicationController
-  #before_action :correct_supervisor, only: [:show]
+  before_action :correct_supervisor, only: [:show]
   before_action :not_users
   
   
@@ -61,8 +61,7 @@ class SupervisorsController < ApplicationController
   private
   
   def correct_supervisor
-    byebug
-    @supervisor = Supervisor.find(params[:id]) 
+    @supervisor = Supervisor.find(params[:id])
     if supervisor_logged_in?
       if !current_supervisor?(@supervisor)
         redirect_to(root_url)
