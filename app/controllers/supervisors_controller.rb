@@ -62,7 +62,6 @@ class SupervisorsController < ApplicationController
   
   def correct_supervisor
     @supervisor = Supervisor.find(params[:id])
-    debugger
     if supervisor_logged_in?
       if !current_supervisor?(@supervisor)
         redirect_to(supervisor_login_path)
@@ -81,7 +80,6 @@ class SupervisorsController < ApplicationController
         flash[:danger] = "Login as a Supervisor to access your account"
       end
     end
-    debugger
   end
   
   def not_users
