@@ -62,19 +62,23 @@ class SupervisorsController < ApplicationController
   
   def correct_supervisor
     @supervisor = Supervisor.find(params[:id])
+    debugger
     if supervisor_logged_in?
+      debugger
       if !current_supervisor?(@supervisor)
         redirect_to(supervisor_login_path)
         flash[:warning] = "Must be the Correct Supervisor"
       end
     else
+      debugger
       if logged_in?
         if !current_user.admin?
           log_out
-          redirect_to(supervisor_login_path)
-         #redirect_to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', :overwrite_params => { :parm => 'foo' }
+          flash[:waring] = "You make me angry"
+          debugger
         end
       end
+      debugger
       if !logged_in?
         redirect_to(supervisor_login_path)
         flash[:danger] = "Login as a Supervisor to access your account"
