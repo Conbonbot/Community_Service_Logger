@@ -236,7 +236,7 @@ GEM
     sendgrid-ruby (6.3.4)
       ruby_http_client (~> 3.4)
     shellany (0.0.1)
-    simple_form (4.0.1)
+    simple_form (5.0.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     spreadsheet (1.2.6)
@@ -318,7 +318,7 @@ DEPENDENCIES
   sass-rails (= 5.0.6)
   selenium-webdriver (= 3.142.3)
   sendgrid-ruby
-  simple_form (= 4.0.1)
+  simple_form (= 5.0.0)
   spreadsheet (~> 1.1, >= 1.1.4)
   spring (= 2.0.2)
   spring-watcher-listen (= 2.0.1)
