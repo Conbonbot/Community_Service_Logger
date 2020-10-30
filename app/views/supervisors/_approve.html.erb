@@ -2,5 +2,6 @@
     <th><%= User.find(approve.user_id).first_name %> <%= User.find(approve.user_id).last_name %></th>
     <th><%= pluralize(approve.content, 'Hour') %></th>
     <th><%= time_ago_in_words(approve.created_at) %> ago</th>
+    <th><%= approve.organization %></th>
     <th><%= button_to "Yes", new_yes_with_parameter_path(approve.id), :method => :get , :hour => approve %><%= button_to "No", new_no_with_parameter_path(approve.id), :method => :get, :hour => approve %></th>
 </tr>
