@@ -60,7 +60,8 @@ class User < ApplicationRecord
             self.activation_token = User.new_token
             self.activation_digest = User.digest(activation_token)
         end
-        UserMailer.account_activation(self).deliver_now
+        debugger
+        UserMailer.account_activation(self).deliver_later
     end
     
     
@@ -80,6 +81,11 @@ class User < ApplicationRecord
     # Returns true if a password reset has expired.
     def password_reset_expired?
         reset_sent_at < 2.hours.ago
+    end
+
+    # Sends a test email
+    def send_test_email
+        UserMailer.test_email(self).deliver_later
     end
     
     private

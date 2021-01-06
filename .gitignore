@@ -45,3 +45,6 @@ config/secrets.yml.key
 node_modules
 sendgrid.env
 sendgrid.env
+sendgrid.env
+sendgrid.env
+sendgrid.env
