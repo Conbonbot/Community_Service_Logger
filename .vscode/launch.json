@@ -4,15 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
         {
-            "name": "Rails server",
-            "type": "Ruby",
+            "type": "pwa-chrome",
             "request": "launch",
-            "program": "${workspaceRoot}/bin/rails",
-            "args": [
-                "server"
-            ]
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }

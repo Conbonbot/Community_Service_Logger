@@ -61,7 +61,8 @@ class User < ApplicationRecord
             self.activation_digest = User.digest(activation_token)
         end
         debugger
-        UserMailer.account_activation(self).deliver_later
+        UserMailer.with(user: self, token: self.activation_token).account_activation.deliver_later
+        debugger
     end
     
     

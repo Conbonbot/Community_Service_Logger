@@ -1,10 +1,10 @@
 class UserMailer < ApplicationMailer
 
 
-  def account_activation(user)
-    @user = user
-    debugger
-    mail( :to => @user.email, :subject => 'Account Activation | Student' )
+  def account_activation(user: User, token: String)
+    @user = params[:user]
+    @user.activation_token = params[:token]
+    mail(to: @user.email, subject: 'Account Activation | Student' )
   end
 
   def password_reset(user)

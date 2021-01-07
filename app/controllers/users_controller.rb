@@ -18,7 +18,6 @@ class UsersController < ApplicationController
     if @user.save # <-- assigns the activation_token and digest
       @user.update_attribute(:level, determine_level(@user))
       @user.send_activation_email
-      debugger
       flash[:info] = "Please check your email to activate your account"
       redirect_to root_url
       #Use lower code until Mailer is fixed
