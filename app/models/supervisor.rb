@@ -45,12 +45,17 @@ class Supervisor < ApplicationRecord
     end
     
     def send_activation_email
-        SupervisorMailer.account_activation(self).deliver_now
+        if self.activation_token.nil?
+            self.update_attribute(:activation_digest, nil)
+            self.activation_token = Supervisor.new_token
+            self.activation_digest = Supervisor.digest(activation_token)
+        end
+        SupervisorMailer.account_activation(supervisor: self, token: self.activation_token).deliver_later
     end
     
     # Sends an email to the supervisor
     def send_supervisor_email(user)
-        SupervisorMailer.supervisor_hour(self, user).deliver_now
+        SupervisorMailer.supervisor_hour(self, user).deliver_later
     end
     
     def create_reset_digest
@@ -60,7 +65,7 @@ class Supervisor < ApplicationRecord
     end
     
     def send_password_reset_email
-        SupervisorMailer.password_reset(self).deliver_now
+        SupervisorMailer.password_reset(self).deliver_later
     end
 
     def remember

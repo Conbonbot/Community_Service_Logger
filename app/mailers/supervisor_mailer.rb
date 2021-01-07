@@ -1,7 +1,8 @@
 class SupervisorMailer < ApplicationMailer
 
-  def account_activation(supervisor)
-    @supervisor = supervisor
+  def account_activation(supervisor: Supervisor, token: String)
+    @supervisor = params[:supervisor]
+    @supervisor.activation_token = params[:token]
     mail( :to => @supervisor.email, :subject => 'Account Activation | Supervisor')
   end
   
