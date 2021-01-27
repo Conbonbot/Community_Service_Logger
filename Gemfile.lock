@@ -77,7 +77,7 @@ GEM
       sassc (>= 2.0.0)
     builder (3.2.4)
     byebug (9.0.6)
-    capybara (3.35.0)
+    capybara (3.35.1)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -86,13 +86,6 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (3.0.0)
-    coffee-rails (5.0.0)
-      coffee-script (>= 2.2.0)
-      railties (>= 5.2.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     erubi (1.10.0)
@@ -115,7 +108,7 @@ GEM
     image_processing (1.12.1)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
-    jbuilder (2.11.1)
+    jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     jquery-rails (4.4.0)
       rails-dom-testing (>= 1, < 3)
@@ -144,7 +137,8 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    msgpack (1.3.3)
+    msgpack (1.4.1)
+    msgpack (1.4.1-java)
     multi_json (1.15.0)
     nio4r (2.5.4)
     nio4r (2.5.4-java)
@@ -229,7 +223,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (2.3.1)
-    sendgrid-ruby (6.3.8)
+    sendgrid-ruby (6.3.9)
       ruby_http_client (~> 3.4)
     simple_form (5.0.3)
       actionpack (>= 5.0)
@@ -292,7 +286,6 @@ DEPENDENCIES
   bootstrap-sass
   byebug (= 9.0.6)
   capybara (>= 2.15)
-  coffee-rails (~> 5.0)
   faker
   gon (~> 6.1)
   image_processing (~> 1.2)
