@@ -7,8 +7,8 @@ class Hour < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :content, :inclusion => 1..1000
-  validates :email, length: { maximum: 255}, format: { with: VALID_EMAIL_REGEX }
-  validates :approved, presence: true, allow_nil: true, default: nil
+  validates :email, :length => { maximum: 255}, :format => { with: VALID_EMAIL_REGEX }
+  validates :approved, presence: true, allow_nil: true
   validates :organization, presence: true
   
   def approve_hour

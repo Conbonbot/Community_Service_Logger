@@ -1,14 +1,15 @@
 class SupervisorMailer < ApplicationMailer
 
   def account_activation(supervisor: Supervisor, token: String)
-    @supervisor = params[:supervisor]
-    @supervisor.activation_token = params[:token]
-    mail( :to => @supervisor.email, :subject => 'Account Activation | Supervisor')
+    @supervisor = supervisor
+    @supervisor.activation_token = token
+    mail(to: @supervisor.email, subject: 'Account Activation | Supervisor' )
   end
   
-  def password_reset(supervisor)
+  def password_reset(supervisor: Supervisor, token: String)
     @supervisor = supervisor
-    mail( :to => @supervisor.email, :subject => 'Password Reset | Supervisor')
+    @supervisor.reset_token = token
+    mail to: supervisor.email, subject: "Password Reset"
   end
   
   def supervisor_hour(supervisor, user)

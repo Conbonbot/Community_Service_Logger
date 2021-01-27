@@ -10,12 +10,13 @@ class SupervisorsController < ApplicationController
   def create
     @supervisor = Supervisor.create(supervisor_params)
     if @supervisor.save
-      #@supervisor.send_activation_email
-      #flash[:info] = "Please check your email to activate your account"
-      @supervisor.activate
-      supervisor_log_in(@supervisor)
-      redirect_to @supervisor
-      flash[:success] = "Account Created and Activated"
+      @supervisor.send_activation_email
+      redirect_to root_url
+      flash[:info] = "Please check your email to activate your account"
+      #@supervisor.activate
+      #supervisor_log_in(@supervisor)
+      #redirect_to @supervisor
+      #flash[:success] = "Account Created and Activated"
     else
       render 'new'
     end

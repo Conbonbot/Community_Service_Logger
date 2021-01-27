@@ -65,7 +65,12 @@ class Supervisor < ApplicationRecord
     end
     
     def send_password_reset_email
-        SupervisorMailer.password_reset(self).deliver_later
+        if self.reset_token.nil?
+            self.reset_token = User.new_token
+            update_attribute(:reset_digest,  User.digest(reset_token))
+            update_attribute(:reset_sent_at, Time.zone.now)
+        end
+        SupervisorMailer.password_reset(supervisor: self, token: self.reset_token).deliver_later
     end
 
     def remember
