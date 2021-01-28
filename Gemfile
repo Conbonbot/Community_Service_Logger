@@ -23,6 +23,7 @@ gem 'faker'
 gem 'sendgrid-ruby'
 gem 'gon', '~> 6.1'
 gem 'roo', '~> 2.7', '>= 2.7.1'
+gem 'spreadsheet', '~> 1.2', '>= 1.2.7'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4', '>= 1.4.2'
