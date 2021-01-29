@@ -1,9 +1,7 @@
 class Hour < ApplicationRecord
   belongs_to :user
-  belongs_to :supervisor
   attr_accessor :supervisor
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  accepts_nested_attributes_for :supervisor 
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :content, :inclusion => 1..1000
@@ -17,6 +15,10 @@ class Hour < ApplicationRecord
   
   def deny_hour
     update_attribute(:approved, false)
+  end
+
+  def send_request_email(hour)
+    HourMailer.with(hour: hour).hour_request_email.deliver_later
   end
   
   private

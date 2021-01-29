@@ -12,7 +12,7 @@ class SupervisorMailer < ApplicationMailer
     mail to: supervisor.email, subject: "Password Reset"
   end
   
-  def supervisor_hour(supervisor, user)
+  def supervisor_hour(supervisor: Supervisor, user: User)
     @supervisor = supervisor
     @user = user
     mail( :to => @supervisor.email, :subject => 'New Request for Community Service')

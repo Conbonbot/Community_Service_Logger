@@ -22,10 +22,11 @@ class HoursController < ApplicationController
        @hour.email = @hour.email.downcase
        if @hour.save
           @supervisor = Supervisor.find_by(email: @hour.email)
-          if @supervisor.nil?
-            @supervisor = Supervisor.new(email: @hour.email)
-          end
-          @supervisor.send_supervisor_email(current_user)
+         if @supervisor.nil?
+            @hour.send_request_email(@hour)
+         else
+           @supervisor.send_supervisor_email(current_user)
+         end
           flash[:info] = "Waiting for approval"
           redirect_to current_user
        else

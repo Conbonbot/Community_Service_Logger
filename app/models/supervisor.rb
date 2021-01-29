@@ -55,7 +55,7 @@ class Supervisor < ApplicationRecord
     
     # Sends an email to the supervisor
     def send_supervisor_email(user)
-        SupervisorMailer.supervisor_hour(self, user).deliver_later
+        SupervisorMailer.supervisor_hour(supervisor: self, user: user).deliver_later
     end
     
     def create_reset_digest
