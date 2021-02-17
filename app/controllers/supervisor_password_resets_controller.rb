@@ -26,7 +26,7 @@ class SupervisorPasswordResetsController < ApplicationController
     if params[:supervisor][:password].empty?
       @supervisor.errors.add(:password, "Can't be empty")
       render 'edit'
-    elsif @supervisor.update_attributes(supervisor_params)
+    elsif @supervisor.update(supervisor_params)
       supervisor_log_in @supervisor
       flash[:success] = "Password has been reset"
       redirect_to @supervisor
@@ -38,7 +38,7 @@ class SupervisorPasswordResetsController < ApplicationController
   private
   
   def supervisor_params
-    params.require(:supervisor).permit(:id, :first_name, :last_name, :email, :address, :telephone, :role, :organization, :password, :password_confirmation, :access_code)
+    params.require(:supervisor).permit(:password, :password_confirmation)
   end
   
   def get_supervisor
