@@ -116,10 +116,11 @@
 
           <div class="row">
 
-            <!-- Hours Chart -->
+            <!-- Hours Chart -->?
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
+                <!-- TODO: Fix this issue, currently the YearlyHourChart.js can't be found in the asset pipeline
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Hours Overview (Yearly)</h6>
                   <div class="dropdown no-arrow">
@@ -138,8 +139,8 @@
                     <canvas id="YearlyAreaChart"></canvas>
                   </div>
                 </div>
-                <!-- Card Body -->
                 </div>
+              -->
                 
     
 
@@ -234,13 +235,14 @@
 
   <!-- Page level custom scripts -->
   <!-- Use these for Charts -->
-  
-  <script src="<%= asset_path 'YearlyHourChart' %>"></script>
+  <!--
+  <script src="YearlyHourChart"></script>
   <div class="card-body">
     <div class="chart-area">
       <canvas id="YearlyAreaChart"></canvas>
     </div>
   </div>
+  -->
 
 </body>
 
