@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_031208) do
+ActiveRecord::Schema.define(version: 2021_04_20_235218) do
 
   create_table "active_storage_variant_records", force: :cascade do |t|
     t.bigint "blob_id", null: false
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_031208) do
   end
 
   create_table "hours", force: :cascade do |t|
-    t.decimal "content", precision: 5, scale: 2
+    t.decimal "content", precision: 6, scale: 2
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

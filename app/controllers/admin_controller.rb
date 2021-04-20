@@ -25,6 +25,10 @@ class AdminController < ApplicationController
       @users[i].update_attribute(:level, stu_level(@users[i]))
     end
   end
+
+  def give_hours
+    debugger
+  end
   
   def transfer
     xlsx = Roo::Spreadsheet.open('./Copy of Community Service 2015-2016.xlsx')
