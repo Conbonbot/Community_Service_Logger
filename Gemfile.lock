@@ -127,7 +127,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.5)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.11.0)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
@@ -137,11 +139,11 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    msgpack (1.4.1)
-    msgpack (1.4.1-java)
+    msgpack (1.4.2)
+    msgpack (1.4.2-java)
     multi_json (1.15.0)
-    nio4r (2.5.4)
-    nio4r (2.5.4-java)
+    nio4r (2.5.7)
+    nio4r (2.5.7-java)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
@@ -153,9 +155,9 @@ GEM
       racc (~> 1.4)
     pg (1.2.3)
     public_suffix (4.0.6)
-    puma (4.3.7)
+    puma (4.3.8)
       nio4r (~> 2.0)
-    puma (4.3.7-java)
+    puma (4.3.8-java)
       nio4r (~> 2.0)
     racc (1.5.2)
     racc (1.5.2-java)
@@ -302,7 +304,7 @@ DEPENDENCIES
   minitest (~> 5.8, >= 5.8.4)
   minitest-reporters
   pg (= 1.2.3)
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.1.1)
   rails-controller-testing
   redis (~> 4.0)
