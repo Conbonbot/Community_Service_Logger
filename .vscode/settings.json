@@ -1,8 +1,7 @@
 {
     "python.pythonPath": "C:\\Program Files\\Python38\\python.exe",
     "git.ignoreLimitWarning": true,
-    "workbench.editorAssociations": [{
-        "viewType": "default",
-        "filenamePattern": "*.md"
-    }]
+    "workbench.editorAssociations": {
+        "*.md": "default"
+    }
 }

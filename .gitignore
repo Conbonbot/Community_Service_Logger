@@ -58,3 +58,8 @@ config/secrets.yml.key
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+
+#Ignore Folders
+.vscode/
+.c9/
