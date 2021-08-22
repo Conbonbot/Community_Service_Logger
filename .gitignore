@@ -61,5 +61,5 @@ yarn-debug.log*
 
 
 #Ignore Folders
-.vscode/
-.c9/
+/.vscode
+/.c9
