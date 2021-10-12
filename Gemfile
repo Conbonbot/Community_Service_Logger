@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 gem 'rails', '~> 6.1.1'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'sass-rails'
 gem 'webpacker', '~> 5.2', '>= 5.2.1'
 gem 'turbolinks', '~> 5'
