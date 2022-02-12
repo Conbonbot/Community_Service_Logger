@@ -154,9 +154,9 @@ GEM
       racc (~> 1.4)
     pg (1.2.3)
     public_suffix (4.0.6)
-    puma (4.3.10)
+    puma (4.3.11)
       nio4r (~> 2.0)
-    puma (4.3.10-java)
+    puma (4.3.11-java)
       nio4r (~> 2.0)
     racc (1.6.0)
     racc (1.6.0-java)
@@ -305,7 +305,7 @@ DEPENDENCIES
   minitest (~> 5.8, >= 5.8.4)
   minitest-reporters
   pg (= 1.2.3)
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.1.1)
   rails-controller-testing
   redis (~> 4.0)
