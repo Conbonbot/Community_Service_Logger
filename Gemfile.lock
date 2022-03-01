@@ -106,7 +106,7 @@ GEM
       request_store (>= 1.0)
     i18n (1.9.1)
       concurrent-ruby (~> 1.0)
-    image_processing (1.12.1)
+    image_processing (1.12.2)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
     jbuilder (2.11.5)
@@ -297,7 +297,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   faker
   gon (~> 6.1)
-  image_processing (~> 1.2)
+  image_processing (~> 1.12)
   jbuilder (~> 2.7)
   jquery-rails
   jquery-ui-rails
