@@ -45,9 +45,8 @@ class SupervisorsController < ApplicationController
     @hour = Hour.find(params[:id])
     @hour.approve_hour
     @user = User.find(@hour.user_id)
-    if @user.grade === '2023'
-      @user.new100 = true
-    end
+    @user.new100 = true
+    @user.save
     redirect_to current_supervisor
   end
   
