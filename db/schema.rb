@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_235218) do
+ActiveRecord::Schema.define(version: 2022_03_20_185808) do
 
   create_table "active_storage_variant_records", force: :cascade do |t|
     t.bigint "blob_id", null: false
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2021_04_20_235218) do
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.datetime "cutoff"
+    t.boolean "new100", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["student_id"], name: "index_users_on_student_id", unique: true
   end
