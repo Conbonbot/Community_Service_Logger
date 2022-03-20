@@ -44,7 +44,7 @@ class SupervisorsController < ApplicationController
     @approves = Hour.where(email: @supervisor.email, approved: nil)
     @hour = Hour.find(params[:id])
     @hour.approve_hour
-    @user = @hour.user_id
+    @user = User.find(@hour.user_id)
     if @user.grade === '2023'
       @user.new100 = true
     end
