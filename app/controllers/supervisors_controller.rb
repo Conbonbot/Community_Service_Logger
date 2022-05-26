@@ -46,7 +46,6 @@ class SupervisorsController < ApplicationController
     @hour.approve_hour
     @user = User.find(@hour.user_id)
     @user.new100 = true
-    @user.grade = "*"
     @user.save
     redirect_to current_supervisor
   end
