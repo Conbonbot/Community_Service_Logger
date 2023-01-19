@@ -87,7 +87,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (4.1.0)
-    concurrent-ruby (1.1.9)
+    concurrent-ruby (1.1.10)
     crass (1.0.6)
     erubi (1.10.0)
     execjs (2.8.1)
@@ -97,14 +97,14 @@ GEM
     ffi (1.15.5-java)
     ffi (1.15.5-x64-mingw32)
     ffi (1.15.5-x86-mingw32)
-    globalid (1.0.0)
+    globalid (1.0.1)
       activesupport (>= 5.0)
     gon (6.4.0)
       actionpack (>= 3.0.20)
       i18n (>= 0.7)
       multi_json
       request_store (>= 1.0)
-    i18n (1.9.1)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
       mini_magick (>= 4.9.5, < 5)
@@ -254,7 +254,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (2.0.4)
+    tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2021.5)
       tzinfo (>= 1.0.0)
@@ -280,7 +280,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.5.4)
+    zeitwerk (2.6.6)
 
 PLATFORMS
   java
