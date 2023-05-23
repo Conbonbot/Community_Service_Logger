@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if @user.save # <-- assigns the activation_token and digest
       @user.update_attribute(:level, determine_level(@user))
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account. Note: This email is sent by noreply@cvhs_community_service.com and could end up in spam"
+      flash[:info] = "Please check your email to activate your account. Note: This email is sent by cvhscommunityservice01@gmail.com and could end up the spam folder."
       redirect_to root_url
     else
       render 'new'
