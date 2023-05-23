@@ -1,8 +1,7 @@
 Hi <%= @user.first_name %> <%= @user.last_name %>,
 
-Welcome to Community Service! Click on the link below to activate your account:
-
-If you have already given hours to Mrs. Gay, they will soon be transferred shortly
-Don't manually input them, we will take care of it
+Welcome to the CVHS Community Service App! Click on the link below to activate your account:
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+Thank you!
