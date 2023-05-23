@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default :from => 'noreply@cvhs_community_service.com'
+  default :from => 'cvhscommunityservice01@gmail.com'
   layout 'mailer'
 end
